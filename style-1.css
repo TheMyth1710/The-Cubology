@@ -1,0 +1,488 @@
+/* Importing Fonts */
+/* The KING MODE: background-image: linear-gradient(to right, #434343 0%, black 100%); */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto:wght@500&family=Exo+2:wght@500&display=swap&display=swap');
+
+:root{
+    --darkblue: #181D31;
+    --navy: #678983;
+    --darkcream: #E6DDC4;
+    --cream: #F0E9D2;
+    --col-1: 8.33%; --col-2: 16.66%; --col-3: 25%; --col-4: 33.33%; --col-5: 41.66%; --col-6: 50%;
+    --col-7: 58.33%; --col-7: 66.66%; --col-8: 66.66%; --col-9: 75%; --col-10: 83.33%; --col-11: 91.66%; --col-12: 100%;
+}
+html::-webkit-scrollbar{
+    width: 10px;
+}
+html::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: rgba(230, 228, 201, 0.845);
+    border: 3px solid  var(--darkblue);
+}
+html::-webkit-scrollbar-track{
+    background-color: var(--darkblue);
+}
+html::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(230, 228, 201);
+}
+body{
+    background-color: var(--cream);
+}
+/* Customize Body Animation Only Home Page */
+
+#body{
+    background-size: cover;
+}
+.spacemaker{
+    background-color: #4158D0;
+}
+
+.wrapper {
+    height: 90vh;
+    width: 100%;
+    background: linear-gradient(309deg, #181D31 0%, #4d62b5 79%);
+}
+
+.boxes div{
+    z-index:1;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid var(--cream);
+}
+
+.boxes div:nth-child(1) {
+    top: 70%;
+    left: 10%;
+    animation: box-animate 10s infinite
+}
+
+.boxes div:nth-child(2) {
+    top: 20%;
+    left: 80%;
+    animation: box-animate 9s infinite
+}
+
+.boxes div:nth-child(3) {
+    top: 50%;
+    left: 55%;
+    animation: box-animate 6s infinite
+}
+
+.boxes div:nth-child(4) {
+    top: 80%;
+    left: 60%;
+    animation: box-animate 15s infinite
+}
+
+.boxes div:nth-child(5) {
+    top: 30%;
+    left: 30%;
+    animation: box-animate 9s infinite
+}
+
+.boxes div:nth-child(6) {
+    top: 60%;
+    left: 90%;
+    animation: box-animate 12s infinite
+}
+
+.boxes div:nth-child(7) {
+    top: 60%;
+    left: 40%;
+    animation: box-animate 2s infinite
+}
+
+.boxes div:nth-child(8) {
+    top: 40%;
+    left: 20%;
+    animation: box-animate 2s infinite
+}
+
+.boxes div:nth-child(9) {
+    top: 50%;
+    left: 80%;
+    animation: box-animate 2s infinite
+}
+
+@keyframes box-animate {
+    0% {
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 1
+    }
+
+    100% {
+        transform: scale(1.3) translateY(-90px) rotate(360deg);
+        opacity: 0
+    }
+}
+/* RESPONSIVE CSS DESIGNING START */
+*{
+    box-sizing: border-box;
+}
+
+/* Sizing the columns */
+.col-1 {width: 8.33%;}.col-2 {width: 16.66%;}.col-3 {width: 25%;}.col-4 {width: 33.33%;}.col-5 {width: 41.66%;}.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}.col-8 {width: 66.66%;}.col-9 {width: 75%;}.col-10 {width: 83.33%;}.col-11 {width: 91.66%;}.col-12 {width: 100%;}
+
+/* For all classes with "col-" */
+[class*="col-"]{
+    padding: 15px;
+}
+
+/* Reallocates the misplacement of columns! Start all rows with "row-" */
+[class*="row-"]::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+/* RESPONSIVE CSS DESIGNING END */
+.center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+html, body{
+    scroll-behavior: smooth;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+.know{
+    margin: auto;
+}
+
+.know .heading{
+    font-family: 'Inconsolata', monospace;
+    font-size: 18px;
+    margin-top:2%;
+}
+
+.know .bodying{
+    font-family: 'Inconsolata', monospace;
+    font-size: 16px;
+}
+
+.center-text{
+    text-align: center !important;
+}
+
+/* NAVBAR */
+.navbar{
+    background-color: #181D31 !important;
+    top: 0 !important;
+    position:fixed !important;
+    width:100% !important;
+    z-index: 5 !important;
+    justify-content: space-between !important;
+}
+#navbarText{
+    color:#EDEDED !important;
+}
+.nav-link{
+    color:#EDEDED !important;
+}
+.nav-link:hover{
+    color:#feffb5 !important;
+}
+
+.nav-link{
+    display: inline-block;
+    position: relative;
+}
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #feffb5;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.nav-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: 0;
+}
+
+.nav-item{
+    margin-left: 1.5em;
+    width: fit-content;
+    width: -moz-fit-content;
+}
+
+.animediv{
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 30%;
+}
+
+@keyframes mymove {
+    50% {font-size: 28px;}
+}
+
+.overlay{
+    background-color: transparent !important;
+    position: absolute; 
+}
+
+
+.btn{
+    border-radius: 10px;
+    height: 3em;
+    line-height: 50%;
+    width: 10em;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: all 0.5s;
+}
+
+.btn:hover{
+    opacity: 1;
+}
+
+.btn-index{
+    background-color:rgb(230, 228, 201);
+}
+
+#storebtn{
+    background-color: #E6913D;
+    margin-left: 20px !important;
+}
+
+#storebtn:hover{
+    background-color: #f29c46;
+}
+
+#downloadbtn{
+    background-color: #3B96BE;
+}
+
+#downloadbtn:hover{
+    background-color: #42a8d3;
+}
+
+#store{
+    width: 10%;
+}
+
+#icon{
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cream);
+    text-shadow: 0px 1.5px 0px rgb(0 0 0 / 25%);
+}
+
+.animetext span{
+    color: #f76363;
+}
+.animetext{
+    color: var(--cream);
+    font-size: 2rem;
+}
+
+.downloadcolor{
+    background-color: #C14E4F !important;
+    text-shadow: 2px 2px #903A3B;
+    color: white;
+    letter-spacing: 2.5px;
+    margin-right: 20px;
+    top: 0px !important;
+    margin: 0px !important;
+    height: 100%;
+    width: 15%;
+    right: 0px;
+    position: absolute;
+    border: none;
+    font-size: 22px;
+    font-family: "Roboto",sans-serif;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.downloadcolor:hover{
+    background-color: #e65151 !important;
+    font-size:  24px !important;
+    text-shadow: 1.5px 1.5px #903A3B;
+}
+
+#download-err{
+    display: none;
+}
+
+.owner{
+    color: #dc3f3f;
+    text-decoration: #0ea5e9 underline;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.owner:hover{
+    color: #9f1e1e;
+    text-decoration: #086591 underline;
+    text-shadow: rgba(209, 102, 102, 0.627) -2px 5px 12px;
+}
+
+/* Cards */
+.card{
+    display: grid;
+    margin-left: 2%;
+    grid-template-columns: 100%;
+    grid-template-rows: 210px 210px 80px;
+    grid-template-areas: "image" "content" "stats";
+    border-radius: 18px;
+    text-align: center;
+    width: 25%;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+}
+.card-image{
+    border: 1px solid red;
+    grid-area: image;
+    background-size: cover;
+    background-position: center center;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+.card-content{
+    grid-area: content;
+    font-weight: bold;
+}
+.card-content .rate{
+    color: rgb(7, 73, 255);
+}
+.card-stats{
+    grid-area: stats;
+}
+
+/* ------------------------------- All Pop-Up Designs ------------------------------- */
+
+.alert {
+    position: relative;
+    border-radius: 5px;
+    color: black;
+    font-size: 15px;
+    box-shadow: 0 0 5px #ccc;
+}
+.close {
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    right: 0px;
+    top: -5px;
+    position: absolute;
+    font-size: 1.6em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Alert Decorations */
+.simple-alert {
+    background-color: #ebebeb;
+    border-left: 5px solid #6c6c6c;
+}
+.simple-alert .close {
+    border-color: #6c6c6c;
+    color: #6c6c6c;
+}
+.success-alert {
+    background-color: #a8f0c6;
+    border-left: 5px solid #178344;
+}
+.success-alert .close {
+    border-color: #178344;
+    color: #178344;
+}
+.danger-alert {
+    background-color: #f7a7a3;
+    border-left: 5px solid #8f130c;
+}
+.danger-alert .close {
+    border-color: #8f130c;
+    color: #8f130c;
+}
+.warning-alert {
+    /* background-color: #ffd48a;
+    border-left: 5px solid #8a5700; */
+        
+    background-color: #c7f0ea;
+    border-left: 5px solid #0a7866;  
+}
+.warning-alert .close {
+    border-color: #023b47;
+    color: #023b47;
+}
+
+/* Font Stuff */
+.panton{
+    font-family: "Panton" !important;
+}
+.inconsolata{
+    font-family: "Inconsolata" !important;
+}
+.exo2{
+    font-family: "Exo 2" !important;
+}
+.roboto{
+    font-family: "Roboto" !important;
+}
+
+.fw-800{
+    font-weight: 800 !important;
+}
+.bold{
+    font-weight: bold !important;
+}
+
+/* ------------------------------- END ------------------------------- */
+
+#download-err{
+    display: block;
+    position: absolute; 
+    top: 0;
+    height:75px; 
+    right: 1%;
+    width: 300px;
+}
+
+.content-1{
+    height: 400px;
+    margin-bottom: 3%;
+}
+
+.content-2{
+    width: 100%;
+}
+
+.mission{
+    width: 80%;
+    margin-left: 10%;
+    border: 4px solid var(--darkblue); 
+    border-radius: 10px;
+}
+
+.mission h2{
+    padding: 0 10px;
+    margin: auto;
+    width: fit-content;
+    background-color: var(--cream);
+    margin-top: -35px;
+    font-size: 51.2px;
+    text-shadow: rgba(0, 0, 0, 0.15) 0px 2px 0px;
+    color: var(--darkblue);
+}
+
+.mission p{
+    padding: 0 20px;
+    font-weight: 600;
+    text-shadow: var(--navy) -2px 5px 12px;
+    margin-top: 1%;
+    color: #28335e;
+    font-size: 20px;
+}

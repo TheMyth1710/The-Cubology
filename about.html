@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 210px 210px 80px;
+            grid-template-areas: "image" "content" "stats";
+            border-radius: 18px;
+            text-align: center;
+            width: 25%;
+            background: white;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+        }
+        .card-image{
+            border: 1px solid red;
+            grid-area: image;
+            background-size: cover;
+            background-position: center center;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+        }
+        .card-content{
+            grid-area: content;
+        }
+        .card-stats{
+            grid-area: stats;
+        }</style>
+</head>
+<body>
+    <div class="card-holder">
+        <div class="card">
+          <div class="card-image" style="background: url('')"></div>
+          <div class="card-content">
+            <span class="rate">#1</span>
+            <h2>2X Better Solutions</h2>
+            <p>This is a sample text.</p>
+          </div>
+          <div class="card-stats"></div>
+        </div>
+      </div>
+</body>
+</html>
