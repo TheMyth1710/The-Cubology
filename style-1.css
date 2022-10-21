@@ -70,6 +70,7 @@ body{
 }
 
 .boxes div:nth-child(4) {
+    display: none;
     top: 80%;
     left: 60%;
     animation: box-animate 15s infinite
@@ -238,7 +239,7 @@ html, body{
     line-height: 50%;
     width: 10em;
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 0;
     transition: all 0.5s;
 }
 
@@ -250,15 +251,6 @@ html, body{
     background-color:rgb(230, 228, 201);
 }
 
-#storebtn{
-    background-color: #E6913D;
-    margin-left: 20px !important;
-}
-
-#storebtn:hover{
-    background-color: #f29c46;
-}
-
 #downloadbtn{
     background-color: #3B96BE;
 }
@@ -267,6 +259,24 @@ html, body{
     background-color: #42a8d3;
 }
 
+#storebtn{
+    background-color: #E6913D;
+    margin-left: 20px !important;
+}
+
+#storebtn:hover{
+    background-color: #f29c46;
+}
+@keyframes popdown-homebtns{
+    0%{
+        opacity: 0;
+        margin-top: -150px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0;
+    }
+}
 #store{
     width: 10%;
 }
@@ -285,7 +295,9 @@ html, body{
 .animetext{
     color: var(--cream);
     font-size: 2rem;
+    text-shadow: rgb(43, 43, 45) -2px 5px 10px;
 }
+
 
 .downloadcolor{
     background-color: #C14E4F !important;
@@ -330,23 +342,48 @@ html, body{
 }
 
 /* Cards */
+.card-holder{
+    width: 100%;
+    height: 385px;
+    margin-top: -14%;
+    position: relative;
+    z-index: 4;
+}
 .card{
     display: grid;
-    margin-left: 2%;
+    float: left;
+    margin-left: 3%;
+    width: 21.25%;
+    height: 385px;
     grid-template-columns: 100%;
-    grid-template-rows: 210px 210px 80px;
-    grid-template-areas: "image" "content" "stats";
+    grid-template-rows: 180px 180px 25px;
+    grid-template-areas: "image" "content" "more";
     border-radius: 18px;
     text-align: center;
-    width: 25%;
-    background: white;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    background: #DCD5BE;
+    cursor: pointer;
+    border: transparent;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+}
+@keyframes popup-card{
+    0%{
+        opacity: 0;
+        margin-top: 14%;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0%;
+    }
+}
+
+.card:last-of-type{
+    margin-right: none;
 }
 .card-image{
-    border: 1px solid red;
     grid-area: image;
-    background-size: cover;
-    background-position: center center;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
 }
@@ -355,10 +392,37 @@ html, body{
     font-weight: bold;
 }
 .card-content .rate{
-    color: rgb(7, 73, 255);
+    font-size: 18px;
+    color: rgb(6, 30, 94);
 }
-.card-stats{
-    grid-area: stats;
+.card-content h3{
+    color: #051038;
+    padding: 20px 2% 0 2%;
+}
+.card-content p{
+    color: #19244d;
+    opacity: 0.85;
+    font-size: 15px;
+    font-weight: 350;
+    text-align: center;
+    padding: 0 5% 0 5%;
+}
+.card-holder p span{
+    opacity: 1;
+    text-shadow: var(--navy) -2px 5px 5px;
+}
+.card-more{
+    grid-area: more;
+}
+.card-more span{
+    color: #19244d;
+    font-size: 16px;
+    float: right;
+    margin-right: 10px;
+}
+.card:hover .card-more span{
+    color: #0e1325;
+    text-decoration: underline;
 }
 
 /* ------------------------------- All Pop-Up Designs ------------------------------- */
@@ -408,9 +472,6 @@ html, body{
     color: #8f130c;
 }
 .warning-alert {
-    /* background-color: #ffd48a;
-    border-left: 5px solid #8a5700; */
-        
     background-color: #c7f0ea;
     border-left: 5px solid #0a7866;  
 }
@@ -439,8 +500,24 @@ html, body{
 .bold{
     font-weight: bold !important;
 }
+.op-0{
+    opacity: 0;
+}
 
 /* ------------------------------- END ------------------------------- */
+
+.basic-link{
+    opacity: 0.9;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.basic-link:hover{
+    color: inherit;
+    opacity: 1;
+    text-decoration: underline;
+}
 
 #download-err{
     display: block;
@@ -451,16 +528,8 @@ html, body{
     width: 300px;
 }
 
-.content-1{
-    height: 400px;
-    margin-bottom: 3%;
-}
-
-.content-2{
-    width: 100%;
-}
-
 .mission{
+    margin-top: 5%;
     width: 80%;
     margin-left: 10%;
     border: 4px solid var(--darkblue); 
@@ -485,4 +554,45 @@ html, body{
     margin-top: 1%;
     color: #28335e;
     font-size: 20px;
+}
+
+/* Animations */
+@keyframes scale{
+    0%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes popup{
+    0%{
+        opacity: 0;
+        margin-top: 20px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+@keyframes popdown{
+    0%{
+        opacity: 0;
+        margin-top: -50px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+@keyframes popleft{
+    0%{
+        opacity: 0;
+        margin-left: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }

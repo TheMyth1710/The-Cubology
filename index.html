@@ -7,7 +7,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" ></script>
-      <script src="https://kit.fontawesome.com/599f35f2d2.js" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/d392aae976.js" crossorigin="anonymous"></script>
       <meta charset="UTF-8">  
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
       <link rel="stylesheet" href="style-1.css">
       <link rel="stylesheet" href="responsive.css">
       <link rel="stylesheet" href="animations.css">
-      <link rel="icon" href="images/temp_icon.png" type="image/icon type">
+      <link rel="icon" href="logo.png" type="image/x-icon">
       <title>The Cubology</title>
   </head>
   <body onload="loadinganim(); screenwidth();"> 
@@ -65,7 +65,7 @@
     <!-- BODY OF THE HOME PAGE AND OTHER PAGES AS WELL -->
     <div id="body" style="display: none;">
       <nav class="navbar navbar-expand-lg navbar-light bg-light dropdown-menu-right" style="float:right;" id="navbar">
-        <a class="navbar-brand" href="#"><img src="images/temp_logo.png" class="logo" width="250em"></a>
+        <a class="navbar-brand" href="#"><img src="logo_with_text.png" class="logo" width="250em"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -91,7 +91,7 @@
             </li>
           </ul>
         </div>
-        <button class="downloadcolor center-text" id="download" onclick="window.location='download.html'"><b>DOWNLOAD</b></button>
+        <button class="downloadcolor center-text" id="download" onclick="window.location='download.html'"><span class="roboto bold">DOWNLOAD</span></button>
       </nav>
       <!-- This Whole Thing is The Cube Animation -->
       <div class="wrapper"> 
@@ -102,52 +102,95 @@
       </div>
       <div class="animediv col-12 center-text">
         <div class="center-text">
-          <h1 class="animetext center-text roboto">Make Cubing&nbsp;<span class="animatedtype roboto"></span></h1>
+          <h1 class="animetext center-text roboto op-0" animation="popdown 0.5s forwards">Make Cubing&nbsp;<span class="animatedtype roboto"></span></h1>
         </div>
         <!-- Cube Animation End -->
         <br>
           <div class="btn btn-index col-5 center-text overlay" id="downloadoverlay" onclick="screenwidth(hover=false);"></div>
-          <button class="btn btn-index col-5 center-text" id="downloadbtn" onclick="window.location='download.html'"><i class="fa-solid fa-download center-text" id="icon" style="float: left;">&nbsp;Download</i></button>
-          <button class="btn btn-index col-5 center-text panton" id="storebtn"><i class="fa-solid fa-cart-shopping center-text" id="icon">&nbsp;Store</i></button>
+          <button class="btn btn-index col-5 center-text" id="downloadbtn" onclick="window.location='download.html'" animation="popdown-homebtns 0.5s 0.25s forwards"><i class="fa-solid fa-download center-text" id="icon" style="float: left;">&nbsp;Download</i></button>
+          <button class="btn btn-index col-5 center-text panton" id="storebtn" onclick="window.location='store.html'" animation="popdown-homebtns 0.5s 0.35s forwards"><i class="fa-solid fa-cart-shopping center-text" id="icon">&nbsp;Store</i></button>
       </div>
-      <div class="content-1">
-        <div class="card-holder">
-          <div class="card">
-            <div class="card-image" style="background: url('')"></div>
-            <div class="card-content">
-              <span class="rate">#1</span>
-              <h2>2X Better Solutions</h2>
-              <p>This is a sample text.</p>
-            </div>
-            <div class="card-stats"></div>
+      <div class="alert warning-alert" id="download-err">
+        <p class="download-err-reason">Oops! We currently only support Windows 10+</p>
+        <a class="close center-text" onclick="vanisherr()">&times;</a>
+      </div>
+      <div class="card-holder">
+        <div class="card" id="card-1" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s">
+          <div class="card-image" style="background: url('https://timebusinessnews.com/wp-content/uploads/img25.jpg');"></div>
+          <div class="card-content">
+            <h3 class="inconsolata fw-800">2x Faster Solutions</h3>
+            <p class="inconsolata bold">With an efficient and fast AI, solve cubes faster than before! Simply with your cube and our AI, you can get upto <span>2x faster solutions</span> for any scramble!</p>
+          </div>
+          <div class="card-more">
+            <span class="inconsolata bold">More Info</span>
           </div>
         </div>
-        
+        <div class="card op-0" id="card-2" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s forwards">
+          <div class="card-image" style="background: url('https://cdn.thisiswhyimbroke.com/images/x-cube.jpg');"></div>
+          <div class="card-content">
+            <h3 class="inconsolata fw-800">3+ Different Methods</h3>
+            <p class="inconsolata bold">You love the CFOP method, the beginner's method, or simply desire a fast solution? We have it all! Now, get upto <span>3+ different methods</span> to solve the same scramble!</p>
+          </div>
+          <div class="card-more">
+            <span class="inconsolata bold">More Info</span>
+          </div>
+        </div>
+        <div class="card op-0" id="card-3" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s forwards">
+          <div class="card-image" style="background: url('https://ruwix.com/pics/rubiks-cube/gan-11-m-pro.jpg'); background-position: 40%;"></div>
+          <div class="card-content">
+            <h3 class="inconsolata fw-800">2x Faster Solutions</h3>
+            <p class="inconsolata bold">With an efficient and fast AI, solve cubes faster than before! Get upto <span>2x faster solutions</span> for scrambles!</p>
+          </div>
+          <div class="card-more">
+            <span class="inconsolata bold">More Info</span>
+          </div>
+        </div>
+        <div class="card op-0" id="card-4" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s forwards"> <!-- Image to be added when app ready (of graph) -->
+          <div class="card-image" style="background: url('https://ruwix.com/pics/rubiks-cube/gan-11-m-pro.jpg'); background-position: 40%;"></div>
+          <div class="card-content">
+            <h3 class="inconsolata fw-800">Better Graphs</h3>
+            <p class="inconsolata bold">Who doesn't love better graphical representations? Your dream is now true! Meet our AI that draws real-time <span>graphs</span> for different solutions to scrambles!</p>
+          </div>
+          <div class="card-more">
+            <span class="inconsolata bold">More Info</span>
+          </div>
+        </div>
       </div>
-      <div class="content-2">
-        <div class="alert warning-alert" id="download-err">
-          <p class="download-err-reason">Oops! We currently only support Windows 10+</p>
-          <a class="close center-text" onclick="vanisherr()">&times;</a>
-        </div>
-        <div class="mission center-text">
-          <h2 class="inconsolata fw-800">Our Motive</h2>
-          <p class="inconsolata">We aim to make cubing easier for everyone, and help professional
-          cubers get faster solutions to different scrambles. This website and the application has been created by <a class="owner" href="https://github.com/themyth1710" target="_blank">Mudith Daga</a> — a
-          programmer and a cuber.</p>
-        </div>
+      <div class="mission center-text op-0" animation="popleft 0.5s forwards">
+        <h2 class="inconsolata fw-800">Our Motive</h2>
+        <p class="inconsolata">We aim to make cubing easier for everyone, and help professional
+        cubers get faster solutions to different scrambles. This <a class="basic-link" href="#top">website</a> and the <a class="basic-link" href="download.html">application</a> has been created by <a class="owner" href="https://github.com/themyth1710" target="_blank">Mudith Daga</a> — a
+        programmer and a cuber.</p>
       </div>
       <div class="about-cube">
-
       </div>
     </div>
     <script src="main.js"></script>
     <script src="loading.js"></script>
+    <script src="onscroll.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
       var typed = new Typed('.animatedtype', {
         strings: ['Faster.', 'Effortless.', 'Exciting.', 'Fun.'], typeSpeed: 100, backDelay: 1500, backSpeed: 70, loop: true
       });
     </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
   </body>
 </html>
+
+<!-- 
+
+Download + Store
+Features
+Our Mission
+About Cube
+New to Cubing?
+  → Redirect to Learn 3x3
+  → Redirect to store
+  → Other Puzzles : redirect to more puzzles
+WCA
+
+
+
+
+-->
