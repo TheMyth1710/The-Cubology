@@ -12,60 +12,60 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="style-1.css">
+      <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="responsive.css">
       <link rel="stylesheet" href="animations.css">
       <link rel="icon" href="logo.png" type="image/x-icon">
       <title>The Cubology</title>
   </head>
-  <body onload="loadinganim(); screenwidth();"> 
+  <body onload="loadinganim(); device_checker(); achievement_main(); achievement_checker(); reward_checker();"> 
     <!-- Loading Animation -->
-    <div class="row-loading col-12 center" id="loader">
+    <div class="row-loading col-12 center center-text" id="loader">
       <center>
       <div class="rubiks-loader">
           <div class="cube">
             <!-- base position -->
             <div class="face front piece justanotherrow-top    column-left   yellow"></div>
-            <div class="face front piece justanotherrow-top    column-centre green "></div>
-            <div class="face front piece justanotherrow-top    column-right  white "></div>
-            <div class="face front piece justanotherrow-centre column-left   blue  "></div>
-            <div class="face front piece justanotherrow-centre column-centre green "></div>
-            <div class="face front piece justanotherrow-centre column-right  blue  "></div>
-            <div class="face front piece justanotherrow-bottom column-left   green "></div>
+            <div class="face front piece justanotherrow-top    column-centre green"></div>
+            <div class="face front piece justanotherrow-top    column-right  white"></div>
+            <div class="face front piece justanotherrow-centre column-left   blue"></div>
+            <div class="face front piece justanotherrow-centre column-centre green"></div>
+            <div class="face front piece justanotherrow-centre column-right  blue"></div>
+            <div class="face front piece justanotherrow-bottom column-left   green"></div>
             <div class="face front piece justanotherrow-bottom column-centre yellow"></div>
-            <div class="face front piece justanotherrow-bottom column-right  red   "></div>
+            <div class="face front piece justanotherrow-bottom column-right  red"></div>
         
             <!-- first step: E', equator inverted -->
-            <div class="face down  piece justanotherrow-top    column-centre green "></div>
-            <div class="face down  piece justanotherrow-centre column-centre red   "></div>
-            <div class="face down  piece justanotherrow-bottom column-centre white "></div>
+            <div class="face down  piece justanotherrow-top    column-centre green"></div>
+            <div class="face down  piece justanotherrow-centre column-centre red"></div>
+            <div class="face down  piece justanotherrow-bottom column-centre white"></div>
         
             <!-- second step: M, middle -->
             <div class="face right piece justanotherrow-centre column-left   yellow"></div>
-            <div class="face right piece justanotherrow-centre column-centre green "></div>
-            <div class="face right piece justanotherrow-centre column-right  blue  "></div>
+            <div class="face right piece justanotherrow-centre column-centre green"></div>
+            <div class="face right piece justanotherrow-centre column-right  blue"></div>
         
             <!-- third step: L, left -->
             <div class="face up    piece justanotherrow-top    column-left   yellow"></div>
-            <div class="face up    piece justanotherrow-centre column-left   blue  "></div>
-            <div class="face up    piece justanotherrow-bottom column-left   green "></div>
+            <div class="face up    piece justanotherrow-centre column-left   blue"></div>
+            <div class="face up    piece justanotherrow-bottom column-left   green"></div>
         
             <!-- fourth step: D, down -->
-            <div class="face left  piece justanotherrow-bottom column-left     green "></div>
+            <div class="face left  piece justanotherrow-bottom column-left     green"></div>
             <div class="face left  piece justanotherrow-bottom column-centre yellow"></div>
-            <div class="face left  piece justanotherrow-bottom column-right  red   "></div>
+            <div class="face left  piece justanotherrow-bottom column-right  red"></div>
           </div>
       </div>
-      <div class="know col-3" id="know">
-        <h1 class="heading">DID YOU KNOW</h1>
-        <p class="bodying" id="cubefact"></p>
+      <div class="know col-3">
+        <h1 class="heading inconsolata">DID YOU KNOW</h1>
+        <p class="bodying inconsolata"></p>
       </div>
       </center>
     </div>
     <!-- BODY OF THE HOME PAGE AND OTHER PAGES AS WELL -->
     <div id="body" style="display: none;">
       <nav class="navbar navbar-expand-lg navbar-light bg-light dropdown-menu-right" style="float:right;" id="navbar">
-        <a class="navbar-brand" href="#"><img src="logo_with_text.png" class="logo" width="250em"></a>
+        <a class="navbar-brand" href="#"><img src="logo_with_text.png" class="logo" width="250em" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -96,8 +96,7 @@
       <!-- This Whole Thing is The Cube Animation -->
       <div class="wrapper"> 
         <div class="boxes"> 
-          <div></div> <div></div> <div></div> <div></div><div></div> <div></div> <div></div> <div></div> 
-          <div id="rickroll" onclick='window.open("https://youtu.be/dQw4w9WgXcQ")'></div> 
+          <div></div> <div></div> <div></div> <div></div><div></div> <div></div> <div></div> <div></div> <div></div> 
         </div> 
       </div>
       <div class="animediv col-12 center-text">
@@ -106,17 +105,13 @@
         </div>
         <!-- Cube Animation End -->
         <br>
-          <div class="btn btn-index col-5 center-text overlay" id="downloadoverlay" onclick="screenwidth(hover=false);"></div>
-          <button class="btn btn-index col-5 center-text" id="downloadbtn" onclick="window.location='download.html'" animation="popdown-homebtns 0.5s 0.25s forwards"><i class="fa-solid fa-download center-text" id="icon" style="float: left;">&nbsp;Download</i></button>
-          <button class="btn btn-index col-5 center-text panton" id="storebtn" onclick="window.location='store.html'" animation="popdown-homebtns 0.5s 0.35s forwards"><i class="fa-solid fa-cart-shopping center-text" id="icon">&nbsp;Store</i></button>
-      </div>
-      <div class="alert warning-alert" id="download-err">
-        <p class="download-err-reason">Oops! We currently only support Windows 10+</p>
-        <a class="close center-text" onclick="vanisherr()">&times;</a>
+          <div class="btn btn-index col-5 center-text overlay" id="downloadoverlay" onclick="device_checker(true);"></div>
+          <button class="btn btn-index col-5 center-text" id="downloadbtn" onclick="window.location='download.html'" animation="popdown-homebtns 0.5s forwards"><i class="fa-solid fa-download center-text" id="icon" style="float: left;">&nbsp;Download</i></button>
+          <button class="btn btn-index col-5 center-text panton" id="storebtn" onclick="window.location='store.html'" animation="popdown-homebtns 0.5s 0.2s forwards"><i class="fa-solid fa-cart-shopping center-text" id="icon">&nbsp;Store</i></button>
       </div>
       <div class="card-holder">
-        <div class="card" id="card-1" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s">
-          <div class="card-image" style="background: url('https://timebusinessnews.com/wp-content/uploads/img25.jpg');"></div>
+        <div class="card op-0" id="card-1" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s forwards">
+          <div class="card-image" style="background: url('https://timebusinessnews.com/wp-content/uploads/img25.jpg');" role="img" aria-label="2x Faster Solutions"></div>
           <div class="card-content">
             <h3 class="inconsolata fw-800">2x Faster Solutions</h3>
             <p class="inconsolata bold">With an efficient and fast AI, solve cubes faster than before! Simply with your cube and our AI, you can get upto <span>2x faster solutions</span> for any scramble!</p>
@@ -125,7 +120,7 @@
             <span class="inconsolata bold">More Info</span>
           </div>
         </div>
-        <div class="card op-0" id="card-2" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s forwards">
+        <div class="card op-0" id="card-2" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s 0.25s forwards" animate-responsive="0.25s > 750- ">
           <div class="card-image" style="background: url('https://cdn.thisiswhyimbroke.com/images/x-cube.jpg');"></div>
           <div class="card-content">
             <h3 class="inconsolata fw-800">3+ Different Methods</h3>
@@ -135,39 +130,203 @@
             <span class="inconsolata bold">More Info</span>
           </div>
         </div>
-        <div class="card op-0" id="card-3" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s forwards">
-          <div class="card-image" style="background: url('https://ruwix.com/pics/rubiks-cube/gan-11-m-pro.jpg'); background-position: 40%;"></div>
+        <div class="card op-0" id="card-3" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s 0.5s forwards" animate-responsive="0.5s > 1100- ">
+          <div class="card-image" style="background: url('https://cdn.dribbble.com/users/563921/screenshots/10945959/media/0c138b5f1801a7799e50b68aeca9c6a2.jpg?compress=1&resize=1000x750&vertical=top'); background-position: 40%;"></div>
           <div class="card-content">
-            <h3 class="inconsolata fw-800">2x Faster Solutions</h3>
-            <p class="inconsolata bold">With an efficient and fast AI, solve cubes faster than before! Get upto <span>2x faster solutions</span> for scrambles!</p>
+            <h3 class="inconsolata fw-800">Straightforward UI</h3>
+            <p class="inconsolata bold">With power comes responsibilities. Likewise, with programming comes UI. Our app has a <span>straightforward UI</span> with capabilities of snapping cube images or entering the scramble!</p>
           </div>
           <div class="card-more">
             <span class="inconsolata bold">More Info</span>
           </div>
         </div>
-        <div class="card op-0" id="card-4" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s forwards"> <!-- Image to be added when app ready (of graph) -->
+        <div class="card op-0" id="card-4" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s 0.75s forwards" animate-responsive="0.75s > 750-,1100-0.25s"> <!-- Image to be added when app ready (of graph) -->
           <div class="card-image" style="background: url('https://ruwix.com/pics/rubiks-cube/gan-11-m-pro.jpg'); background-position: 40%;"></div>
           <div class="card-content">
             <h3 class="inconsolata fw-800">Better Graphs</h3>
             <p class="inconsolata bold">Who doesn't love better graphical representations? Your dream is now true! Meet our AI that draws real-time <span>graphs</span> for different solutions to scrambles!</p>
           </div>
           <div class="card-more">
-            <span class="inconsolata bold">More Info</span>
+            <span class="inconsolata bold"b>More Info</span>
           </div>
         </div>
       </div>
       <div class="mission center-text op-0" animation="popleft 0.5s forwards">
         <h2 class="inconsolata fw-800">Our Motive</h2>
         <p class="inconsolata">We aim to make cubing easier for everyone, and help professional
-        cubers get faster solutions to different scrambles. This <a class="basic-link" href="#top">website</a> and the <a class="basic-link" href="download.html">application</a> has been created by <a class="owner" href="https://github.com/themyth1710" target="_blank">Mudith Daga</a> — a
-        programmer and a cuber.</p>
+        cubers get faster solutions to different scrambles. This <a class="basic-link" href="#top">website</a> and the <a class="basic-link" href="solvemycube.html">application</a> has been created by <a class="owner" href="https://github.com/themyth1710" target="_blank">Mudith Daga</a> — a
+        programmer and speedcuber.</p>
       </div>
       <div class="about-cube">
+        <div class="container">
+          <img class="op-0" src="https://images.ctfassets.net/r3qu44etwf9a/680DVunIR7hWHjteAxswdj/dd0883c61324c316809714fff178ff00/about-img.png?w=474&h=712&q=50&fm=webp" width="60%" alt="Ernõ Rubik" animation="popleft 1s forwards">
+        </div>
+        <div class="container">
+          <h1 class="inconsolata fw-800 op-0" animation="popright 1s forwards"  animate-responsive="popright > 750-popleft">About Rubik's Cube</h1>
+          <p class="about-cube-p exo2 op-0" id="p-1" animation="popright 1s forwards"  animate-responsive="popright > 750-popleft">What is a rubik's cube? Where did it come from? Who invented it? Want to know more about the Rubik's Cube? You've arrived
+            at the right place for the right information!</p>
+          <p class="about-cube-p exo2 op-0" id="p-2" animation="popright 1s forwards"  animate-responsive="popright > 750-popleft">Invented in 1974 by Ernõ Rubik, a Hungarian architecture professor, the Rubik's Cube has always been the most beloved 
+            puzzle of children. Originally named as the "Magic Cube", Ernõ has also usedit as a learning exercise to illuminate his students about 3-dimensional spaces.</p>
+          <p class="about-cube-p exo2 op-0" id="p-3" animation="popright 1s forwards"  animate-responsive="popright > 750-popleft">It was during the 1980s, when the Rubik's Cube started becoming a hype
+            between people, mostly teenagers. Not only did it become a pop culture, Cubes were also featured in The Simpsons, The Big Bang Theory,
+            and so many more to name...
+          </p>
+          <p class="about-cube-p exo2 op-0" id="p-4" animation="popright 1s forwards"  animate-responsive="popright > 750-popleft">
+            Currently, the Rubik's Cube holds one of the top places in the world when it comes to mind exercises, or a healthy competition.
+            Yes, it's the <a class="basic-link" href="#wca" onclick="clickanimation('#wca','background-color','inherit')">World Cube Association</a> we're talking about. Since Feliks Zemdges broke 100 world records, cubing has become a spirit.
+            The current world record to solve a 3x3x3 Rubik's Cube is 3.475s by Yusheng Du. That's quite amazing! What are you waiting for?
+            Go set one for yourself!
+          </p>
+        </div>
       </div>
+      <div class="change-background">
+        <div class="new-cube center-text">
+          <div class="new-cube-title op-0" animation="fliptext 1s forwards">
+            <h1 class="inconsolata bold">New to Cubing? Don't worry, we've got you covered!</h1>
+          </div>
+          <div class="new-cube-btn-holder">
+            <button class="btn new-cube-btn" id="new-cube-btn-1" onclick="window.location='learnthecube.html'" animation="scalein 0.5s forwards">Start With The 3x3x3</button>
+            <button class="btn new-cube-btn" id="new-cube-btn-2" onclick="window.location='morecubes.html'" animation="scalein 0.5s forwards">Explore More Cubes</button>
+            <button class="btn new-cube-btn" id="new-cube-btn-3" onclick="window.location='store.html'" animation="scalein 0.5s forwards">Buy Some Cubes</button>
+          </div>
+          <hr class="index-separator">
+        </div>
+        <div class="wca">
+          <div class="wca-title" id="wca">
+            <h1 class="inconsolata bold" typing-effect="true" typing-text="The World Cube Association" typing-responsive="770"><span class="cursor"></span></h1>
+          </div>
+          <div class="wca-content">
+            <img class="img-text-wrap op-0" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/World_Cube_Association.svg/1200px-World_Cube_Association.svg.png" alt="WCA Logo" width="200px" animation="scaleout 1s forwards" />
+            <p class="exo2 op-0" id="p-1" animation="fadein 3s forwards">Officially founded by Ron van Bruchem of the Netherlands and Tyson Mao of the United States, the World Cube Association or the WCA
+            has been a spark since 2004. Quite evident by their name, the WCA is an official cubing association and 
+            has hosted more than 7,500 competitions with more than 160,000 participants (as of June 2022) — numbers are 
+            expected to increase as more people gain knowledge about Rubik Cubes. The WCA hosts competitions all around the globe!
+            For more info, you can check out more on their upcoming <a class="basic-link link-blue" href="https://www.worldcubeassociation.org/competitions" target="_blank">competition schedules</a>.
+            </p>
+            <p class="exo2 op-0" id="p-2" animation="fadein 3s forwards">Going by their name, the WCA is the world's biggest cubing association. From <a class="basic-link link-blue" href="https://www.worldcubeassociation.org/results/records" target="_blank">world records list</a>
+            to <a class="basic-link link-blue" href="https://www.worldcubeassociation.org/regulations/" target="_blank">rules and regulations</a>, they have it all.
+            There's no harm in saying that it's the WCA because of which the cubing spirit is still alive. Every cuber has a dream
+            of being recognized globally as a speedcuber, which wouldn't be possible without the WCA. Look up at <a class="basic-link link-blue" href="https://www.worldcubeassociation.org/persons/2009ZEMD01" target="_blank">Feliks Zemdegs</a>, 
+            <a class="basic-link link-blue" href="https://www.worldcubeassociation.org/persons/2012PARK03" target="_blank">Max Park</a> and <a class="basic-link link-blue" href="https://www.worldcubeassociation.org/persons/2015DUYU01" target="_blank">Yushend Du</a>.
+            Well, if you believe it or not, the final achievement of every speedcuber is to be on the rankings of the WCA. So, what are you waiting for? Start practicing!
+             </p>
+          </div>
+        </div>
+      </div>
+      <div class="ap-holder">
+        <div class="ap-title">
+          <h1 class="inconsolata fw-800 center-text" id="achievements">Achievements: 0/100 Points</h1>
+        </div>
+        <div class="achievements">
+          <div class="achievement locked ap-5" onclick="unlock_hint(this)" animation="fadein-locked 2s forwards">
+            <img src="images/tab.png" alt="images/tab.png" />
+            <h4 class="achievement-title exo2">Tab Friend</h4>
+            <p class="exo2">Navigate through <kbd class="exo2">tab</kbd></p>
+          </div>
+          <div class="achievement locked ap-5" onclick="unlock_hint(this)" animation="fadein-locked 2s forwards">
+            <img src="images/safe.png" alt="images/safe.png"  />
+            <h4 class="achievement-title exo2">I'm safe!</h4>
+            <p class="exo2">Get your hands on cubing</p>
+          </div>
+          <div class="achievement locked ap-15" onclick="unlock_hint(this)" animation="fadein-locked 2s forwards">
+            <img src="images/rickastley.png" alt="images/rickastley.png" />
+            <h4 class="achievement-title exo2">Rick Astley's Brat</h4>
+            <p class="exo2">Are you a brat?</p>
+          </div>
+          <div class="achievement locked" onclick="unlock_hint(this)" animation="fadein-locked 2s forwards">
+            <img src="images/cube_logo.png" alt="Achievement" />
+            <h4 class="achievement-title exo2">Achievement</h4>
+            <p class="exo2">Description...</p>
+          </div>
+          <div class="achievement locked" onclick="unlock_hint(this)" animation="fadein-locked 2s forwards">
+            <img src="images/cube_logo.png" alt="Achievement" />
+            <h4 class="achievement-title exo2">Achievement</h4>
+            <p class="exo2">Description...</p>
+          </div>
+          <div class="achievement locked" animation="fadein-locked 1.2s forwards" onclick="unlock_hint(this)"> <!-- On Lock Warning Alerts-->
+            <img src="images/cube_logo.png" alt="Achievement">
+            <h4 class="achievement-title exo2">Achievement</h4>
+            <p class="exo2">Description...</p>
+          </div>
+          <div class="achievement locked" onclick="unlock_hint(this)" animation="fadein-locked 2s forwards">
+            <img src="images/cube_logo.png" alt="Achievement" />
+            <h4 class="achievement-title exo2">Achievement</h4>
+            <p class="exo2">Description...</p>
+          </div>
+          <div class="achievement locked" onclick="unlock_hint(this)" animation="fadein-locked 2s forwards">
+            <img src="images/cube_logo.png" alt="Achievement" />
+            <h4 class="achievement-title exo2">Achievement</h4>
+            <p class="exo2">Description...</p>
+          </div>
+          <div class="achievement locked" onclick="unlock_hint(this)" animation="fadein-locked 2s forwards">
+            <img src="images/cube_logo.png" alt="Achievement" />
+            <h4 class="achievement-title exo2">Achievement</h4>
+            <p class="exo2">Description...</p>
+          </div>
+        </div>
+      </div>
+      <div class="uncompatible">
+        *Achievements and Rewards are only available on the Desktop version!
+      </div>
+      <hr class="ap-separator" />
+      <div class="rw-holder">
+        <div class="rw-title">
+          <h1 class="inconsolata fw-800 center-text" id="rewards">Rewards</h1>
+        </div>
+        <div class="rewards">
+          <div class="reward op-0" animation="fadein 2s forwards">
+            <div class="classifier">
+              <img src="images/tictactoe.png" alt="TicTacToe" />
+            </div>
+            <div class="classifier">
+              <h4 class="reward-title exo2">TicTacToe Game</h4>
+              <p>Now enjoy TicTacToe with bots! </p>
+            </div>
+            <button class="btn reward-claim" onclick="unlock_reward(this)" points="20">20 Points Needed</button>
+            </div>
+          <div class="reward op-0" animation="fadein 2s forwards">
+            <div class="classifier">
+              <img src="images/temp-files.png" style="background-size: 500% !important" alt="Reward" />
+            </div>
+            <div class="classifier">
+              <h4 class="reward-title exo2" onclick="unlock_reward(this)" points="50">Temporary File Remover</h4>
+              <p class="exo2">Save disk space like never before!</p>
+            </div>
+            <button class="btn reward-claim" onclick="unlock_reward(this)" points="20">50 Points Needed</button>
+          </div>
+          <div class="reward op-0" animation="fadein 2s forwards">
+            <div class="classifier">
+              <img src="images/jarvis.png" alt="Jarvis" />
+            </div>
+            <div class="classifier">
+              <h4 class="reward-title exo2" onclick="unlock_reward(this)" points="100">Jarvis</h4>
+              <p class="exo2">Get your PC's work done by a bot!</p>
+            </div>
+            <button class="btn reward-claim" onclick="unlock_reward(this)" points="20">100 Points Needed</button>
+          </div>
+        </div>
+      </div>
+    <div class="footer">
+      <div class="section" style="width: 30%; cursor: pointer;" onclick="window.location='#top'">
+        <img src="images/cube_logo_footer.png" style="width: 50px; float: left;">
+        <h5 class="inconsolata">&#169; 2022 The Cubology</h5>
+      </div>
+      <div class="section" style="width: 40%;">
+        <a class="footer-link" href="mailto:s.mudith.daga@fountainheadschools.org?subject=The Cubology - Support">Support</a>
+        <a class="footer-link" href="other.html/#faq">FAQ</a>
+        <a class="footer-link" href="other.html/#tos">Terms of Service</a>
+        <a class="footer-link" href="other.html/#privacy">Privacy Policy</a> 
+        <a class="footer-link" href="#top">Back to Top</a>
+      </div>
+      <div class="section">
+        <h5 class="inconsolata">Affiliated with <a href="https://github.com/themyth1710" target="_blank">TheMyth1710</a></h5>
+      </div>
+    </div>
     </div>
     <script src="main.js"></script>
     <script src="loading.js"></script>
     <script src="onscroll.js"></script>
+    <script src="achievements.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
       var typed = new Typed('.animatedtype', {
@@ -183,14 +342,30 @@
 Download + Store
 Features
 Our Mission
-About Cube
-New to Cubing?
+About Cube //cream
+New to Cubing? //blue
   → Redirect to Learn 3x3
   → Redirect to store
   → Other Puzzles : redirect to more puzzles
 WCA
+Achievements:
+(+5) Tab Friend → 5 tabs continuous
+(+5) Want to feel safe? → Learn the 3x3 cube simulator
+(+15) The Terminator → Terminator The Download Animation
+(+10) Never Gonna Give You Up → Imagine Being Rick Rolled (Mostly in Other page)
+(+5) You aren't broke! → Click a product in the store
+(+10) Getting hands on! → Visit WCA
+and more...
 
 
+Rewards:
+Rick Roll: 20 Points
+All unlocked: Redirect to Jarvis Installation
+
+Pending Tasks:
+Alerts
+Download Banner → Lunar
+Footer
 
 
 -->

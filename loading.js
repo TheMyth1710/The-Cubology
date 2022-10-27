@@ -13,8 +13,7 @@ var cubing_facts = ['Cubes were initially called Magic Cube.','CFOP is the most 
 ];
 
 function random(choices){
-    var index = Math.floor(Math.random() * choices.length);
-    return choices[index];
+    return choices[Math.floor(Math.random() * choices.length)];
 }
 
 function loadinganim() {
@@ -22,18 +21,22 @@ function loadinganim() {
     if (document.URL.includes('index.html')){
         document.getElementById("loader").style.display = "block";
         document.getElementById("body").style.display = "none";
-        document.getElementById("cubefact").innerHTML = random(cubing_facts);
+        document.querySelector(".know .bodying").innerHTML = random(cubing_facts);
         setTimeout(function(){
             document.getElementById("loader").style.display = "none";
-            document.getElementById("body").style.display = "block";}, 3000);
+            document.getElementById("body").style.display = "block";
+            document.getElementById("body").style.backgroundColor = "var(--cream)";}, 3000);
     }else{
-        if (document.readyState !== "complete") {
-        document.getElementById("body").style.display = "none";
-        document.getElementById("loader").style.display = "block";
-        
-        }else{
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("body").style.display = "block";
+        if (document.readyState === "complete") {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("body").style.display = "block";
+            if (document.URL.includes("#")){
+                let id = document.URL.split("#").at(-1);
+                if (document.getElementById(id)){
+                    clickanimation("#"+id);
+                    document.getElementById(id).style.opacity = '1';
+                }
+            }
         }
-}
+    }
 };
