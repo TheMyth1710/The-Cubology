@@ -22,15 +22,22 @@ function clickanimation(element, key='background-color', before='inherit', after
     })
 }
 
-function home_nav(nav, start_page = 'index.html'){
+function home_nav(nav=null, start_page = 'index.html', navigate=true){
     args = start_page.slice(0,-5);
     if (start_page == 'index.html'){
         args = ['index','','#'];
     }
-    if (args.includes(document.URL.split("/").at(-1).slice(0,-5)) || document.URL.split("/").at(-1).slice(0,-5).startsWith("#")){
-        window.location = `#${nav}`;
+    console.log(nav,navigate);
+    if (navigate){
+        if (args.includes(document.URL.split("/").at(-1).slice(0,-5)) || document.URL.split("/").at(-1).startsWith("#")){
+            window.location = `#${nav}`;
+        }else{
+            window.location = `${start_page}#${nav}`;
+        }
     }else{
-        window.location = `${start_page}/#${nav}`;
+        if (args.includes(document.URL.split("/").at(-1).slice(0,-5)) || document.URL.split("/").at(-1).startsWith("#")){
+            return true;
+        }
     }
 }
 

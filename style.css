@@ -187,6 +187,12 @@ html, body{
 .nav-link:hover{
     color:#feffb5 !important;
 }
+.nav-link.active{
+    color: #fcfe9c !important;
+}
+.nav-link.active:hover{
+    color: #f4f67b !important;
+}
 
 .nav-link{
     display: inline-block;
@@ -630,6 +636,9 @@ hr{
     border-bottom: 1px solid var(--darkblue);
     display: none;
 }
+.wca{
+    padding-bottom: 30px;
+}
 .wca-title{
     margin: auto;
 }
@@ -848,9 +857,11 @@ hr{
     position: relative;
     margin-top: 93.27px;
     height: 70vh;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu-ZqYLFJrKIRBqM_8urRDvcGhHwtwlIJSuArjQKPOjSoEngXJUxe4AWtYB6hFjyDiooc&usqp=CAU');
-    background-size: cover;
-    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.features img{
+    width: 100%;
+    transform: scale(1.1);
 }
 
 .features-title{
@@ -859,9 +870,20 @@ hr{
     width: 100%;
     text-align: center;
 }
-.features-title h1{
+
+.features-title > *{
     color: var(--cream);
+}
+
+.features-title h1{
+    font-size: 60px;
+    font-weight: 900;
+    filter: blur(0px);
     text-shadow: rgb(0 0 0 / 33%) 0px 3px 0px;
+}
+
+.feature-cards{
+    margin-top: -15%;
 }
 
 /* Animations */

@@ -33,15 +33,18 @@ var achievements_DOM = document.querySelectorAll(".achievement.locked");
 
 
 function achievement_completed(achievement, points){
-    var ap = points+parseInt(achievements[achievement]["points"])
+    var achievements = JSON.parse(localStorage.getItem("data"))["achievements"];
+    var ap = points+parseInt(achievements[achievement]["points"]);
     var achievements_DOM = document.querySelectorAll(".achievement.locked");
     update("ap", ap);
-    document.querySelector('.ap-title h1').innerHTML = `Achievements: ${ap}/100 Points`;
-    achievements_DOM.forEach(obj => {
-        if (obj.querySelector("h4").innerHTML == achievement){
-            achievement_retriever(obj);
+    if (home_nav(null,undefined,navigate=false)){
+        document.querySelector('.ap-title h1').innerHTML = `Achievements: ${ap}/100 Points`;
+        achievements_DOM.forEach(obj => {
+            if (obj.querySelector("h4").innerHTML == achievement){
+                achievement_retriever(obj);
+            }
         }
-    })
+    )}
     if (confirm(`Whoa!\rYou just unlocked the ${achievement} achievement! Go check it out in the home page!`)){
         home_nav('achievements');  
         clickanimation('#achievements');      
@@ -87,20 +90,19 @@ function achievement_main(){
         }
         if (tab_presses >=5 && !achievements["Tab Friend"]["completed"]){
             update("achievements",true,"Tab Friend","completed");
+            achievements["Tab Friend"]["completed"] = true;
             achievement_completed("Tab Friend", ap);
-
         }
     })
-    if (document.URL.includes('learn3x3.html') && !achievements["Want to feel safe?"]["completed"]){
-        update("achievements",true,"Want to feel safe?","completed");
+    if (document.URL.includes('learn3x3.html') && !achievements["I'm safe!"]["completed"]){
+        update("achievements",true,"I'm safe!","completed");
+        achievements["I'm safe!"]["completed"] = true;
         achievement_completed("I'm safe!",ap);
     }
 }
 
 function unlock_hint(elm){
     var achievements = JSON.parse(localStorage.getItem("data"))["achievements"];
-    // Ask if they want to unlock hint. To be runned on .locked classes
-    // Mostly will lose 40% achievement points
     achievement = elm.querySelector('h4').innerHTML;
     if (elm.classList.contains('locked')){
         if (!achievements[achievement]["hint_unlocked"]){
