@@ -45,10 +45,10 @@ function achievement_completed(achievement, points){
             }
         }
     )}
-    if (confirm(`Whoa!\rYou just unlocked the ${achievement} achievement! Go check it out in the home page!`)){
+    if (confirm(`Whoa!\rYou just unlocked the ${achievement} achievement!\rGo check it out?`)){
         home_nav('achievements');  
-        clickanimation('#achievements');      
-    }
+        clickanimation('achievements');
+    }achievement_checker();        
 }
 
 function achievement_retriever(obj){
@@ -59,6 +59,8 @@ function achievement_retriever(obj){
 
 function achievement_checker(){ // Check for Completed Achievements and Update
     var achievements_DOM = document.querySelectorAll(".achievement.locked");
+    var ap = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
+    document.querySelector('.ap-title h1').innerHTML = `Achievements: ${ap}/100 Points`;
     achievements_DOM.forEach(obj => {
         for (const [achievement, value] of Object.entries(achievements)){
             if (obj.querySelector("h4").innerHTML == achievement){
@@ -82,7 +84,7 @@ function achievement_main(){
     if (['index', '', '#'].includes(document.URL.split("/").at(-1).slice(0,-5)) || document.URL.split("/").at(-1).slice(0,-5).startsWith('#')) document.querySelector('.ap-title h1').innerHTML = `Achievements: ${ap}/100 Points`;
     // Achievement Records
     tab_presses = 0
-    $(window).on('keyup', function(e) {
+    $(document).on('keyup', function(e) {
         if (e.key == "Tab"){ // Tab Friend
             tab_presses += 1;
         }else{
@@ -116,8 +118,7 @@ function unlock_hint(elm){
             alert("You have already unlocked the hint for this achievement!");
         }
     }else if (confirm(`You have already unlocked this achievement for ${achievements[achievement]["points"]} points! Go check out the rewards?`)){
-        home_nav('rewards');
-        clickanimation('#rewards');
+        clickanimation('rewards');
     }
 }
 function reward_checker(){

@@ -168,6 +168,22 @@
     .footer .section:last-of-type{
         margin-top: 50px;
     }
+    .feature-solo-list{
+        height: 650px;
+    }
+    .feature-solo-list .container{
+        width: 100%;
+        height: 400px;
+        float: none;
+    }
+    .feature-text > *{
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .feature-img img{
+        height: 200px;
+        /* width: 10px; */
+    }
     @keyframes popup-card{
         0%{
             opacity: 0;

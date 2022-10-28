@@ -33,7 +33,7 @@ function loadinganim() {
             if (document.URL.includes("#")){
                 let id = document.URL.split("#").at(-1);
                 if (document.getElementById(id)){
-                    clickanimation("#"+id);
+                    clickanimation(id);
                     document.getElementById(id).style.opacity = '1';
                 }
             }

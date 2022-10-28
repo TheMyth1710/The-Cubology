@@ -64,7 +64,7 @@
     </div>
     <!-- BODY OF THE HOME PAGE AND OTHER PAGES AS WELL -->
     <div id="body" style="display: none;">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light dropdown-menu-right" style="float:right;" id="navbar">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light dropdown-menu-right" style="float:right;" id="navbar" animation="popdown-navbar 1s">
         <a class="navbar-brand" href="#"><img src="logo_with_text.png" class="logo" width="250em" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -110,8 +110,8 @@
           <button class="btn btn-index col-5 center-text panton" id="storebtn" onclick="window.location='store.html'" animation="popdown-homebtns 0.5s 0.2s forwards"><i class="fa-solid fa-cart-shopping center-text" id="icon">&nbsp;Store</i></button>
       </div>
       <div class="card-holder">
-        <div class="card op-0" id="card-1" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s forwards">
-          <div class="card-image" style="background: url('https://timebusinessnews.com/wp-content/uploads/img25.jpg');" role="img" aria-label="2x Faster Solutions"></div>
+        <div class="card op-0" id="card-1" onclick="window.location='features.html#2x-faster-solutions'" data-tilt data-tilt-perspective="500" animation="popup-card 1.5s forwards">
+          <div class="card-image" style="background: url('images/feature_1.png');" role="img" aria-label="2x Faster Solutions"></div>
           <div class="card-content">
             <h3 class="inconsolata fw-800">2x Faster Solutions</h3>
             <p class="inconsolata bold">With an efficient and fast AI, solve cubes faster than before! Simply with your cube and our AI, you can get upto <span>2x faster solutions</span> for any scramble!</p>
@@ -120,8 +120,8 @@
             <span class="inconsolata bold">More Info</span>
           </div>
         </div>
-        <div class="card op-0" id="card-2" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s 0.25s forwards" animate-responsive="0.25s > 750- ">
-          <div class="card-image" style="background: url('https://cdn.thisiswhyimbroke.com/images/x-cube.jpg');"></div>
+        <div class="card op-0" id="card-2" onclick="window.location='features.html#3+-different-methods'" data-tilt data-tilt-perspective="500" animation="popup-card 1.5s 0.25s forwards" animate-responsive="0.25s > 750- ">
+          <div class="card-image" style="background: url('images/feature_2.png');"></div>
           <div class="card-content">
             <h3 class="inconsolata fw-800">3+ Different Methods</h3>
             <p class="inconsolata bold">You love the CFOP method, the beginner's method, or simply desire a fast solution? We have it all! Now, get upto <span>3+ different methods</span> to solve the same scramble!</p>
@@ -130,8 +130,8 @@
             <span class="inconsolata bold">More Info</span>
           </div>
         </div>
-        <div class="card op-0" id="card-3" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s 0.5s forwards" animate-responsive="0.5s > 1100- ">
-          <div class="card-image" style="background: url('https://cdn.dribbble.com/users/563921/screenshots/10945959/media/0c138b5f1801a7799e50b68aeca9c6a2.jpg?compress=1&resize=1000x750&vertical=top'); background-position: 40%;"></div>
+        <div class="card op-0" id="card-3" onclick="window.location='features.html#straightforward-ui'" data-tilt data-tilt-perspective="500" animation="popup-card 1.5s 0.5s forwards" animate-responsive="0.5s > 1100- ">
+          <div class="card-image" style="background: url('images/feature_3.png'); background-position: 40%;"></div>
           <div class="card-content">
             <h3 class="inconsolata fw-800">Straightforward UI</h3>
             <p class="inconsolata bold">With power comes responsibilities. Likewise, with programming comes UI. Our app has a <span>straightforward UI</span> with capabilities of snapping cube images or entering the scramble!</p>
@@ -140,8 +140,8 @@
             <span class="inconsolata bold">More Info</span>
           </div>
         </div>
-        <div class="card op-0" id="card-4" onclick="window.location='features.html'" data-tilt animation="popup-card 1.5s 0.75s forwards" animate-responsive="0.75s > 750-,1100-0.25s"> <!-- Image to be added when app ready (of graph) -->
-          <div class="card-image" style="background: url('https://ruwix.com/pics/rubiks-cube/gan-11-m-pro.jpg'); background-position: 40%;"></div>
+        <div class="card op-0" id="card-4" onclick="window.location='features.html#better-graphs'" data-tilt data-tilt-perspective="500" animation="popup-card 1.5s 0.75s forwards" animate-responsive="0.75s > 750-,1100-0.25s"> <!-- Image to be added when app ready (of graph) -->
+          <div class="card-image" style="background: url('images/feature_4.png'); background-position: 40%;"></div>
           <div class="card-content">
             <h3 class="inconsolata fw-800">Better Graphs</h3>
             <p class="inconsolata bold">Who doesn't love better graphical representations? Your dream is now true! Meet our AI that draws real-time <span>graphs</span> for different solutions to scrambles!</p>
@@ -173,7 +173,7 @@
           </p>
           <p class="about-cube-p exo2 op-0" id="p-4" animation="popright 1s forwards"  animate-responsive="popright > 750-popleft">
             Currently, the Rubik's Cube holds one of the top places in the world when it comes to mind exercises, or a healthy competition.
-            Yes, it's the <a class="basic-link" href="#wca" onclick="clickanimation('#wca','background-color','inherit')">World Cube Association</a> we're talking about. Since Feliks Zemdges broke 100 world records, cubing has become a spirit.
+            Yes, it's the <span class="basic-link" onclick="clickanimation('wca')">World Cube Association</span> we're talking about. Since Feliks Zemdges broke 100 world records, cubing has become a spirit.
             The current world record to solve a 3x3 Rubik's Cube is 3.475s by Yusheng Du. That's quite amazing! What are you waiting for?
             Go set one for yourself!
           </p>
@@ -289,39 +289,39 @@
               <img src="images/temp-files.png" style="background-size: 500% !important" alt="Reward" />
             </div>
             <div class="classifier">
-              <h4 class="reward-title exo2" onclick="unlock_reward(this)" points="50">Temporary File Remover</h4>
+              <h4 class="reward-title exo2">Temporary File Remover</h4>
               <p class="exo2">Save disk space like never before!</p>
             </div>
-            <button class="btn reward-claim" onclick="unlock_reward(this)" points="20">50 Points Needed</button>
+            <button class="btn reward-claim" onclick="unlock_reward(this)" points="50">50 Points Needed</button>
           </div>
           <div class="reward op-0" animation="fadein 2s forwards">
             <div class="classifier">
               <img src="images/jarvis.png" alt="Jarvis" />
             </div>
             <div class="classifier">
-              <h4 class="reward-title exo2" onclick="unlock_reward(this)" points="100">Jarvis</h4>
+              <h4 class="reward-title exo2">Jarvis</h4>
               <p class="exo2">Get your PC's work done by a bot!</p>
             </div>
-            <button class="btn reward-claim" onclick="unlock_reward(this)" points="20">100 Points Needed</button>
+            <button class="btn reward-claim" onclick="unlock_reward(this)" points="100">100 Points Needed</button>
           </div>
         </div>
       </div>
-    <div class="footer">
-      <div class="section" style="width: 30%; cursor: pointer;" onclick="window.location='#top'">
-        <img src="images/cube_logo_footer.png" style="width: 50px; float: left;">
-        <h5 class="inconsolata">&#169; 2022 The Cubology</h5>
+      <div class="footer">
+        <div class="section" style="width: 30%; cursor: pointer;" onclick="window.location='#top'">
+          <img src="images/cube_logo_footer.png" style="width: 50px; float: left;">
+          <h5 class="inconsolata">&#169; 2022 The Cubology</h5>
+        </div>
+        <div class="section" style="width: 40%;">
+          <a class="footer-link" href="mailto:s.mudith.daga@fountainheadschools.org?subject=The Cubology - Support">Support</a>
+          <a class="footer-link" href="other.html/#faq">FAQ</a>
+          <a class="footer-link" href="other.html/#tos">Terms of Service</a>
+          <a class="footer-link" href="other.html/#privacy">Privacy Policy</a> 
+          <a class="footer-link" href="#top">Back to Top</a>
+        </div>
+        <div class="section">
+          <h5 class="inconsolata">Affiliated with <a href="https://github.com/themyth1710" target="_blank">TheMyth1710</a></h5>
+        </div>
       </div>
-      <div class="section" style="width: 40%;">
-        <a class="footer-link" href="mailto:s.mudith.daga@fountainheadschools.org?subject=The Cubology - Support">Support</a>
-        <a class="footer-link" href="other.html/#faq">FAQ</a>
-        <a class="footer-link" href="other.html/#tos">Terms of Service</a>
-        <a class="footer-link" href="other.html/#privacy">Privacy Policy</a> 
-        <a class="footer-link" href="#top">Back to Top</a>
-      </div>
-      <div class="section">
-        <h5 class="inconsolata">Affiliated with <a href="https://github.com/themyth1710" target="_blank">TheMyth1710</a></h5>
-      </div>
-    </div>
     </div>
     <script src="main.js"></script>
     <script src="loading.js"></script>
