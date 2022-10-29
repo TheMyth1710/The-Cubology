@@ -954,17 +954,124 @@ hr{
     border-radius: 18px;
 }
 
+.cube-holder{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    height: 99vh;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+
+.cube-simulator-title{
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.cube-holder > div:last-of-type{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cube-level-ribbons{
+    height: 80%;
+    width: 25%;
+}
+
 .cube-notation-holder{
     opacity: 1;
     display: block;
+    width: 25%;
+    padding: 10px;
     overflow: hidden;
-    margin-top: 100px;
+}
+
+.cube-notation-row{
+    display: flex;
+    justify-content: center;
+}
+
+.cube-notation-row:not(:first-of-type){
+    margin-top: 10px;
 }
 
 .cube-notation{
-    opacity: 1;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    color: var(--cream);
+    background-color: #263569;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s;
 }
 
+.cube-notation:hover{
+    background-color: #111c44;
+}
+
+.cube-simulator{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.cube-simulator > *{
+    position: absolute;
+    left: -50%;
+    top: -15%;
+}
+
+.ribbon{
+    position: relative;
+    width: 150px;
+    height: 45px;
+    background: #21749a;
+    left: -8px;
+    margin-top: 20px;
+    color: var(--cream);
+    font-size: 26px;
+}
+
+.ribbon span{
+    padding: 10px;
+    width: 100%;
+}
+.ribbon:before{
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    text-align:left !important;
+    border-bottom: 8px solid #14455b;
+    border-left: 8px solid transparent;
+    top: -8px;
+}
+.ribbon:after{
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 15px solid #21749a;
+    right: -15px;
+}
+
+#level-3{
+    background-color: #d85d54
+}
+#level-3:before{
+    border-bottom: 8px solid #5b1914;
+}
+#level-3:after{
+    border-left: 15px solid #d85d54;    
+}
 /* Animations */
 @keyframes fadein{
     0%{

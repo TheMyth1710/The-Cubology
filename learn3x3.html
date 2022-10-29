@@ -93,22 +93,65 @@
         </div>
         <button class="downloadcolor center-text" id="download" onclick="window.location='download.html'"><span class="roboto bold">DOWNLOAD</span></button>
       </nav>
-      <div class="cube-notation-holder">
-        <button class="roboto cube-notation switch left">U</button>
-        <button class="roboto cube-notation switch right">U'</button>  
-        <button class="roboto cube-notation switch left">D</button>   
-        <button class="roboto cube-notation switch right">D'</button>
-        <button class="roboto cube-notation switch left">R</button>   
-        <button class="roboto cube-notation switch right">R'</button>
-        <button class="roboto cube-notation switch left">L</button>   
-        <button class="roboto cube-notation switch right">L'</button>
-        <br><br>
-        <button class="roboto cube-notation switch left">F</button>   
-        <button class="roboto cube-notation switch right">F'</button>
-        <button class="roboto cube-notation switch left">B</button>   
-        <button class="roboto cube-notation switch right">B'</button>
+    <div class="cube-holder">
+      <div class="cube-simulator-title">
+        <h1 class="exo2 bold">The Cube Simulator</h1> <!-- Add Credits for Real Owner -->
+      </div>
+      <div>
+        <div class="cube-level-ribbons">
+          <div class="ribbon" style="margin-left: 10%;"><span>Practice</span></div>
+          <div class="ribbon" style="margin-left: 10%;"><span>Level 1</span></div>
+          <div class="ribbon" style="margin-left: 10%;"><span>Level 2</span></div>
+          <div class="ribbon" style="margin-left: 10%;" id="level-3"><span>Level 3</span></div>
+        </div>
+        <div class="cube-simulator">
+          <canvas data-engine="three.js r140" style="display: block; touch-action: none;"></canvas>
+        </div>
+        <div class="cube-notation-holder">
+          <div class="cube-notation-row">
+            <button class="roboto cube-notation" onclick="turnFace(1, 1)">U</button>
+            <button class="roboto cube-notation" onclick="turnFace(6, -1)">D</button>
+            <button class="roboto cube-notation" onclick="turnFace(3, 1)">R</button>
+            <button class="roboto cube-notation" onclick="turnFace(5, 1)">L</button>
+            <button class="roboto cube-notation" onclick="turnFace(2, 1)">F</button>
+            <button class="roboto cube-notation" onclick="turnFace(4, 1)">B</button>
+          </div>
+          <div class="cube-notation-row">
+            <button class="roboto cube-notation" onclick="turnFace(1, -1)">U'</button> 
+            <button class="roboto cube-notation" onclick="turnFace(6, 1)">D'</button>   
+            <button class="roboto cube-notation" onclick="turnFace(3, -1)">R'</button>   
+            <button class="roboto cube-notation" onclick="turnFace(5, -1)">L'</button>   
+            <button class="roboto cube-notation" onclick="turnFace(2, -1)">F'</button>   
+            <button class="roboto cube-notation" onclick="turnFace(4, -1)">B'</button> 
+          </div>   
+        </div>
       </div>
     </div>
+    <script src="simulator\three.js"></script>
+    <script src="simulator\controls.js"></script>
+    <script src="simulator\modules.js"></script>
+    <script src="simulator\cube.js"></script>
+
+      <!-- <div class="cube-notation-holder" style="margin-top: 100%;">
+        <button class="roboto cube-notation">U</button>
+        <button class="roboto cube-notation">U'</button>  
+        <button class="roboto cube-notation">D</button>   
+        <button class="roboto cube-notation">D'</button>
+        <button class="roboto cube-notation">R</button>   
+        <button class="roboto cube-notation">R'</button>
+        <button class="roboto cube-notation">L</button>   
+        <button class="roboto cube-notation">L'</button>
+        <br><br>
+        <button class="roboto cube-notation">F</button>   
+        <button class="roboto cube-notation">F'</button>
+        <button class="roboto cube-notation">B</button>   
+        <button class="roboto cube-notation">B'</button>
+      </div> -->
+    </div>
+    <script src="simulator/controls.js"></script>
+    <script src="simulator/thre.js"></script>
+    <script src="simulator/modules.js"></script>
+    <script src="simulator/cube.js"></script>
     <script src="main.js"></script>
     <script src="cube_simulator.js"></script>
     <script src="loading.js"></script>
