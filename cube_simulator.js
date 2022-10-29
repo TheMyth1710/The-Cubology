@@ -78,61 +78,24 @@ function cube_notation(move){
             cube[j] = front_cube[i];
         }
     }else if (['F','F\'','B','B\''].includes(notation)){
-        // let layer = 2
+        let layer = 2
         let sel = 0;
         let direction = -1;
         let dynamic_cube = structuredClone([cube[0],cube[2],cube[5],cube[4]]);
         let dynamic_cube_copy = structuredClone(dynamic_cube);
         if (['F\'','B'].includes(notation)) direction = 1;
-        if (notation == 'F\'') sel = 2;
-        // if (['B','B\''].includes(notation)) layer = 0;
+        if (['F\'','B\''].includes(notation)) sel = 2;
+        if (['B','B\''].includes(notation)) layer = 0;
         for (let j = 0; j < 3; j++){
-            dynamic_cube[0][2][j] = dynamic_cube_copy.at(0+direction)[j][Math.abs(sel-2)];
-            dynamic_cube[1][j][0] = dynamic_cube_copy[1+direction][Math.abs(sel-2)][j];
-            dynamic_cube[2][0][j] = dynamic_cube_copy[2+direction][j][sel];
-            if (3 + direction == 4) dynamic_cube[3][j][2] = dynamic_cube_copy[0][sel][j]
-            else dynamic_cube[3][j][2] = dynamic_cube_copy[3+direction][sel][j];
+            dynamic_cube[0][layer][j] = dynamic_cube_copy.at(0+direction)[j][Math.abs(sel-2)];
+            dynamic_cube[1][j][Math.abs(layer-2)] = dynamic_cube_copy[1+direction][Math.abs(sel-2)][j];
+            dynamic_cube[2][Math.abs(layer-2)][j] = dynamic_cube_copy[2+direction][j][sel];
+            if (3 + direction == 4) dynamic_cube[3][j][layer] = dynamic_cube_copy[0][sel][j]
+            else dynamic_cube[3][j][layer] = dynamic_cube_copy[3+direction][sel][j];
         }
         for (const[i,j] of Object.entries({0:0,1:2,2:5,3:4})){
             cube[j] = dynamic_cube[i];
         }
     }
-    // W R Y O
-    /*
-    W   W   W
-    W   W   W
-    R   R   R
-
-    Y   R   R
-    Y   R   R
-    Y   R   R
-
-    O   O   O
-    Y   Y   Y
-    Y   Y   Y
-
-    O   O   W
-    O   O   W
-    O   O   W
-
-    ---------
-
-    W   W   W
-    W   W   W
-    O   O   O
-
-    W   R   R
-    W   R   R
-    W   R   R
-
-    R   R   R
-    Y   Y   Y
-    Y   Y   Y
-
-    O   O   Y
-    O   O   Y
-    O   O   Y
-
-    */
     console.log(cube);
 }
