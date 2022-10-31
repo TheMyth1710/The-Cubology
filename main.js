@@ -1,3 +1,47 @@
+function update(key,value,sub_key=null,sub_sub_key=null){
+    console.log(key,value,sub_key,sub_sub_key)
+    data = JSON.parse(localStorage.getItem("data"));
+    if (sub_sub_key){
+        data[key][sub_key][sub_sub_key] = value;
+    }else if (sub_key){
+        data[key][sub_key] = value;
+    }else{
+        data[key] = value;
+    }
+    localStorage.setItem("data",JSON.stringify(data));
+} // Updates the localStorage with specific value
+
+function arraysEqual(a, b) {
+    if (a === b) return true;
+    if (a == null || b == null) return false;
+    if (a.length !== b.length) return false;  
+    for (var i = 0; i < a.length; ++i){if (a[i] !== b[i]) return false;}
+    return true;
+}
+
+if (!localStorage.getItem("data")){
+    localStorage.setItem("data", JSON.stringify({
+        "achievements": {
+            "Tab Friend": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Press <kbd>tab</kbd> 5 times"},
+            "I'm safe!": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Open <kbd>Learn the 3x3</kbd> page"},
+            "Rick Astley's Brat": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Get rickrolled!"}
+            
+        },
+        "rewards": {
+            20: {"claimed": false, "reward": "https://youtu.be/dQw4w9WgXcQ"},
+            50: {"claimed": false, "reward": ""},
+            100: {"claimed": false, "reward": ""}
+        },
+        "ap": 0,
+        "levels": {
+            0: true, 
+            1: false, 
+            2: false, 
+            3: false
+        }
+    }))
+}
+
 function device_checker(click=false){
     let downloadbtn = document.getElementById("downloadbtn");
     let overlay = document.getElementById("downloadoverlay");

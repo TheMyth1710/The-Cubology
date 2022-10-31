@@ -958,16 +958,22 @@ hr{
     width: 100%;
     display:flex;
     flex-direction: column;
-    height: 99vh;
+    height: 100vh;
+    padding-bottom: 1vh;
     overflow: hidden;
     flex-grow: 1;
+    overflow: hidden;
 }
-
 
 .cube-simulator-title{
     margin-top: 100px;
-    width: 100%;
+    width: 70%;
+    margin-left: 25%;
     text-align: center;
+}
+
+.cube-simulator-title h1{
+    font-size: 3em;
 }
 
 .cube-holder > div:last-of-type{
@@ -977,17 +983,16 @@ hr{
     align-items: center;
 }
 
-.cube-level-ribbons{
-    height: 80%;
-    width: 25%;
-}
-
 .cube-notation-holder{
     opacity: 1;
     display: block;
-    width: 25%;
+    width: 100%;
     padding: 10px;
     overflow: hidden;
+    z-index: 1000000;
+    position: absolute;
+    top: 70% !important;
+    left: 0% !important;
 }
 
 .cube-notation-row{
@@ -1000,8 +1005,8 @@ hr{
 }
 
 .cube-notation{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     margin: 5px;
     color: var(--cream);
     background-color: #263569;
@@ -1016,26 +1021,38 @@ hr{
 
 .cube-simulator{
     position: relative;
-    width: 50%;
+    width: 70%;
     height: 100%;
+    background-color: #7DD6FA;
     overflow: hidden;
-    border-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
-.cube-simulator > *{
+.cube-simulator > *:not(.cube-notation-holder){
     position: absolute;
-    left: -50%;
-    top: -15%;
+    left: -22%;
+    top: -25%;
+}
+
+.cube-level-ribbons{
+    height: 100%;
+    padding-top: 5%;
+    background-color: rgb(239, 158, 158);
+    border-right: 1px solid #000;
+    width: 20%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .ribbon{
     position: relative;
     width: 150px;
     height: 45px;
-    background: #21749a;
-    left: -8px;
+    background-color: #d85d54;
     margin-top: 20px;
     color: var(--cream);
     font-size: 26px;
+    transition: all 0.5s;
 }
 
 .ribbon span{
@@ -1047,31 +1064,57 @@ hr{
     position: absolute;
     height: 0;
     width: 0;
-    text-align:left !important;
-    border-bottom: 8px solid #14455b;
+    border-bottom: 8px solid #5b1914;
     border-left: 8px solid transparent;
     top: -8px;
+    transition: all 0.5s;
 }
 .ribbon:after{
     content: "";
     position: absolute;
     height: 0;
     width: 0;
-    border-top: 22px solid transparent;
-    border-bottom: 22px solid transparent;
-    border-left: 15px solid #21749a;
+    border-top: 22.5px solid transparent;
+    border-bottom: 22.5px solid transparent;
+    border-left: 15px solid #d85d54;
     right: -15px;
+    transition: all 0.5s;
 }
 
-#level-3{
-    background-color: #d85d54
+.ribbon.active{
+    background: #21749a !important;
 }
-#level-3:before{
-    border-bottom: 8px solid #5b1914;
+.ribbon.active:before{
+    border-bottom: 8px solid #14455b !important;
 }
-#level-3:after{
-    border-left: 15px solid #d85d54;    
+.ribbon.active:after{
+    border-left: 15px solid #21749a !important;
 }
+.ribbon.cleared{
+    background-color: #2CB22C;
+}
+.ribbon.cleared:before{
+    border-bottom: 8px solid #197d0b;
+}
+.ribbon.cleared:after{
+    border-left: 15px solid #2CB22C;
+}
+
+.circlebtns{
+    width: 15px;
+    margin: 5px;
+    margin-top: 0;
+    height: 15px;
+    background-color: #6b6b6b;
+    border-radius: 50%;
+}
+.circlebtns.correct{
+    background-color: #2CB22C;
+}
+.circlebtns.wrong{
+    background-color: #b22c2c;
+}
+
 /* Animations */
 @keyframes fadein{
     0%{

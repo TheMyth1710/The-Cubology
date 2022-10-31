@@ -9,6 +9,12 @@
     }
 }
 
+@media only screen and (max-width: 992px){
+    #nav-link-download{
+        display: block !important;
+    }
+}
+
 @media only screen and (max-width: 1100px) and (min-width: 771px){
     #download, #store{
         display: none
@@ -44,6 +50,49 @@
     }
     .footer .section:not(:first-of-type){
         margin-top: 20px;
+    }
+    .cube-holder{
+        width: 100%;
+        overflow: visible;
+    }
+    .cube-holder > div:last-of-type{
+        flex-direction: column;
+    }
+    .cube-level-ribbons{
+        width: 85%;
+        height: 80px;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 20px;
+    }
+    .ribbon{
+        width: 125px;
+        margin: 0;
+        float: left;
+        left: 0;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .ribbon:before, .ribbon:after{
+        display: none;
+    }
+    .ribbon:first-of-type{
+        margin-left: 0 !important;
+    }
+    .cube-simulator-title{
+        width: 100%;
+        margin-left: 0%;
+    }
+    .cube-simulator{
+        width: 85%;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 20px;
+    }
+    .cube-simulator > *:not(.cube-notation-holder){
+        top: -40%;
+        left: -10%;
     }
     @keyframes popup-card{
         0%{
@@ -182,7 +231,49 @@
     }
     .feature-img img{
         height: 200px;
-        /* width: 10px; */
+    }
+    .cube-holder{
+        width: 100%;
+        height: auto;
+    }
+    .cube-holder > div:last-of-type{
+        flex-direction: column;
+    }
+    .cube-level-ribbons{
+        width: 85%;
+        height: 250px;
+        padding: 5px;
+        padding-top: 2px;
+        display: flex;
+        flex-direction: column;        
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 20px;
+    }
+    .ribbon{
+        width: 80%;
+        margin: auto !important;
+        margin-top: 10px !important;
+        float: left;
+        left: 0;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .ribbon:before, .ribbon:after{
+        display: none;
+    }
+    .cube-simulator-title{
+        width: 100%;
+        margin-left: 0%;
+    }
+    .cube-simulator{
+        height: 600px;
+        width: 85%;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 20px;
+    }
+    .cube-simulator > *:not(.cube-notation-holder){
+        top: -40%;
+        left: -10%;
     }
     @keyframes popup-card{
         0%{

@@ -82,7 +82,7 @@ controls.minDistance = 50;
 controls.maxDistance = 150;
 
 canvas.appendChild(renderer.domElement);
-scene.background = new THREE.Color(0x87CEEB); // Background Color
+scene.background = new THREE.Color(0x7dd6fa); // Background Color
 renderer.setSize(window.innerWidth, window.innerHeight, false);
 let temp = 0;
 let idxCount = 0;

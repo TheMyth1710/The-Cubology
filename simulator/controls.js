@@ -464,9 +464,10 @@ class OrbitControls extends THREE.EventDispatcher {
 			if ( scope.object.isPerspectiveCamera ) {
 
 				scale /= dollyScale;
+				scale = Math.min(Math.max(.125, scale), 2);
 
 			} else if ( scope.object.isOrthographicCamera ) {
-
+				scale = Math.min(Math.max(.125, scale), 2);
 				scope.object.zoom = Math.max( scope.minZoom, Math.min( scope.maxZoom, scope.object.zoom * dollyScale ) );
 				scope.object.updateProjectionMatrix();
 				zoomChanged = true;
@@ -481,7 +482,6 @@ class OrbitControls extends THREE.EventDispatcher {
 		}
 
 		function dollyIn( dollyScale ) {
-
 			if ( scope.object.isPerspectiveCamera ) {
 
 				scale *= dollyScale;
@@ -498,7 +498,6 @@ class OrbitControls extends THREE.EventDispatcher {
 				scope.enableZoom = false;
 
 			}
-
 		}
 
 		//
@@ -580,7 +579,6 @@ class OrbitControls extends THREE.EventDispatcher {
 		function handleMouseWheel( event ) {
 
 			if ( event.deltaY < 0 ) {
-
 				dollyIn( getZoomScale() );
 
 			} else if ( event.deltaY > 0 ) {

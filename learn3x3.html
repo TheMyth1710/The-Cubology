@@ -18,7 +18,7 @@
       <link rel="icon" href="logo.png" type="image/x-icon">
       <title>The Cubology</title>
   </head>
-  <body onload="loadinganim(); achievement_main();achievement_checker();"> 
+  <body onload="loadinganim(); level_checker(); achievement_main();achievement_checker();"> 
     <!-- Loading Animation -->
     <div class="row-loading col-12 center center-text" id="loader">
       <center>
@@ -86,6 +86,9 @@
             <li class="nav-item">
               <a class="nav-link" href="store.html">Store</a> <!-- Direct Connection Via an API to Other Platforms -->
             </li>
+            <li class="nav-item" id="nav-link-download" style="display: none">
+              <a class="nav-link" href="download.html">Download</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="other.html">Other</a> <!-- Upon Hover... Contact | Support | T&C | Privacy Policy -->
             </li>
@@ -99,60 +102,50 @@
       </div>
       <div>
         <div class="cube-level-ribbons">
-          <div class="ribbon" style="margin-left: 10%;"><span>Practice</span></div>
-          <div class="ribbon" style="margin-left: 10%;"><span>Level 1</span></div>
-          <div class="ribbon" style="margin-left: 10%;"><span>Level 2</span></div>
-          <div class="ribbon" style="margin-left: 10%;" id="level-3"><span>Level 3</span></div>
+          <div class="ribbon active" style="margin-left: 10%;" onclick="level_identifier(this)" level="0"><span class="exo2">Practice</span></div>
+          <div class="ribbon" style="margin-left: 10%;" onclick="level_identifier(this)" level="1"><span class="exo2">Level 1</span></div>
+          <div class="ribbon" style="margin-left: 10%;" onclick="level_identifier(this)" level="2"><span class="exo2">Level 2</span></div>
+          <div class="ribbon" style="margin-left: 10%;" onclick="level_identifier(this)" level="3 "><span class="exo2">Level 3</span></div>
         </div>
         <div class="cube-simulator">
-          <canvas data-engine="three.js r140" style="display: block; touch-action: none;"></canvas>
-        </div>
-        <div class="cube-notation-holder">
-          <div class="cube-notation-row">
-            <button class="roboto cube-notation" onclick="turnFace(1, 1)">U</button>
-            <button class="roboto cube-notation" onclick="turnFace(6, -1)">D</button>
-            <button class="roboto cube-notation" onclick="turnFace(3, 1)">R</button>
-            <button class="roboto cube-notation" onclick="turnFace(5, 1)">L</button>
-            <button class="roboto cube-notation" onclick="turnFace(2, 1)">F</button>
-            <button class="roboto cube-notation" onclick="turnFace(4, 1)">B</button>
+          <div>
+            <canvas data-engine="three.js r140" style="display: block; touch-action: none;"></canvas>
           </div>
-          <div class="cube-notation-row">
-            <button class="roboto cube-notation" onclick="turnFace(1, -1)">U'</button> 
-            <button class="roboto cube-notation" onclick="turnFace(6, 1)">D'</button>   
-            <button class="roboto cube-notation" onclick="turnFace(3, -1)">R'</button>   
-            <button class="roboto cube-notation" onclick="turnFace(5, -1)">L'</button>   
-            <button class="roboto cube-notation" onclick="turnFace(2, -1)">F'</button>   
-            <button class="roboto cube-notation" onclick="turnFace(4, -1)">B'</button> 
-          </div>   
+          <div class="cube-notation-holder">
+            <div class="cube-notation-row" style="display: none;">
+              <div class="circlebtns"></div>
+              <div class="circlebtns"></div>
+              <div class="circlebtns"></div>
+              <div class="circlebtns"></div>
+              <div class="circlebtns"></div>
+            </div>
+            <div class="cube-notation-row">
+              <button class="roboto cube-notation">U</button>
+              <button class="roboto cube-notation">D</button>
+              <button class="roboto cube-notation">R</button>
+              <button class="roboto cube-notation">L</button>
+              <button class="roboto cube-notation">F</button>
+              <button class="roboto cube-notation">B</button>
+            </div>
+            <div class="cube-notation-row">
+              <button class="roboto cube-notation">U'</button> 
+              <button class="roboto cube-notation">D'</button>   
+              <button class="roboto cube-notation">R'</button>   
+              <button class="roboto cube-notation">L'</button>   
+              <button class="roboto cube-notation">F'</button>   
+              <button class="roboto cube-notation">B'</button> 
+            </div>   
+          </div>
         </div>
+        
       </div>
     </div>
+    </div>
+    <script src="main.js"></script>
     <script src="simulator\three.js"></script>
     <script src="simulator\controls.js"></script>
     <script src="simulator\modules.js"></script>
     <script src="simulator\cube.js"></script>
-
-      <!-- <div class="cube-notation-holder" style="margin-top: 100%;">
-        <button class="roboto cube-notation">U</button>
-        <button class="roboto cube-notation">U'</button>  
-        <button class="roboto cube-notation">D</button>   
-        <button class="roboto cube-notation">D'</button>
-        <button class="roboto cube-notation">R</button>   
-        <button class="roboto cube-notation">R'</button>
-        <button class="roboto cube-notation">L</button>   
-        <button class="roboto cube-notation">L'</button>
-        <br><br>
-        <button class="roboto cube-notation">F</button>   
-        <button class="roboto cube-notation">F'</button>
-        <button class="roboto cube-notation">B</button>   
-        <button class="roboto cube-notation">B'</button>
-      </div> -->
-    </div>
-    <script src="simulator/controls.js"></script>
-    <script src="simulator/thre.js"></script>
-    <script src="simulator/modules.js"></script>
-    <script src="simulator/cube.js"></script>
-    <script src="main.js"></script>
     <script src="cube_simulator.js"></script>
     <script src="loading.js"></script>
     <script src="onscroll.js"></script>

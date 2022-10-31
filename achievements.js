@@ -1,32 +1,3 @@
-function update(key,value,sub_key=null,sub_sub_key=null){
-    data = JSON.parse(localStorage.getItem("data"));
-    if (sub_sub_key){
-        data[key][sub_key][sub_sub_key] = value;
-    }else if (sub_key){
-        data[key][sub_key] = value;
-    }else{
-        data[key] = value;
-    }
-    localStorage.setItem("data",JSON.stringify(data));
-} // Updates the localStorage with specific value
-
-if (!localStorage.getItem("data")){
-    localStorage.setItem("data", JSON.stringify({
-        "achievements": {
-            "Tab Friend": {"points": "5", "completed": false, "hint_unlocked": false, "hint": "Press <kbd>tab</kbd> 5 times"},
-            "I'm safe!": {"points": "5", "completed": false, "hint_unlocked": false, "hint": "Open <kbd>Learn the 3x3</kbd> page"},
-            "Rick Astley's Brat": {"points": "15", "completed": false, "hint_unlocked": false, "hint": "Get rickrolled!"}
-            
-        },
-        "rewards": {
-            "20": {"claimed": false, "reward": "https://youtu.be/dQw4w9WgXcQ"},
-            "50": {"claimed": false, "reward": ""},
-            "100": {"claimed": false, "reward": ""}
-        },
-        "ap": "0"
-    }))
-}
-
 var achievements = JSON.parse(localStorage.getItem("data"))["achievements"];
 var ap = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
 var achievements_DOM = document.querySelectorAll(".achievement.locked");
