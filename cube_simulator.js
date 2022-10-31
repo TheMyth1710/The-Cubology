@@ -20,13 +20,14 @@ var level3_list = [];
 var level3_input_list = [];
 var practice_moves = [];
 
-function onclick_buttons(param='move(this)'){
+function onclick_buttons(param='move(this, true)'){
     if (param != ''){
         document.querySelectorAll(".cube-notation").forEach(
             btn => btn.setAttribute("onclick",`${param}`)
         )
     }
 }
+
 function level_checker(){
     onclick_buttons();
     let level_record = JSON.parse(localStorage.getItem("data"))["levels"];
@@ -88,7 +89,7 @@ function level_simulator(level, i=0){
             case 3: // Level 3
                 reset_cube(practice_moves);
                 document.querySelector('.cube-notation-row').style.display = 'flex';
-                document.querySelectorAll(".cube-notation").forEach(btn => btn.setAttribute("onclick",`get_move_inputs(this, ${i});`))
+                document.querySelectorAll(".cube-notation").forEach(btn => btn.setAttribute("onclick",`move(this);get_move_inputs(this, ${i});`))
                 multiple_random_moves();
                 break;
         }
@@ -204,7 +205,7 @@ function do_random_move(i, reverse=false, animate=true){
     var random_move_notation = moves_list[random_move];
     setTimeout(function(){
         turnFace(random_move_notation[0], random_move_notation[1], animate);
-        document.querySelectorAll(".cube-notation").forEach(btn => btn.setAttribute("onclick",`${move};check_for_move(this, ${i}, ${reverse})`));
+        document.querySelectorAll(".cube-notation").forEach(btn => btn.setAttribute("onclick",`move(this);check_for_move(this, ${i}, ${reverse})`));
         correct_move = random_move;
         done_moves.push(random_move);
     }, 500);
@@ -224,7 +225,7 @@ function check_for_move(btn, i, reverse=false, level3=false){ // Checks for Corr
     level_simulator(NaN, i);
 }
 
-function move(btn, complete=true){ // Avoid over spamming
+function move(btn, complete=false){ // Avoid over spamming
     document.querySelectorAll('.cube-notation').forEach(
         btn => btn.disabled = true
     );

@@ -1050,6 +1050,7 @@ hr{
     height: 45px;
     background-color: #d85d54;
     margin-top: 20px;
+    cursor: pointer;
     color: var(--cream);
     font-size: 26px;
     transition: all 0.5s;
