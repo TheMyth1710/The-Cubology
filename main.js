@@ -11,11 +11,18 @@ function update(key,value,sub_key=null,sub_sub_key=null){
     localStorage.setItem("data",JSON.stringify(data));
 } // Updates the localStorage with specific value
 
-function arraysEqual(a, b) {
+function arraysEqual(a, b, notations=false) {
+    console.log(a,b,notations);
     if (a === b) return true;
     if (a == null || b == null) return false;
     if (a.length !== b.length) return false;  
-    for (var i = 0; i < a.length; ++i){if (a[i] !== b[i]) return false;}
+    for (var i = 0; i < a.length; ++i){
+        if (!notations){
+            if (a[i] !== b[i]) return false;
+        }else{
+            if (!adjacent_moves(a[i],b[i]) && a[i] !== b[i]) return false;
+        } 
+    }
     return true;
 }
 
@@ -87,12 +94,12 @@ var lastScrollTop = 0;
 document.onscroll = function(){
     var st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop && st > 50){
-        navbar.style.opacity = "0";
+        navbar.style.visibility = 'hidden'
         navbar.style.animation = '';
-        navbar.style.animation = 'popup-navbar 1s'
+        navbar.style.animation = 'popup-navbar 1s forwards'
     } else {
-        navbar.style.animation = 'popdown-navbar 1s'
-        navbar.style.opacity = "1";
+        navbar.style.animation = 'popdown-navbar 1s forwards'
+        navbar.style.visibility = 'visible'
     }
     lastScrollTop = st <= 0 ? 0 : st;
 }

@@ -1,4 +1,3 @@
-"use strict"
 const moves_list = {
     "U": [1, 1],
     "U'": [1, -1],
@@ -12,6 +11,16 @@ const moves_list = {
     "F'": [2, -1],
     "B": [4, 1],
     "B'": [4, -1]
+}
+const adjacent_moves_list = {
+    "U": ["U","U'","D","D'"],
+    "R": ["R","R'","L","L'"],
+    "F": ["F","F'","B","B'"],
+    "aliases": {
+        "U'": "U", "D": "U", "D'": "U",
+        "R'": "R", "L": "R", "L'": "R",
+        "F'": "F", "B": "F", "B'": "F",
+    }
 }
 var correct_move = '';
 var global_level = 0;
@@ -51,7 +60,7 @@ function level_identifier(level_DOM){
         }
     }
     if (level == 0){
-        alert("Practice Mode Enabled!\rUse the buttons to learn the cube notations.\rYou can scroll beneath the simulator below to learn more.")
+        alert("Practice Mode Enabled!\rUse the buttons to learn the cube notations.\rYou can scroll beneath the simulator below to learn more."); level_simulator(level_DOM);
     }
     else if (move_ahead){
         if (level == 1){
@@ -74,8 +83,8 @@ function level_simulator(level, i=0){
             global_level = lvl;
         }
         switch (lvl){ // For loop 5 times execute
-            case 0: default: // Default
-            document.querySelector('.cube-notation-row').style.display = 'none';
+            case 0:  // Default
+                document.querySelectorAll('.cube-notation-row .circlebtns').forEach(btn => btn.style.transform = 'scale(0)');
                 onclick_buttons();
                 break;
             case 1: // Level 1
@@ -88,7 +97,7 @@ function level_simulator(level, i=0){
                 break;
             case 3: // Level 3
                 reset_cube(practice_moves);
-                document.querySelector('.cube-notation-row').style.display = 'flex';
+                document.querySelectorAll('.cube-notation-row .circlebtns').forEach(btn => btn.style.transform = 'scale(1)');
                 document.querySelectorAll(".cube-notation").forEach(btn => btn.setAttribute("onclick",`move(this);get_move_inputs(this, ${i});`))
                 multiple_random_moves();
                 break;
@@ -129,14 +138,12 @@ function get_reverse_move(move){
 
 function reset_cube(a=[],b=[],done=false){
     if (!done){
-        console.log(a,b);
         a = structuredClone(a).reverse();
         b = structuredClone(b).reverse();
     }
     setTimeout(function(){
         if (a.length > 0){
             let move1 = get_reverse_move(a[0]);
-            console.log(move1)
             turnFace(moves_list[move1][0],moves_list[move1][1],false);
             a.shift();
             reset_cube(a,b,true);
@@ -155,13 +162,19 @@ function reset_cube(a=[],b=[],done=false){
     practice_moves = [];
 }
 
+function adjacent_moves(a,b){
+    let i = adjacent_moves_list[a]
+    if (!Object.keys(adjacent_moves_list).includes(a)) i = adjacent_moves_list[adjacent_moves_list.aliases[a]]; 
+    if ([a,b].every(move => i.includes(move)) && ![b,get_reverse_move(b)].includes(a)) return true;
+    return false;
+}
+
 function get_move_inputs(btn, i){
     let answers = document.querySelectorAll('.cube-notation-row .circlebtns');
     level3_input_list.push(btn.innerHTML);
     turnFace(moves_list[btn.innerHTML][0],moves_list[btn.innerHTML][1])
     setTimeout(function(){if (level3_input_list.length == 5){
         if (success(level3_input_list)){
-            console.log(i);
             answers[i].classList.add('correct');
             i++;
             level_simulator(NaN,i);
@@ -200,7 +213,7 @@ function get_random_move(level3=false){
 }
 
 function do_random_move(i, reverse=false, animate=true){
-    document.querySelector('.cube-notation-row').style.display = 'flex';
+    document.querySelectorAll('.cube-notation-row .circlebtns').forEach(btn => btn.style.transform = 'scale(1)');
     var random_move = get_random_move();
     var random_move_notation = moves_list[random_move];
     setTimeout(function(){
@@ -238,3 +251,19 @@ function move(btn, complete=false){ // Avoid over spamming
         practice_moves.push(notation);
     }
 }
+
+// Rest of the Code for learn3x3.html | NOT RELATED TO CUBE SIMULATOR |
+
+document.querySelectorAll(".know-more label input[type='checkbox']").forEach(input => input.addEventListener("change", function(){
+    if (this.checked){
+        this.parentElement.style.borderRadius = "0px";
+        this.parentElement.parentElement.querySelector(".additional-info").style.opacity = "1";
+        this.parentElement.parentElement.querySelector(".additional-info").style.visibility = "visible";
+        this.parentElement.parentElement.querySelector(".additional-info").style.animation = "height 0.3s forwards linear";
+    }else{
+        this.parentElement.style.borderRadius = "10px";
+        this.parentElement.parentElement.querySelector(".additional-info").style.opacity = "0";
+        this.parentElement.parentElement.querySelector(".additional-info").style.visibility = "hidden";
+        this.parentElement.parentElement.querySelector(".additional-info").style.animation = "height 0.3s reverse linear";
+    }
+}));

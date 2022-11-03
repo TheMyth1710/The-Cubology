@@ -1,7 +1,11 @@
-const pages = {"index":[".navbar",".animetext", "#downloadbtn", "#storebtn", "#card-1", "#card-2", "#card-3", "#card-4", ".mission", 
+const pages = {
+    "index": [".navbar",".animetext", "#downloadbtn", "#storebtn", "#card-1", "#card-2", "#card-3", "#card-4", ".mission", 
 ".about-cube .container img[alt='Ernõ Rubik']", ".about-cube .container h1", ".about-cube .container #p-1", 
 ".about-cube .container #p-2", ".about-cube .container #p-3", ".about-cube .container #p-4", ".new-cube-title", ".new-cube-btn",
-".wca-title h1", ".wca-content img", ".wca-content p", ".achievements", ".achievement", ".reward"]};
+".wca-title h1", ".wca-content img", ".wca-content p", ".achievements", ".achievement", ".reward"],
+    "features": [],
+    "learn3x3": [".navbar", "cube-simulator-title h1", ".cube-simulator", ".ribbon", ""]
+};
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(obj =>{
         if (obj.isIntersecting){

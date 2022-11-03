@@ -96,57 +96,310 @@
         </div>
         <button class="downloadcolor center-text" id="download" onclick="window.location='download.html'"><span class="roboto bold">DOWNLOAD</span></button>
       </nav>
-    <div class="cube-holder">
-      <div class="cube-simulator-title">
-        <h1 class="exo2 bold">The Cube Simulator</h1> <!-- Add Credits for Real Owner -->
-      </div>
-      <div>
-        <div class="cube-level-ribbons">
-          <div class="ribbon active" style="margin-left: 10%;" onclick="level_identifier(this)" level="0"><span class="exo2">Practice</span></div>
-          <div class="ribbon" style="margin-left: 10%;" onclick="level_identifier(this)" level="1"><span class="exo2">Level 1</span></div>
-          <div class="ribbon" style="margin-left: 10%;" onclick="level_identifier(this)" level="2"><span class="exo2">Level 2</span></div>
-          <div class="ribbon" style="margin-left: 10%;" onclick="level_identifier(this)" level="3 "><span class="exo2">Level 3</span></div>
+      <div class="cube-holder">
+        <div class="cube-simulator-title">
+          <h1 class="exo2 bold">The Cube Simulator</h1> <!-- Add Credits for Real Owner -->
         </div>
-        <div class="cube-simulator">
-          <div>
-            <canvas data-engine="three.js r140" style="display: block; touch-action: none;"></canvas>
+        <div>
+          <div class="cube-level-ribbons">
+            <div class="ribbon active" style="margin-left: 10%;" onclick="level_identifier(this)" level="0"><span class="exo2">Practice</span></div>
+            <div class="ribbon" style="margin-left: 10%;" onclick="level_identifier(this)" level="1"><span class="exo2">Level 1</span></div>
+            <div class="ribbon" style="margin-left: 10%;" onclick="level_identifier(this)" level="2"><span class="exo2">Level 2</span></div>
+            <div class="ribbon" style="margin-left: 10%;" onclick="level_identifier(this)" level="3 "><span class="exo2">Level 3</span></div>
           </div>
-          <div class="cube-notation-holder">
-            <div class="cube-notation-row" style="display: none;">
-              <div class="circlebtns"></div>
-              <div class="circlebtns"></div>
-              <div class="circlebtns"></div>
-              <div class="circlebtns"></div>
-              <div class="circlebtns"></div>
+          <div class="cube-simulator">
+            <div>
+              <canvas data-engine="three.js r140" style="display: block; touch-action: none;"></canvas>
             </div>
-            <div class="cube-notation-row">
-              <button class="roboto cube-notation">U</button>
-              <button class="roboto cube-notation">D</button>
-              <button class="roboto cube-notation">R</button>
-              <button class="roboto cube-notation">L</button>
-              <button class="roboto cube-notation">F</button>
-              <button class="roboto cube-notation">B</button>
+            <div class="cube-notation-holder">
+              <div class="cube-notation-row">
+                <div class="circlebtns"></div>
+                <div class="circlebtns"></div>
+                <div class="circlebtns"></div>
+                <div class="circlebtns"></div>
+                <div class="circlebtns"></div>
+              </div>
+              <div class="cube-notation-row">
+                <button class="roboto cube-notation">U</button>
+                <button class="roboto cube-notation">D</button>
+                <button class="roboto cube-notation">R</button>
+                <button class="roboto cube-notation">L</button>
+                <button class="roboto cube-notation">F</button>
+                <button class="roboto cube-notation">B</button>
+              </div>
+              <div class="cube-notation-row">
+                <button class="roboto cube-notation">U'</button> 
+                <button class="roboto cube-notation">D'</button>   
+                <button class="roboto cube-notation">R'</button>   
+                <button class="roboto cube-notation">L'</button>   
+                <button class="roboto cube-notation">F'</button>   
+                <button class="roboto cube-notation">B'</button> 
+              </div>   
+              <p class="roboto" style="width: 100%; text-align: center; padding-top: 2px; font-size: 14px; ">Drag the cube to move</p>
             </div>
-            <div class="cube-notation-row">
-              <button class="roboto cube-notation">U'</button> 
-              <button class="roboto cube-notation">D'</button>   
-              <button class="roboto cube-notation">R'</button>   
-              <button class="roboto cube-notation">L'</button>   
-              <button class="roboto cube-notation">F'</button>   
-              <button class="roboto cube-notation">B'</button> 
-            </div>   
           </div>
         </div>
-        
       </div>
-    </div>
+      <div class="notation-content">
+        <div class="know-more" table-index="1">
+          <label class="bold">
+            <input type="checkbox"  />
+            Want to know more?<span class="triangle_down"></span></label>
+          <div class="additional-info">
+            <h2 class="bold">Face Turns</h2>
+            <h4>The basic moves are <b>U</b>p, <b>D</b>own, <b>R</b>ight, <b>L</b>eft, <b>F</b>ront, and <b>B</b>ack.</h4>
+            <h4>Each move indicated to turn that side clockwise, as if you were facing that side.</h4>
+            <div class="move-image-holder">
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/U.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">U</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/D.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">D</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/R.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">R</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/L.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">L</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/F.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">F</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/B.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">B</div>
+              </div>
+            </div>
+            <h4>An apostrophe (pronounceded as <i>prime</i>) indicates to turn that side in the opposite direction (anti-clockwise).</h4>
+            <div class="move-image-holder">
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/U'.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">U'</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/D'.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">D'</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/R'.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">R'</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/L'.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">L'</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/F'.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">F'</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/B'.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">B'</div>
+              </div>
+            </div>
+            <h4>The number 2 indicates to turn that side twice.</h4>
+            <div class="move-image-holder">
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/U2.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">U2</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/D2.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">D2</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/R2.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">R2</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/L2.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">L2</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/F2.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">F2</div>
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-notations/B2.png" width="100" height="100" alt="move" />
+                <div class="cube-text bold">B2</div>
+              </div>
+              <h6 class="info-note"><b>Note:</b> Double moves such as U2 can be done in any direction (clockwise or anti-clockwise). The direction is specified with an apostrophe such as U2 or U2' (to show fingertricks), but it's not prevalent. </h6>
+          </div>
+          <h2 class="bold">Wide Moves</h2>
+          <h4>Wide moves turn 2 layers at once. They are written in 2 ways:</h4>
+          <ul style="text-align: left !important; display: inline-block;">
+            <li><h5>Lower case: <b>u, d, r, l, f, b</b></h5></li>
+            <li><h5>Ending in w: <b>Uw, Dw, Rw, Lw, Fw, Bw</b></h5></li>
+          </ul>
+          <div class="move-image-holder">
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/Uw.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">Uw / u</div>
+            </div>
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/Dw.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">Dw / d</div>
+            </div>
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/Rw.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">Rw / r</div>
+            </div>
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/Lw.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">Lw / l</div>
+            </div>
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/Fw.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">Fw / f</div>
+            </div>
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/Bw.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">Bw / b</div>
+            </div>
+          </div>
+          <h4>There is also Uw' and Uw2, etc.</h4>
+          <h2 class="bold"> Slice Moves</h2>
+          <h4>Slice moves only turn the middle layer. They are written as <b>M</b>, <b>E</b>, and <b>S</b>.</h4>
+          <h4><b>M</b> follows the <b>L</b> direction, <b>E</b> follows the <b>D</b> direction, <b>S</b> follows the <b>F</b> direction.</h4>
+          <div class="move-image-holder">
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/M.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">M</div>
+            </div>
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/E.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">E</div>
+            </div>
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/S.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">S</div>
+            </div>
+          </div>
+          <h4>There is also M' and M2, etc.</h4>
+          <h6 class="info-note"><b>Memory Trick:</b> M follows the same direction as L because M is closer to L than R in the alphabet. The same idea applies for E (follows D instead of U) and S (follows F instead of B).</h6>
+          <h2 class="bold">Cube Rotations</h2>
+          <h4>Cube rotations rotate the cube. They are written as <b>x</b>, <b>y</b>, <b>z</b>.</h4>
+          <h4><b>x</b> follows the <b>R</b> direction, <b>y</b> follows the <b>U</b> direction, <b>z</b> follows the <b>F</b> direction.</h4>
+          <div class="move-image-holder">
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/no-rotation.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">No Rotation</div>
+            </div>
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/x.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">x</div>
+            </div>
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/y.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">y</div>
+            </div>
+            <div class="move-image">
+              <img class="cube-img" src="images/cube-notations/Z.png" width="100" height="100" alt="move" />
+              <div class="cube-text bold">z</div>
+            </div>
+          </div>
+          <h4>There is also x' and x2, etc.</h4>
+          <h6 class="info-note"><b>Note:</b> The default position of the cube is <b>White (Top)</b>, <b>Green (Front)</b>, <b>Red (Right)</b>. Refer to the <b>No Rotation</b> image</h6>
+          <h6 class="info-note"><b>Memory Trick:</b> x follows the same direction as R because x is closer to R than L in the alphabet. The same idea applies for y (follows U instead of D) and z (follows F instead of B).</h6>
+          <!-- Redirect user to download image -->
+          <h2 class="bold"><a class="basic-link" href="images/cube-notations/cheat-sheet.png" target="_blank" download rel="nofollow">Download the Basic Cheat Sheet</a></h2>
+          <h6 class="info-note" style="text-align: right"><a href="https://jperm.net/3x3/moves" target="_blank">Credits</a></h6>
+        </div>
+      </div>
+      <div class="notation-content">
+        <div class="know-more" table-index="1">
+          <label class="bold">
+            <input type="checkbox"  />
+            The Beginner's Method<span class="triangle_down"></span></label>
+          <div class="additional-info">
+            <h2 class="bold">Step 1. White Cross</h2>
+            <div class="move-image-holder no-border center-img">
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-1.png" width="100" height="100" alt="white-cross" />
+              </div>
+              <div class="move-image">
+                <img class="cube-arrow" src="images/arrow.png"  alt="white-cross" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-2.png" width="100" height="100" alt="white-cross" />
+              </div>
+            </div>
+            <h4>Keep the white center piece on top, and find an edge in the bottom layer that has white.</h4>
+            <h6 class="info-note"><b>Note:</b> A center piece has only 1 color and an edge piece has only 2 colors.</h6>
+            <h4>Look at the edge piece's other color (not white), and turn the bottom layer so that the edge is under the center of the respective color.</h4>
+            <h4>Rotate that face to bring the edge on the white center piece/layer.</h4>
+            <div class="move-image-holder center-img">
+              <div class="move-image">
+                <img class="cube-img img-inverted" src="images/cube-solve/white-cross-solve-1-1.png" width="100" height="100" alt="example" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img img-inverted" src="images/cube-solve/white-cross-solve-1-2.png" width="100" height="100" alt="example" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-solve-1-3.png" width="100" height="100" alt="example" />
+              </div>
+            </div>
+            <h4>Another example:</h4>
+            <div class="move-image-holder center-img">
+              <div class="move-image">
+                <img class="cube-img img-inverted" src="images/cube-solve/white-cross-solve-2-1.png" width="100" height="100" alt="example" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img img-inverted" src="images/cube-solve/white-cross-solve-2-2.png" width="100" height="100" alt="example" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-solve-2-3.png" width="100" height="100" alt="example" />
+              </div>
+            </div>
+            <h4>Anytime an edge piece is flipped/inverted (an example above), fix it by doing the following moves:</h4>
+            <div class="move-image-holder center-img">
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-solve-3-1.png" width="100" height="100" alt="example" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-solve-3-2.png" width="100" height="100" alt="example" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-solve-3-3.png" width="100" height="100" alt="example" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-solve-3-4.png" width="100" height="100" alt="example" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-solve-3-5.png" width="100" height="100" alt="example" />
+              </div>
+            </div>
+            <h4>Anytime you find a white edge piece that is not in the bottom layer, you can move it in the bottom layer by doing the following:</h4>
+            <div class="move-image-holder center-img">
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-solve-4-1.png" width="100" height="100" alt="example" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-solve-4-2.png" width="100" height="100" alt="example" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-solve-4-3.png" width="100" height="100" alt="example" />
+              </div>
+              <div class="move-image">
+                <img class="cube-img" src="images/cube-solve/white-cross-solve-4-4.png" width="100" height="100" alt="example" />
+              </div>
+            </div>
+            <h4>Then simply solve it like you would do for any white edge piece in the bottom layer.</h4>
+            <h4>Solve all the 4 white edge pieces to make the white cross. Make sure to look at both colors on each piece to not mess up with inserting the edge inverted.</h4>
+        </div>
+      </div>
     </div>
     <script src="main.js"></script>
+    <script src="cube_simulator.js"></script>
     <script src="simulator\three.js"></script>
     <script src="simulator\controls.js"></script>
     <script src="simulator\modules.js"></script>
     <script src="simulator\cube.js"></script>
-    <script src="cube_simulator.js"></script>
     <script src="loading.js"></script>
     <script src="onscroll.js"></script>
     <script src="achievements.js"></script>
