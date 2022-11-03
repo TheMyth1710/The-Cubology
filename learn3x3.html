@@ -64,7 +64,7 @@
     </div>
     <!-- BODY OF THE HOME PAGE AND OTHER PAGES AS WELL -->
     <div id="body" style="display: none;">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light dropdown-menu-right" style="float:right;" id="navbar">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light dropdown-menu-right" style="float:right;" id="navbar" animation="popdown-navbar 1s forwards">
         <a class="navbar-brand" href="index.html"><img src="logo_with_text.png" class="logo" width="250em" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -144,7 +144,7 @@
         <div class="know-more" table-index="1">
           <label class="bold">
             <input type="checkbox"  />
-            Want to know more?<span class="triangle_down" animation="distorted-pop 0.5s forwards;"></span></label>
+            Want to know more?<span class="triangle_down op-0" animation="distorted-pop 0.5s forwards"></span></label>
           <div class="additional-info">
             <h2>Face Turns</h2>
             <h4>The basic moves are <b>U</b>p, <b>D</b>own, <b>R</b>ight, <b>L</b>eft, <b>F</b>ront, and <b>B</b>ack.</h4>
@@ -228,8 +228,8 @@
                 <img class="cube-img" src="images/cube-notations/B2.png" width="100" height="100" alt="move" />
                 <div class="cube-text bold">B2</div>
               </div>
-              <h6 class="info-note"><b>Note:</b> Double moves such as U2 can be done in any direction (clockwise or anti-clockwise). The direction is specified with an apostrophe such as U2 or U2' (to show fingertricks), but it's not prevalent. </h6>
           </div>
+          <h6 class="info-note"><b>Note:</b> Double moves such as U2 can be done in any direction (clockwise or anti-clockwise). The direction is specified with an apostrophe such as U2 or U2' (to show fingertricks), but it's not prevalent. </h6>
           <h2>Wide Moves</h2>
           <h4>Wide moves turn 2 layers at once. They are written in 2 ways:</h4>
           <ul style="text-align: left !important; display: inline-block;">
@@ -286,7 +286,7 @@
           <h4>Cube rotations rotate the cube. They are written as <b>x</b>, <b>y</b>, <b>z</b>.</h4>
           <h4><b>x</b> follows the <b>R</b> direction, <b>y</b> follows the <b>U</b> direction, <b>z</b> follows the <b>F</b> direction.</h4>
           <div class="move-image-holder">
-            <div class="move-image">
+            <div class="move-image" id="no-rotation">
               <img class="cube-img" src="images/cube-notations/no-rotation.png" width="100" height="100" alt="move" />
               <div class="cube-text bold">No Rotation</div>
             </div>
@@ -304,7 +304,7 @@
             </div>
           </div>
           <h4>There is also x' and x2, etc.</h4>
-          <h6 class="info-note"><b>Note:</b> The default position of the cube is <b>White (Top)</b>, <b>Green (Front)</b>, <b>Red (Right)</b>. Refer to the <b>No Rotation</b> image</h6>
+          <h6 class="info-note"><b>Note:</b> The default position of the cube is <b>White (Top)</b>, <b>Green (Front)</b>, <b>Red (Right)</b>.</h6>
           <h6 class="info-note"><b>Memory Trick:</b> x follows the same direction as R because x is closer to R than L in the alphabet. The same idea applies for y (follows U instead of D) and z (follows F instead of B).</h6>
           <!-- Redirect user to download image -->
           <h2><a class="basic-link" href="images/cube-notations/cheat-sheet.png" target="_blank" download rel="nofollow">Download the Basic Cheat Sheet</a></h2>
@@ -315,7 +315,7 @@
         <div class="know-more" table-index="1">
           <label class="bold">
             <input type="checkbox"  />
-            The Beginner's Method<span class="triangle_down"></span></label>
+            The Beginner's Method<span class="triangle_down op-0" animation="distorted-pop 0.5s forwards"></span></label>
           <div class="additional-info">
             <h2>Step 1. White Cross</h2>
             <div class="move-image-holder no-border center-img">
@@ -403,7 +403,47 @@
                 <img class="cube-img img-inverted" src="images/cube-solve/first-layer-2.png" width="100" height="100" alt="white-cross" />
               </div>
             </div>
-            <h4>Hold the white cross at the bottom (Yellow on top).</h4>
+            <h4>Hold the white cross at the bottom (yellow on top).</h4>
+            <h4>Before solving anything, do this <span class="basic-link" style="color: rgb(0, 63, 92)" onclick="clickanimation('4-move')">4-move sequence</span> repeatedly until you've memorized it. It will help you later on!</h4>
+            <div id="4-move">
+              <h4><u>Right handed 4-moves:</u></h4>   
+              <div class="move-image-holder center-img">
+                <div class="move-image">
+                  <img class="cube-img" src="images/cube-solve/first-layer-solve-1-1.png" width="100" height="100" alt="white-cross" />
+                </div>
+                <div class="move-image">
+                  <img class="cube-img" src="images/cube-solve/first-layer-solve-1-2.png" width="100" height="100" alt="white-cross" />
+                </div>
+                <div class="move-image">
+                  <img class="cube-img" src="images/cube-solve/first-layer-solve-1-3.png" width="100" height="100" alt="white-cross" />
+                </div>
+                <div class="move-image">
+                  <img class="cube-img" src="images/cube-solve/first-layer-solve-1-4.png" width="100" height="100" alt="white-cross" />
+                </div>
+                <div class="move-image">
+                  <img class="cube-img" src="images/cube-solve/first-layer-solve-1-5.png" width="100" height="100" alt="white-cross" />
+                </div>
+              </div>
+              <h4><u>Left handed 4-moves:</u></h4>   
+              <div class="move-image-holder center-img">
+                <div class="move-image">
+                  <img class="cube-img" src="images/cube-solve/first-layer-solve-2-1.png" width="100" height="100" alt="white-cross" />
+                </div>
+                <div class="move-image">
+                  <img class="cube-img" src="images/cube-solve/first-layer-solve-2-2.png" width="100" height="100" alt="white-cross" />
+                </div>
+                <div class="move-image">
+                  <img class="cube-img" src="images/cube-solve/first-layer-solve-2-3.png" width="100" height="100" alt="white-cross" />
+                </div>
+                <div class="move-image">
+                  <img class="cube-img" src="images/cube-solve/first-layer-solve-2-4.png" width="100" height="100" alt="white-cross" />
+                </div>
+                <div class="move-image">
+                  <img class="cube-img" src="images/cube-solve/first-layer-solve-2-5.png" width="100" height="100" alt="white-cross" />
+                </div>
+              </div>
+            </div>
+
         </div>
       </div>
     </div>

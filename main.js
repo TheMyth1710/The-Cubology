@@ -61,12 +61,20 @@ function device_checker(click=false){
         }
     }
 }
+$.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
 
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
 function clickanimation(id, key='background-color', before='inherit', after='orange', time='1'){
     const obj = document.getElementById(id);
     if (['2x-faster-solutions','3+-different-solutions','straightforward-ui','better-graphs'].includes(id)) before = '#252E51';
     var style = document.createElement("style");
-    style.innerHTML = `@keyframes clickanimation{0%{${key}: ${before};}50%{${key}: ${after};}100%{${key}: ${before}; opacity: 1;}}`;
+    style.innerHTML = `@keyframes clickanimation{0%{${key}: ${before};}50%{${key}: ${after};}100%{${key}: ${before};}}`;
     document.getElementsByTagName('head')[0].appendChild(style);
     obj.style.animation = `clickanimation ${time}s`;
     obj.addEventListener("animationend",()=>{
