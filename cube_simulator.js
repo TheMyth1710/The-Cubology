@@ -255,15 +255,25 @@ function move(btn, complete=false){ // Avoid over spamming
 // Rest of the Code for learn3x3.html | NOT RELATED TO CUBE SIMULATOR |
 
 document.querySelectorAll(".know-more label input[type='checkbox']").forEach(input => input.addEventListener("change", function(){
+    var additional_info = this.parentElement.parentElement.querySelector(".additional-info");
     if (this.checked){
+        additional_info.classList.add("active")
+        document.querySelectorAll(".know-more label input").forEach(elem => {if (elem != this) elem.checked = false});
+        document.querySelectorAll(".know-more label").forEach(elem => {if (elem != this.parentElement) elem.style.borderRadius = "10px"});
+        document.querySelectorAll(".additional-info").forEach(elem => {
+            if (elem.style.opacity == 1){
+                Object.assign(elem.style, {"opacity": "0", "visibility": "hidden", "animation": "height 0.3s reverse linear"})
+            }
+        });
         this.parentElement.style.borderRadius = "0px";
-        this.parentElement.parentElement.querySelector(".additional-info").style.opacity = "1";
-        this.parentElement.parentElement.querySelector(".additional-info").style.visibility = "visible";
-        this.parentElement.parentElement.querySelector(".additional-info").style.animation = "height 0.3s forwards linear";
+        additional_info.style.opacity = "1";
+        additional_info.style.visibility = "visible";
+        additional_info.style.animation = "height 0.3s forwards linear";
     }else{
+        additional_info.classList.remove("active")
         this.parentElement.style.borderRadius = "10px";
-        this.parentElement.parentElement.querySelector(".additional-info").style.opacity = "0";
-        this.parentElement.parentElement.querySelector(".additional-info").style.visibility = "hidden";
-        this.parentElement.parentElement.querySelector(".additional-info").style.animation = "height 0.3s reverse linear";
+        additional_info.style.opacity = "0";
+        additional_info.style.visibility = "hidden";
+        additional_info.style.animation = "height 0.3s reverse linear";
     }
 }));

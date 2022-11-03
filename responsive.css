@@ -275,6 +275,13 @@
         top: -40%;
         left: -10%;
     }
+    .triangle_down{
+        width: 10px;
+        height: 10px;
+    }
+    .know-more label{
+        font-size: 16px;
+    }
     @keyframes popup-card{
         0%{
             opacity: 0;

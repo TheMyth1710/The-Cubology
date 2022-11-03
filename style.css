@@ -1165,10 +1165,6 @@ hr{
     transition: all 0.3s;
 }
 
-.know-more label span{
-    animation: distorted-pop 0.5s forwards; 
-}
-
 .know-more label input{
 	display: none;
 }
@@ -1190,7 +1186,6 @@ hr{
     padding: 8px 12px;
     border-radius: 3px;
     transition: all 0.3s;
-    /* animation: height 5s forwards; */
 }
 
 .additional-info h2{
@@ -1216,6 +1211,10 @@ hr{
 }
 .move-image{
     display: inline-block;
+}
+
+.additional-info h2{
+    font-weight: bold;
 }
 
 .additional-info h4{

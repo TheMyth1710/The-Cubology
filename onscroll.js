@@ -4,7 +4,7 @@ const pages = {
 ".about-cube .container #p-2", ".about-cube .container #p-3", ".about-cube .container #p-4", ".new-cube-title", ".new-cube-btn",
 ".wca-title h1", ".wca-content img", ".wca-content p", ".achievements", ".achievement", ".reward"],
     "features": [],
-    "learn3x3": [".navbar", "cube-simulator-title h1", ".cube-simulator", ".ribbon", ""]
+    "learn3x3": [".navbar", "cube-simulator-title h1", ".cube-simulator", ".ribbon", ".know-more label span"]
 };
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(obj =>{
