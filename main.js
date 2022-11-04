@@ -31,8 +31,8 @@ if (!localStorage.getItem("data")){
         "achievements": {
             "Tab Friend": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Press <kbd>tab</kbd> 5 times"},
             "I'm safe!": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Open <kbd>Learn the 3x3</kbd> page"},
-            "Rick Astley's Brat": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Get rickrolled!"}
-            
+            "Rick Astley's Brat": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Get rickrolled!"},
+            "The All-Rounder": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Finish Level 3 in Cube Simulator"}
         },
         "rewards": {
             20: {"claimed": false, "reward": "https://youtu.be/dQw4w9WgXcQ"},
@@ -45,6 +45,11 @@ if (!localStorage.getItem("data")){
             1: false, 
             2: false, 
             3: false
+        },
+        "3x3": {
+            "Cube Notations": false,
+            "The Beginner's Method": false,
+            "The CFOP Method": false
         }
     }))
 }
@@ -70,7 +75,7 @@ $.fn.isInViewport = function() {
 
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
-function clickanimation(id, key='background-color', before='inherit', after='orange', time='1'){
+function clickanimation(id, key='background-color', before='', after='orange', time='1'){
     const obj = document.getElementById(id);
     if (['2x-faster-solutions','3+-different-solutions','straightforward-ui','better-graphs'].includes(id)) before = '#252E51';
     var style = document.createElement("style");

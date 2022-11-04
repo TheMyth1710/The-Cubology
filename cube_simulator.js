@@ -53,10 +53,11 @@ function level_identifier(level_DOM){
     let move_ahead = true;
     for (let i = 0; i < level; i++){
         if (level_status[level]){
-            if (!confirm(`You have already completed this level!\rIf you fail this time, it'll be counted!\rDo it again?`)) move_ahead = false
+            if (!confirm(`You have already completed this level!\rIf you fail this time, it'll be counted!\rDo it again?`)) move_ahead = false;
         }else if (!level_status[i.toString()]){  // Check if any previous level is incomplete
             move_ahead = false;
-            alert(`You can't skip levels! Complete Level ${i} first!`)
+            alert(`You can't skip levels! Complete Level ${i} first!`);
+            break;
         }
     }
     if (level == 0){
@@ -256,21 +257,31 @@ function move(btn, complete=false){ // Avoid over spamming
 
 document.querySelectorAll(".know-more label input[type='checkbox']").forEach(input => input.addEventListener("change", function(){
     var additional_info = this.parentElement.parentElement.querySelector(".additional-info");
+    var opened = JSON.parse(localStorage.getItem("data"))["3x3"];
+    var keys = Object.keys(opened);
+    var check_out = true;
     if (this.checked){
-        additional_info.classList.add("active")
-        document.querySelectorAll(".know-more label input").forEach(elem => {if (elem != this) elem.checked = false});
-        document.querySelectorAll(".know-more label").forEach(elem => {if (elem != this.parentElement) elem.style.borderRadius = "10px"});
-        document.querySelectorAll(".additional-info").forEach(elem => {
-            if (elem.style.opacity == 1){
-                Object.assign(elem.style, {"opacity": "0", "visibility": "hidden", "animation": "height 0.3s reverse linear"})
+        for (let i = 1; i < keys.length; i++){
+            if (!opened[keys[i.toString()]] && $(this.parentElement).text().trim() == keys[i.toString()] && !opened[keys[(i-1).toString()]]){
+                if (!confirm(`You didn't check out "${keys[(i-1).toString()]}"!\rDo you still want to move ahead?`)) check_out = false;
+                break;
             }
-        });
-        this.parentElement.style.borderRadius = "0px";
-        additional_info.style.opacity = "1";
-        additional_info.style.visibility = "visible";
-        additional_info.style.animation = "height 0.3s forwards linear";
+        }
+        if (check_out){
+            update("3x3",true,$(this.parentElement).text().trim())
+            document.querySelectorAll(".know-more label input").forEach(elem => {if (elem != this) elem.checked = false});
+            document.querySelectorAll(".know-more label").forEach(elem => {if (elem != this.parentElement) elem.style.borderRadius = "10px"});
+            document.querySelectorAll(".additional-info").forEach(elem => {
+                if (elem.style.opacity == 1){
+                    Object.assign(elem.style, {"opacity": "0", "visibility": "hidden", "animation": "height 0.3s reverse linear"})
+                }
+            });
+            this.parentElement.style.borderRadius = "0px";
+            additional_info.style.opacity = "1";
+            additional_info.style.visibility = "visible";
+            additional_info.style.animation = "height 0.3s forwards linear";
+        }else this.checked = false;
     }else{
-        additional_info.classList.remove("active")
         this.parentElement.style.borderRadius = "10px";
         additional_info.style.opacity = "0";
         additional_info.style.visibility = "hidden";

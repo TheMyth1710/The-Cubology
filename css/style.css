@@ -11,7 +11,7 @@
     --col-1: 8.33%; --col-2: 16.66%; --col-3: 25%; --col-4: 33.33%; --col-5: 41.66%; --col-6: 50%;
     --col-7: 58.33%; --col-7: 66.66%; --col-8: 66.66%; --col-9: 75%; --col-10: 83.33%; --col-11: 91.66%; --col-12: 100%;
 }
-*::-webkit-scrollbar{
+/* *::-webkit-scrollbar{
     width: 5px;
 }
 *::-webkit-scrollbar-thumb{
@@ -20,7 +20,7 @@
 }
 *::-webkit-scrollbar-thumb:hover{
     background-color: rgb(230, 228, 201);
-}
+} */
 html::-webkit-scrollbar{
     width: 10px;
 }
@@ -38,7 +38,6 @@ html::-webkit-scrollbar-thumb:hover{
 body{
     background-color: var(--cream);
 }
-
 .know{
     margin: auto;
 }
@@ -1012,7 +1011,6 @@ hr{
     justify-content: center;
 }
 
-
 .cube-notation-row:not(:first-of-type){
     margin-top: 10px;
 }
@@ -1146,6 +1144,12 @@ hr{
 	transition: all 0.3s;
 }
 
+.cube-content > h2{
+    text-align: center;
+    color: var(--darkblue);
+    padding-top: 20px;
+}
+
 .know-more{
     margin: 50px 0px 40px 10%;
     border-radius: 10px;
@@ -1191,7 +1195,7 @@ hr{
 .additional-info h2{
     margin: 20px 0px 20px 0px;
     width: 100%;
-    padding: 10px;
+    padding: 10px !important;
     border-top: 1px solid var(--darkblue);
     border-bottom: 1px solid var(--darkblue);   
 }
@@ -1212,18 +1216,32 @@ hr{
 .move-image{
     display: inline-block;
 }
+.move-image.small{
+    transform: translateY(25%);
+}
+.move-image.small h6{
+    padding: 0px 10px 0px 10px;
+    margin: auto;
+}
 
 .additional-info h2{
+    padding: 0px 10px 0px 10px;
     font-weight: bold;
 }
 
 .additional-info h4{
+    padding: 0px 10px 0px 10px;
     margin-top: 20px;
+}
+
+.additional-info span.basic-link{
+    color: rgb(0, 63, 92);
 }
 
 .additional-info .info-note{
     width: 100%;
     font-size: 14px;
+    padding: 0px 10px 0px 10px;
     margin-top: 10px;
     white-space: normal;
     text-align: center;
@@ -1241,8 +1259,20 @@ hr{
     height: 2em;
     margin: 0 1em 0 1em;
 }
+.cube-arrow.small{
+    margin: 5px 1em 0 1.5em;
+}
 .cube-text{
     text-align: center;
+}
+.algorithms{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.algorithms h2{
+    color: var(--darkblue)
 }
 
 @keyframes height{
