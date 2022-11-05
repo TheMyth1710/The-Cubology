@@ -1,11 +1,15 @@
-const pages = {
-    "index": [".navbar",".animetext", "#downloadbtn", "#storebtn", "#card-1", "#card-2", "#card-3", "#card-4", ".mission", 
-".about-cube .container img[alt='Ernõ Rubik']", ".about-cube .container h1", ".about-cube .container #p-1", 
-".about-cube .container #p-2", ".about-cube .container #p-3", ".about-cube .container #p-4", ".new-cube-title", ".new-cube-btn",
-".wca-title h1", ".wca-content img", ".wca-content p", ".achievements", ".achievement", ".reward"],
-    "features": [],
-    "learn3x3": [".navbar", ".know-more label span"]
-};
+// const pages = {
+//     "index": [".navbar",".animetext", "#downloadbtn", "#storebtn", "#card-1", "#card-2", "#card-3", "#card-4", ".mission", 
+// ".about-cube .container img[alt='Ernõ Rubik']", ".about-cube .container h1", ".about-cube .container #p-1", 
+// ".about-cube .container #p-2", ".about-cube .container #p-3", ".about-cube .container #p-4", ".new-cube-title", ".new-cube-btn",
+// ".wca-title h1", ".wca-content img", ".wca-content p", ".achievements", ".achievement", ".reward"],
+//     "features": [".features-title h1"],
+//     "learn3x3": [".navbar", ".know-more label span"]
+// };
+// page = pages[document.URL.split("/").at(-1).slice(0,-5)];
+// if ([undefined, '', '#'].includes(page)){
+//     page = pages["index"];
+// }
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(obj =>{
         if (obj.isIntersecting){
@@ -54,11 +58,9 @@ const observer = new IntersectionObserver((entries, observer) => {
         }
     });
 })
-page = pages[document.URL.split("/").at(-1).slice(0,-5)];
-if ([undefined, '', '#'].includes(page)){
-    page = pages["index"];
-}
+
+page = document.querySelectorAll("[animation]");
 
 for (key of page){
-    document.querySelectorAll(key).forEach(subkey => observer.observe(subkey))
+    observer.observe(key)
 }

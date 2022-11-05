@@ -64,6 +64,7 @@
         padding: 15px;
         display: flex;
         justify-content: center;
+        border-right: none;
         border-bottom-left-radius: 0px;
         border-top-right-radius: 20px;
     }
@@ -245,7 +246,8 @@
         padding: 5px;
         padding-top: 2px;
         display: flex;
-        flex-direction: column;        
+        flex-direction: column;       
+        border-right: none;
         border-bottom-left-radius: 0px;
         border-top-right-radius: 20px;
     }
