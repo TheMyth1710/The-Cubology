@@ -892,7 +892,7 @@ hr{
     height: 100vh;
     overflow: hidden;
     flex-grow: 1;
-    background-image: url('/uploads/images/features.png');
+    background-image: url('uploads/images/features.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
