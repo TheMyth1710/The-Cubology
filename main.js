@@ -66,15 +66,7 @@ function device_checker(click=false){
         }
     }
 }
-$.fn.isInViewport = function() {
-    var elementTop = $(this).offset().top;
-    var elementBottom = elementTop + $(this).outerHeight();
 
-    var viewportTop = $(window).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
-
-    return elementBottom > viewportTop && elementTop < viewportBottom;
-};
 function clickanimation(id, key='background-color', before='', after='orange', time='1'){
     const obj = document.getElementById(id);
     if (['2x-faster-solutions','3+-different-solutions','straightforward-ui','better-graphs'].includes(id)) before = '#252E51';

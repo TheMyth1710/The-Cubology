@@ -687,8 +687,9 @@ hr{
     text-align: center;
     overflow: hidden;
     border-right: 3px solid var(--darkcream);
-    animation: blink 1s 3;
+    animation: blink-cream 1s 3;
 }
+
 .wca-title h1.animationend{
     text-decoration: underline var(--darkcream);
     cursor: pointer;
@@ -1336,6 +1337,19 @@ hr{
     text-align: left;
 }
 
+.cube-content h2:first-of-type{
+    font-size: 3rem;
+    padding: 0.5rem;
+    width: fit-content;
+    margin: auto;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    overflow: hidden;
+    border-right: 3px solid var(--darkblue);
+    animation: blink-blue 1s 3;
+}
+
 @keyframes height{
     0%{
         max-height: 0px;
@@ -1384,7 +1398,7 @@ hr{
 @keyframes fliptext{
     0% {
       opacity: 0;
-      transform: rotateX(90def);
+      transform: rotateX(90deg);
     }
     50% {
       opacity: 1;
@@ -1447,12 +1461,19 @@ hr{
         margin-top: 0;
     }
 }
-@keyframes blink{
+@keyframes blink-cream{
     10% {border-right: 3px solid var(--darkcream);}
     49% {border-right: 3px solid var(--darkcream);}
     50% {border-right: 3px solid transparent;}
     99% {border-right: 3px solid transparent;}
     100%{border-right: 3px solid var(--darkcream);}
+}
+@keyframes blink-blue{
+    10% {border-right: 3px solid var(--darkblue);}
+    49% {border-right: 3px solid var(--darkblue);}
+    50% {border-right: 3px solid transparent;}
+    99% {border-right: 3px solid transparent;}
+    100%{border-right: 3px solid var(--darkblue);}
 }
 @keyframes conditionalOpen{
     from {
