@@ -18,7 +18,7 @@
       <link rel="icon" href="uploads/images/fav.png" type="image/x-icon">
       <title>The Cubology</title>
   </head>
-  <body onload="loadinganim(); device_checker(); achievement_main(); achievement_checker(); reward_checker();"> 
+  <body onload="if (loadinganim()){animate_cubes()}; device_checker(); achievement_main(); achievement_checker(); reward_checker();"> 
     <!-- Loading Animation -->
     <div class="row-loading col-12 center center-text" id="loader">
       <center>
