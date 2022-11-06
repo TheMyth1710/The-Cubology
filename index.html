@@ -18,7 +18,7 @@
       <link rel="icon" href="uploads/images/fav.png" type="image/x-icon">
       <title>The Cubology</title>
   </head>
-  <body onload="if (loadinganim()){animate_cubes()}; device_checker(); achievement_main(); achievement_checker(); reward_checker();"> 
+  <body onload="loadinganim(); device_checker(); achievement_main(); achievement_checker(); reward_checker();"> 
     <!-- Loading Animation -->
     <div class="row-loading col-12 center center-text" id="loader">
       <center>
@@ -236,10 +236,10 @@
             <h4 class="achievement-title exo2 fw-600">Rick Astley's Brat</h4>
             <p class="exo2">Are you a brat?</p>
           </div>
-          <div class="achievement locked" onclick="unlock_hint(this)" animation="fadein-locked 2s forwards">
-            <img src="uploads/images/cube_logo.png" alt="Achievement" />
-            <h4 class="achievement-title exo2 fw-600">Achievement</h4>
-            <p class="exo2">Description...</p>
+          <div class="achievement locked ap-10" onclick="unlock_hint(this)" animation="fadein-locked 2s forwards">
+            <img src="uploads/images/inspector.png" alt="Inspector" />
+            <h4 class="achievement-title exo2 fw-600">The Inspector</h4>
+            <p class="exo2">Get your eyes on the website</p>
           </div>
           <div class="achievement locked" onclick="unlock_hint(this)" animation="fadein-locked 2s forwards">
             <img src="uploads/images/cube_logo.png" alt="Achievement" />

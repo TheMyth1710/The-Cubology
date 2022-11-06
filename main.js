@@ -11,6 +11,13 @@ function update(key,value,sub_key=null,sub_sub_key=null){
     localStorage.setItem("data",JSON.stringify(data));
 } // Updates the localStorage with specific value
 
+function any(iterable) {
+    for (var index = 0; index < iterable.length; index++) {
+        if (iterable[index]) return true;
+    }
+    return false;
+}
+
 function arraysEqual(a, b, notations=false) {
     console.log(a,b,notations);
     if (a === b) return true;
@@ -32,6 +39,7 @@ if (!localStorage.getItem("data")){
             "Tab Friend": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Press <kbd>tab</kbd> 5 times"},
             "I'm safe!": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Open <kbd>Learn the 3x3</kbd> page"},
             "Rick Astley's Brat": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Get rickrolled!"},
+            "The Inspector": {"points": 10, "completed": false, "hint_unlocked": false, "hint": "Inspect me with your gun!"},
             "The All-Rounder": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Finish Level 3 in Cube Simulator"}
         },
         "rewards": {
@@ -96,6 +104,7 @@ function home_nav(nav=null, start_page = 'index.html', navigate=true){
 
 var navbar = document.querySelector('.navbar');
 var lastScrollTop = 0;
+document.querySelectorAll('img').forEach(() => {setAttribute('loading', 'lazy')});
 document.onscroll = function(){
     var st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop && st > 50){
@@ -108,22 +117,3 @@ document.onscroll = function(){
     }
     lastScrollTop = st <= 0 ? 0 : st;
 }
-
-document.onkeydown = function(e) {
-    if(e.keyCode == 123) {
-     return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
-     return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
-     return false;
-    }
-    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
-     return false;
-    }
-
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
-     return false;
-    }      
- }

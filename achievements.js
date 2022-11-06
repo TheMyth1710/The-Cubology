@@ -16,11 +16,12 @@ function achievement_completed(achievement, points){
             }
         }
     )}
-    if (confirm(`Whoa!\rYou just unlocked the ${achievement} achievement!\rGo check it out?`)){
+    if (confirm(`Whoa!\rYou just unlocked the "${achievement}" achievement!\rGo check it out?`)){
         home_nav('achievements');  
         clickanimation('achievements');
     }achievement_checker();        
 }
+
 
 function achievement_retriever(obj){
     obj.classList.remove("locked");
@@ -55,7 +56,7 @@ function achievement_main(){
     if (['index', '', '#'].includes(document.URL.split("/").at(-1).slice(0,-5)) || document.URL.split("/").at(-1).slice(0,-5).startsWith('#')) document.querySelector('.ap-title h1').innerHTML = `Achievements: ${ap}/100 Points`;
     // Achievement Records
     tab_presses = 0
-    $(document).on('keyup', function(e) {
+    $(document).keyup((e) => {
         if (e.key == "Tab"){ // Tab Friend
             tab_presses += 1;
         }else{
@@ -67,6 +68,15 @@ function achievement_main(){
             achievement_completed("Tab Friend", ap);
         }
     })
+    
+    $(document).keydown((e) => {        
+        console.log(e)
+        if((e.key == "F12") || (e.ctrlKey && e.shiftKey && any([e.key=="I", e.key == 'J', e.key == 'C']))){
+        update("achievements",true,"The Inspector","completed");
+        achievements["The Inspector"]["completed"] = true;
+        achievement_completed("The Inspector", ap);
+        }  
+    });
     if (document.URL.includes('learn3x3.html') && !achievements["I'm safe!"]["completed"]){
         update("achievements",true,"I'm safe!","completed");
         achievements["I'm safe!"]["completed"] = true;
