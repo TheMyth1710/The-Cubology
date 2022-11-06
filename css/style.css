@@ -53,13 +53,17 @@ body{
     font-size: 16px;
     width: 100%;
 }
-
 /* Customize Body Animation Only Home Page */
 
 .wrapper {
     height: 90vh;
     width: 100%;
     background: linear-gradient(309deg, #181D31 0%, #4d62b5 79%);
+    overflow-y: auto;
+    perspective: 10px;
+    overflow-x: hidden;
+    object-fit: cover;
+    transform: translateZ(-10px) scale(1.1);
 }
 
 .boxes div{
@@ -69,6 +73,7 @@ body{
     height: 50px;
     background-color: transparent;
     border: 2px solid var(--cream);
+    transform: translateZ(-500px);
 }
 
 .boxes div:nth-child(1) {
@@ -897,6 +902,7 @@ hr{
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 
 .features-title{
     width: 100%;
