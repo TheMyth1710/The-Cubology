@@ -105,7 +105,7 @@ function home_nav(nav=null, start_page = 'index.html', navigate=true){
 
 var navbar = document.querySelector('.navbar');
 var lastScrollTop = 0;
-document.querySelectorAll('img').forEach((img) => {img.setAttribute('loading', 'lazy')}); //
+document.querySelectorAll('img').forEach((img) => {img.setAttribute('loading', 'lazy')});
 document.onscroll = function(){
     var st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop && st > 50){
