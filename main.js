@@ -108,19 +108,3 @@ document.onscroll = function(){
     }
     lastScrollTop = st <= 0 ? 0 : st;
 }
-function animate_cubes(){
-    let index = 0;
-    let interval = 100000;
-    const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-    const animate = cube => {
-        cube.style.top = `${random(20, 90)}%`;
-        cube.style.left = `${random(10, 90)}%`;
-        cube.style.animation = `box-animate ${random(6,12)}s infinite`;
-    }
-    for (const cube of document.querySelectorAll(".boxes div")){
-        setTimeout(()=>{
-            animate(cube);
-            setInterval(() => animate(cube), 1000);
-        }, index++ * (interval / 3))
-    }
-}

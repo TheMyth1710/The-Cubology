@@ -71,7 +71,7 @@ body{
     border: 2px solid var(--cream);
 }
 
-/* .boxes div:nth-child(1) {
+.boxes div:nth-child(1) {
     top: 70%;
     left: 10%;
     animation: box-animate 10s infinite
@@ -124,7 +124,7 @@ body{
     top: 50%;
     left: 80%;
     animation: box-animate 2s infinite
-} */
+}
 
 @keyframes box-animate {
     0% {
