@@ -18,7 +18,7 @@
     <link rel="icon" href="uploads/images/fav.png" type="image/x-icon">
     <title>The Cubology - Download</title>
 </head>
-<body onload=" window.onbeforeunload = ()=>{window.scrollTo(0, 0)}; loadinganim();"> 
+<body onload=" window.onbeforeunload = ()=>{window.scrollTo(0, 0)}; if (loadinganim()){pageScroll();}"> 
     <!-- Loading Animation -->
     <div class="row-loading col-12 center" id="loader">
       <center>
@@ -63,7 +63,7 @@
       </center>
     </div>
     <!-- BODY OF THE HOME PAGE AND OTHER PAGES AS WELL -->
-    <div id="body" style="display: none; background-color: transparent;" onload="window.location.href='#end'">
+    <div id="body" style="display: none; background-color: transparent;">
       <nav class="navbar navbar-expand-lg navbar-light bg-light dropdown-menu-right" style="float:right;" id="navbar">
         <a class="navbar-brand" href="index"><img src="uploads/images/logo.png" class="logo" width="250em"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,8 +104,10 @@
             <section class="rocket-section"></section>
         </div>
     </div>
-    <p id="end">L</p>
     <script>
+      function pageScroll() {
+        window.scrollBy(0,3060);
+      }
         $(window).scroll(()=>{
             const rocket = document.querySelector('#rocket')
             const sky = document.querySelector('#sky')

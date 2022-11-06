@@ -37,6 +37,7 @@ function loadinganim() {
                     document.getElementById(id).style.opacity = '1';
                 }
             }
+            return true;
         }
     }
 };
