@@ -30,14 +30,21 @@ function achievement_retriever(obj){
 }
 
 function achievement_checker(){ // Check for Completed Achievements and Update
+    var achievements = JSON.parse(localStorage.getItem("data"))["achievements"];
     var achievements_DOM = document.querySelectorAll(".achievement.locked");
     var ap = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
     document.querySelector('.ap-title h1').innerHTML = `Achievements: ${ap}/100 Points`;
     achievements_DOM.forEach(obj => {
         for (const [achievement, value] of Object.entries(achievements)){
-            if (obj.querySelector("h4").innerHTML == achievement){
+            let name = obj.querySelector("h4").innerHTML;
+            if (name == achievement){
                 if (value["completed"]){
                     achievement_retriever(obj);
+                    if (obj.hasAttribute("special")){
+                        obj.querySelector("h4").innerHTML = achievements[name]["title"];
+                        obj.querySelector("p").innerHTML = achievements[name]["desc"];
+                        obj.querySelector("img").src = achievements[name]["img"];
+                    }
                     obj.setAttribute('title', `${value["points"]} Points | Completed: ${value["completed"]}`);
                 }
                 if (value["hint_unlocked"]){
@@ -69,9 +76,8 @@ function achievement_main(){
         }
     })
     
-    $(document).keydown((e) => {        
-        console.log(e)
-        if((e.key == "F12") || (e.ctrlKey && e.shiftKey && any([e.key=="I", e.key == 'J', e.key == 'C']))){
+    $(document).keydown((e) => {
+        if(((e.key == "F12") || (e.ctrlKey && e.shiftKey && any([e.key=='I', e.key == 'J', e.key == 'C']))) &&  !achievements["The Inspector"]["completed"]){
         update("achievements",true,"The Inspector","completed");
         achievements["The Inspector"]["completed"] = true;
         achievement_completed("The Inspector", ap);
@@ -100,7 +106,7 @@ function unlock_hint(elm){
         }
     }else if (confirm(`You have already unlocked this achievement for ${achievements[achievement]["points"]} points! Go check out the rewards?`)){
         clickanimation('rewards');
-    }
+    }achievement_checker();
 }
 function reward_checker(){
     var rewards_DOM = document.querySelectorAll(".reward-claim");

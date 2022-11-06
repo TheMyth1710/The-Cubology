@@ -1430,6 +1430,24 @@ hr{
     background-color: var(--cream);
 }
 
+.store{
+    width: 70%;
+    margin: auto;
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: 200px 100px;
+    grid-gap: 1rem;
+}
+.store-item{
+    background-color: #1EAAFC;
+    background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    color: #fff;
+    border-radius: 4px;
+    grid-column: span 2;
+    border: 6px solid #171717;
+}
 @keyframes height{
     0%{
         max-height: 0px;

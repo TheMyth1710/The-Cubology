@@ -37,8 +37,9 @@ if (!localStorage.getItem("data")){
     localStorage.setItem("data", JSON.stringify({
         "achievements": {
             "Tab Friend": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Press <kbd>tab</kbd> 5 times"},
-            "I'm safe!": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Open <kbd>Learn the 3x3</kbd> page"},
-            "Rick Astley's Brat": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Get rickrolled!"},
+            "Hands On": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Open <kbd>Learn the 3x3</kbd> page"},
+            "Safety First": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Open the <kbd>privacy policy</kbd> section"},
+            "?????": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Get Scammed!", "title": "Here's Your Free Cube!", "desc": "Get Rickrolled!", "img": "uploads/images/rickastley.png"},
             "The Inspector": {"points": 10, "completed": false, "hint_unlocked": false, "hint": "Inspect me with your gun!"},
             "The All-Rounder": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Finish Level 3 in Cube Simulator"}
         },
@@ -104,7 +105,7 @@ function home_nav(nav=null, start_page = 'index.html', navigate=true){
 
 var navbar = document.querySelector('.navbar');
 var lastScrollTop = 0;
-document.querySelectorAll('img').forEach(() => {setAttribute('loading', 'lazy')});
+document.querySelectorAll('img').forEach((img) => {img.setAttribute('loading', 'lazy')});
 document.onscroll = function(){
     var st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop && st > 50){
