@@ -83,10 +83,10 @@ function achievement_main(){
         achievement_completed("The Inspector", ap);
         }  
     });
-    if (document.URL.includes('learn3x3') && !achievements["I'm safe!"]["completed"]){
-        update("achievements",true,"I'm safe!","completed");
-        achievements["I'm safe!"]["completed"] = true;
-        achievement_completed("I'm safe!",ap);
+    if (document.URL.includes('learn3x3') && !achievements["Hands On"]["completed"]){
+        update("achievements",true,"Hands On","completed");
+        achievements["Hands On"]["completed"] = true;
+        achievement_completed("Hands On",ap);
     }
 }
 

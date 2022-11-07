@@ -1502,7 +1502,7 @@ hr{
 }
 .side-navbar-link.active{
     border-right: 2px solid #e0ce9e ;
-    background-color: linear-gradient(to right var(--cream), #e0ce9e);
+    background: linear-gradient(to right var(--cream), #e0ce9e);
 }
 .other-content{
     padding: 0px 100px 0px 100px;

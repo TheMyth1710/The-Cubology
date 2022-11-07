@@ -97,9 +97,6 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="other">Other</a>
-            </li>
           </ul>
         </div>
         <button class="downloadcolor center-text " id="download" onclick="window.location='download'"><span class="roboto bold">DOWNLOAD</span></button>
@@ -117,8 +114,8 @@
             <div class="sub-content">
                 <h2 class="inconsolata bold">It seems we are stuck in here! Rewind some moves and try again!</h2>
                 <div>
-                    <button class="btn error-btn">Home</button>
-                    <button class="btn error-btn">Back</button>
+                    <button class="btn error-btn" onclick="window.location='index'">Home</button>
+                    <button class="btn error-btn" onclick="history.back()">Back</button>
                 </div>
             </div>
         </div>

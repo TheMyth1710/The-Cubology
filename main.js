@@ -38,7 +38,7 @@ if (!localStorage.getItem("data")){
         "achievements": {
             "Tab Friend": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Press <kbd>tab</kbd> 5 times"},
             "Hands On": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Open <kbd>Learn the 3x3</kbd> page"},
-            "Safety First": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Open the <kbd>privacy policy</kbd> section"},
+            "Safety First": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Accept the downloading option!"},
             "?????": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Get Scammed!", "title": "Here's Your Free Cube!", "desc": "Get Rickrolled!", "img": "uploads/images/rickastley.png"},
             "The Inspector": {"points": 10, "completed": false, "hint_unlocked": false, "hint": "Inspect me with your gun!"},
             "The All-Rounder": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Finish Level 3 in Cube Simulator"}
