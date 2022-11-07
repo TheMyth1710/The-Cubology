@@ -83,7 +83,7 @@ function achievement_main(){
         achievement_completed("The Inspector", ap);
         }  
     });
-    if (document.URL.includes('learn3x3.html') && !achievements["I'm safe!"]["completed"]){
+    if (document.URL.includes('learn3x3') && !achievements["I'm safe!"]["completed"]){
         update("achievements",true,"I'm safe!","completed");
         achievements["I'm safe!"]["completed"] = true;
         achievement_completed("I'm safe!",ap);
