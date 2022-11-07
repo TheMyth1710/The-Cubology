@@ -4,6 +4,7 @@ var achievements_DOM = document.querySelectorAll(".achievement.locked");
 
 
 function achievement_completed(achievement, points){
+    points = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
     var achievements = JSON.parse(localStorage.getItem("data"))["achievements"];
     var ap = points+parseInt(achievements[achievement]["points"]);
     var achievements_DOM = document.querySelectorAll(".achievement.locked");
@@ -19,7 +20,8 @@ function achievement_completed(achievement, points){
     if (confirm(`Whoa!\rYou just unlocked the "${achievement}" achievement!\rGo check it out?`)){
         home_nav('achievements');  
         clickanimation('achievements');
-    }achievement_checker();        
+    }
+    achievement_checker();        
 }
 
 
@@ -72,7 +74,7 @@ function achievement_main(){
         if (tab_presses >=5 && !achievements["Tab Friend"]["completed"]){
             update("achievements",true,"Tab Friend","completed");
             achievements["Tab Friend"]["completed"] = true;
-            achievement_completed("Tab Friend", ap);
+            achievement_completed("Tab Friend");
         }
     })
     
@@ -80,13 +82,18 @@ function achievement_main(){
         if(((e.key == "F12") || (e.ctrlKey && e.shiftKey && any([e.key=='I', e.key == 'J', e.key == 'C']))) &&  !achievements["The Inspector"]["completed"]){
         update("achievements",true,"The Inspector","completed");
         achievements["The Inspector"]["completed"] = true;
-        achievement_completed("The Inspector", ap);
+        achievement_completed("The Inspector");
         }  
     });
     if (document.URL.includes('learn3x3') && !achievements["Hands On"]["completed"]){
         update("achievements",true,"Hands On","completed");
         achievements["Hands On"]["completed"] = true;
-        achievement_completed("Hands On",ap);
+        achievement_completed("Hands On");
+    }
+    else if (document.URL.includes('other') && !achievements["Safety First"]["completed"]){
+        update("achievements",true,"Safety First","completed");
+        achievements["Safety First"]["completed"] = true;
+        achievement_completed("Safety First");
     }
 }
 
