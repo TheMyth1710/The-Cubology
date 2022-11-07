@@ -19,7 +19,9 @@ function random(choices){
 function loadinganim() {
     document.getElementById("body").style.display = "block";
     if (document.URL.includes('index.html')){
+        var ap = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
         document.getElementById("loader").style.display = "block";
+        document.getElementById("loader").setAttribute("onclick", `window.open('https://youtu.be/dQw4w9WgXcQ'); update("achievements",true,"?????","completed");achievement_completed('?????',${ap}); achievement_checker();`);
         document.getElementById("body").style.display = "none";
         document.querySelector(".know .bodying").innerHTML = random(cubing_facts);
         setTimeout(function(){

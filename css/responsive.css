@@ -306,6 +306,18 @@
     .error-img img{
         width: fit-content;
     }
+    .grid {
+        margin-inline: 1rem;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "grid-area1"
+            "grid-area2"
+            "grid-area3"
+            "grid-area4"
+            "grid-area5";
+        gap: 10px 10px;
+    }
+
     @keyframes popup-card{
         0%{
             opacity: 0;
