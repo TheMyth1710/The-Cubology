@@ -41,7 +41,7 @@ if (!localStorage.getItem("data")){
             "Safety First": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Accept the downloading option!"},
             "?????": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Get Scammed!", "title": "Here's Your Free Cube!", "desc": "Get Rickrolled!", "img": "uploads/images/rickastley.png"},
             "The Inspector": {"points": 10, "completed": false, "hint_unlocked": false, "hint": "Inspect me with your gun!"},
-            "The All-Rounder": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Finish Level 3 in Cube Simulator"}
+            "All-Rounder": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Finish Level 3 in Cube Simulator"}
         },
         "rewards": {
             20: {"claimed": false, "reward": "https://youtu.be/dQw4w9WgXcQ"},

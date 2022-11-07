@@ -106,19 +106,25 @@ function level_simulator(level, i=0){
     }else{
         done_moves = [];
         let score = document.querySelectorAll('.circlebtns.correct').length;
-        if (score == 5) var msg = `Level ${global_level} Completed!\rYou Scored ${score}/5!\rGo to the next level?`;
+        if (score == 5) var msg = `Level ${global_level} Completed!\rYou Scored ${score}/5!`;
         else var msg = `Level ${global_level} Failed!\rYou Scored ${score}/5!\rScore 5/5 to move to complete the level!`;
         update("levels",(score == 5) ? true: false,lvl.toString());
         i = 0;
         level_checker();
         setTimeout(() => {
             alert(msg);
+            if (global_level == 3){
+                var ap = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
+                update("achievements",true,"All-Rounder","completed");
+                achievement_completed("All-Rounder",ap);
+            }
             document.querySelectorAll('.cube-notation-row .circlebtns').forEach(btn => btn.classList = 'circlebtns');
         }, 100); // To Avoid Overriding Code
+
     }
 }
 
-function multiple_random_moves(j=0,level3=true){
+function multiple_random_moves(j=0){
     setTimeout(function(){
         if (j < 5){
             j++;
@@ -196,7 +202,7 @@ function success(move_list){
         if (reversed_list[i].includes("'")) reversed_list[i] = reversed_list[i].replace("'","");
         else reversed_list[i] += "'";
     }
-    return arraysEqual(reversed_list,level3_list);    
+    return arraysEqual(reversed_list,level3_list, true);    
 }
 
 function get_random_move(level3=false){

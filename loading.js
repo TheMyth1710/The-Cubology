@@ -18,7 +18,7 @@ function random(choices){
 
 function loadinganim() {
     document.getElementById("body").style.display = "block";
-    if (document.URL.includes('index.html')){
+    if (document.URL.includes('index')){
         var ap = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
         document.getElementById("loader").style.display = "block";
         document.getElementById("loader").setAttribute("onclick", `window.open('https://youtu.be/dQw4w9WgXcQ'); update("achievements",true,"?????","completed");achievement_completed('?????',${ap}); achievement_checker();`);
