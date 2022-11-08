@@ -362,13 +362,13 @@ html, body{
 
 
 .downloadcolor{
-    background-color: #C14E4F !important;
+    background-color: #C14E4F;
     text-shadow: 2px 2px #903A3B;
     color: white;
     letter-spacing: 2.5px;
     margin-right: 20px;
-    top: 0px !important;
-    margin: 0px !important;
+    top: 0px;
+    margin: 0px;
     height: 100%;
     width: 15%;
     right: 0px;
@@ -381,8 +381,8 @@ html, body{
     transition: all .5s ease;
 }
 .downloadcolor:hover{
-    background-color: #e65151 !important;
-    font-size:  24px !important;
+    background-color: #e65151;
+    font-size:  24px;
     text-shadow: 1.5px 1.5px #903A3B;
 }
 
