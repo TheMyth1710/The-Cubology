@@ -338,12 +338,19 @@
     #new-cube-btn-3{
         margin-right: 0;
     }
+    .tos{
+        padding: 10px;
+    }
     .tos h1{
-        font-size: 36px;
+        font-size: 30px;
+    }
+    .switch-button{
+        width: 320px;
+        font-size: 12px;
     }
     .tos .content{
         max-width: 40ch;
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 
