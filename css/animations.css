@@ -8,6 +8,12 @@
 /* Constants */
 /* Functions */
 /* Inheritance basis */
+.row-loading{
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
 .rubiks-loader {
     margin: auto;
     width: 130px;
