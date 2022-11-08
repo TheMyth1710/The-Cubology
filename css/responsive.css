@@ -306,17 +306,6 @@
     .error-img img{
         width: fit-content;
     }
-    .grid {
-        margin-inline: 1rem;
-        grid-template-columns: 100%;
-        grid-template-areas:
-            "grid-area1"
-            "grid-area2"
-            "grid-area3"
-            "grid-area4"
-            "grid-area5";
-        gap: 10px 10px;
-    }
 
     @keyframes popup-card{
         0%{
@@ -349,6 +338,13 @@
     #new-cube-btn-3{
         margin-right: 0;
     }
+    .tos h1{
+        font-size: 36px;
+    }
+    .tos .content{
+        max-width: 40ch;
+        font-size: 20px;
+    }
 }
 
 @media only screen and (max-width: 350px){
@@ -369,6 +365,16 @@
     }
     .card-holder p{
         font-size: 12px;
+    }
+    .tos h1{
+        font-size: 24px;
+    }
+    .tos .content{
+        font-size: 16px;
+    }
+    .switch-button{
+        width: 275px;
+        font-size: 10px;
     }
 }
 
