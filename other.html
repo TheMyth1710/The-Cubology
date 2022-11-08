@@ -21,7 +21,6 @@
   <body onload="loadinganim(); achievement_main();achievement_checker();"> 
     <!-- Loading Animation -->
     <div class="row-loading col-12 center center-text" id="loader">
-      <center>
       <div class="rubiks-loader">
           <div class="cube">
             <!-- base position -->
@@ -60,7 +59,6 @@
         <h1 class="heading inconsolata">DID YOU KNOW</h1>
         <p class="bodying inconsolata"></p>
       </div>
-      </center>
     </div>
     <!-- BODY OF THE HOME PAGE AND OTHER PAGES AS WELL -->
     <div id="body" style="display: none;">
@@ -78,7 +76,15 @@
               <a class="nav-link dropdown" href="learn3x3">Learn The 3x3</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link dropdown" href="more">More Puzzles</a>
+              <div class="dropdown">
+                <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false">
+                  More Puzzles
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="more#2x2">Learn The 2x2</a>
+                  <a class="dropdown-item" href="more#3x3">Learn The 4x4</a>
+                </div>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="solve">Solve My Cube</a>

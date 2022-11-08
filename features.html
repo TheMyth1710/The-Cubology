@@ -19,12 +19,9 @@
       <title>The Cubology</title>
   </head>
   <body onload="loadinganim(); achievement_main();achievement_checker();"> 
-    <!-- Loading Animation -->
     <div class="row-loading col-12 center center-text" id="loader">
-      <center>
       <div class="rubiks-loader">
           <div class="cube">
-            <!-- base position -->
             <div class="face front piece justanotherrow-top    column-left   yellow"></div>
             <div class="face front piece justanotherrow-top    column-centre green"></div>
             <div class="face front piece justanotherrow-top    column-right  white"></div>
@@ -35,22 +32,18 @@
             <div class="face front piece justanotherrow-bottom column-centre yellow"></div>
             <div class="face front piece justanotherrow-bottom column-right  red"></div>
         
-            <!-- first step: E', equator inverted -->
             <div class="face down  piece justanotherrow-top    column-centre green"></div>
             <div class="face down  piece justanotherrow-centre column-centre red"></div>
             <div class="face down  piece justanotherrow-bottom column-centre white"></div>
         
-            <!-- second step: M, middle -->
             <div class="face right piece justanotherrow-centre column-left   yellow"></div>
             <div class="face right piece justanotherrow-centre column-centre green"></div>
             <div class="face right piece justanotherrow-centre column-right  blue"></div>
         
-            <!-- third step: L, left -->
             <div class="face up    piece justanotherrow-top    column-left   yellow"></div>
             <div class="face up    piece justanotherrow-centre column-left   blue"></div>
             <div class="face up    piece justanotherrow-bottom column-left   green"></div>
         
-            <!-- fourth step: D, down -->
             <div class="face left  piece justanotherrow-bottom column-left     green"></div>
             <div class="face left  piece justanotherrow-bottom column-centre yellow"></div>
             <div class="face left  piece justanotherrow-bottom column-right  red"></div>
@@ -61,7 +54,6 @@
         <p class="bodying inconsolata"></p>
       </div>
     </div>
-    <!-- BODY OF THE HOME PAGE AND OTHER PAGES AS WELL -->
     <div id="body" style="display: none;">
       <nav class="navbar navbar-expand-lg navbar-light bg-light dropdown-menu-right" style="float:right;" id="navbar">
         <a class="navbar-brand" href="index"><img src="uploads/images/logo.png" class="logo" width="250em" alt="Logo"></a>
@@ -71,30 +63,38 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="features">Features</a> <!-- Cube Features -->
+              <a class="nav-link active" href="features">Features</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link dropdown" href="learn3x3">Learn The 3x3</a> <!-- Move Notation | Beginner | Advanced --> 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link dropdown" href="more">More Puzzles</a> <!-- Upon Hover... Idk-->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="solve">Solve My Cube</a> <!-- Redirection to Download Page-->
+              <a class="nav-link dropdown" href="learn3x3">Learn The 3x3</a>
             </li>
             <li class="nav-item">
               <div class="dropdown">
-                <button class="nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false">
+                  More Puzzles
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="more#2x2">Learn The 2x2</a>
+                  <a class="dropdown-item" href="more#3x3">Learn The 4x4</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="solve">Solve My Cube</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false">
                   Store
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <div class="dropdown-menu">
                   <a class="dropdown-item" href="https://www.cubelelo.com/" target="_blank">Cubelelo</a>
                   <a class="dropdown-item" href="https://www.gancube.com/" target="_blank">GanCube</a>
                   <a class="dropdown-item" href="https://www.thecubicle.com/" target="_blank">The Cubicle</a>
                   <a class="dropdown-item" href="https://ruwix.com/shop/" target="_blank">Ruwix</a>
                   <a class="dropdown-item" href="https://speedcubeshop.com/" target="_blank">Speed Cube Shop</a>
                 </div>
-              </div> <!-- Direct Connection Via an API to Other Platforms -->
+              </div>
             </li>
             <li class="nav-item">
               <div class="dropdown">

@@ -21,7 +21,6 @@
   <body onload="loadinganim(); level_checker(); achievement_main();achievement_checker();"> 
     <!-- Loading Animation -->
     <div class="row-loading col-12 center center-text" id="loader">
-      <center>
       <div class="rubiks-loader">
           <div class="cube">
             <!-- base position -->
@@ -60,7 +59,6 @@
         <h1 class="heading inconsolata">DID YOU KNOW</h1>
         <p class="bodying inconsolata"></p>
       </div>
-      </center>
     </div>
     <!-- BODY OF THE HOME PAGE AND OTHER PAGES AS WELL -->
     <div id="body" style="display: none;">
@@ -78,17 +76,25 @@
               <a class="nav-link active" href="#">Learn The 3x3</a> <!-- Move Notation | Beginner | Advanced --> 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="more">More Puzzles</a>
+              <div class="dropdown">
+                <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false">
+                  More Puzzles
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="more#2x2">Learn The 2x2</a>
+                  <a class="dropdown-item" href="more#3x3">Learn The 4x4</a>
+                </div>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="solve">Solve My Cube</a> <!-- Redirection to Download Page-->
             </li>
             <li class="nav-item">
               <div class="dropdown">
-                <button class="nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false">
                   Store
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <div class="dropdown-menu">
                   <a class="dropdown-item" href="https://www.cubelelo.com/" target="_blank">Cubelelo</a>
                   <a class="dropdown-item" href="https://www.gancube.com/" target="_blank">GanCube</a>
                   <a class="dropdown-item" href="https://www.thecubicle.com/" target="_blank">The Cubicle</a>
@@ -163,7 +169,7 @@
         </div>
       </div>
       <div class="cube-content">
-        <h2 class="inconsolata bold" animation typing-effect="true" typing-text="An Intuitive Approach:" typing-responsive="770"><span class="cursor"></span></h2>
+        <h2 class="inconsolata bold cube-title" animation typing-effect="true" typing-text="An Intuitive Approach:" typing-responsive="770"><span class="cursor"></span></h2>
         <div class="know-more" animation="scaleout 1s forwards">
           <label class="bold" id="cube-notations">
             <input type="checkbox" />
@@ -342,13 +348,13 @@
             <h2>Step 1. White Cross</h2>
             <div class="move-image-holder no-border center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-1.png" alt="white-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-1.png" alt="white-cross" />
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-2.png" alt="white-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-2.png" alt="white-cross" />
               </div>
             </div>
             <h4>Keep the white center piece on top, and find an edge in the bottom layer that has white.</h4>
@@ -357,58 +363,58 @@
             <h4>Rotate that face to bring the edge on the white center piece/layer.</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/white-cross-solve-1-1.png" alt="example" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/white-cross-solve-1-1.png" alt="example" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/white-cross-solve-1-2.png" alt="example" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/white-cross-solve-1-2.png" alt="example" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-solve-1-3.png" alt="example" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-solve-1-3.png" alt="example" />
               </div>
             </div>
             <h4>Another example:</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/white-cross-solve-2-1.png" alt="example" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/white-cross-solve-2-1.png" alt="example" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/white-cross-solve-2-2.png" alt="example" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/white-cross-solve-2-2.png" alt="example" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-solve-2-3.png" alt="example" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-solve-2-3.png" alt="example" />
               </div>
             </div>
             <h4>Anytime an edge piece is flipped/inverted (an example above), fix it by doing the following moves:</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-solve-3-1.png" alt="example" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-solve-3-1.png" alt="example" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-solve-3-2.png" alt="example" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-solve-3-2.png" alt="example" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-solve-3-3.png" alt="example" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-solve-3-3.png" alt="example" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-solve-3-4.png" alt="example" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-solve-3-4.png" alt="example" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-solve-3-5.png" alt="example" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-solve-3-5.png" alt="example" />
               </div>
             </div>
             <h4>Anytime you find a white edge piece that is not in the bottom layer, you can move it in the bottom layer by doing the following:</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-solve-4-1.png" alt="example" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-solve-4-1.png" alt="example" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-solve-4-2.png" alt="example" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-solve-4-2.png" alt="example" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-solve-4-3.png" alt="example" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-solve-4-3.png" alt="example" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-solve-4-4.png" alt="example" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-solve-4-4.png" alt="example" />
               </div>
             </div>
             <h4>Then simply solve it like you would do for any white edge piece in the bottom layer.</h4>
@@ -417,13 +423,13 @@
             <h2>Step 2. First Layer</h2>
             <div class="move-image-holder no-border center-img">
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/first-layer-1.png" alt="first-layer" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/first-layer-1.png" alt="first-layer" />
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/first-layer-2.png" alt="first-layer" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/first-layer-2.png" alt="first-layer" />
               </div>
             </div>
             <h4>Hold the white cross at the bottom (yellow on top).</h4>
@@ -433,19 +439,19 @@
                 <h4><u>Right handed 4-moves:</u></h4>   
                 <div class="move-image-holder center-img">
                   <div class="move-image">
-                    <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-1-1.png" alt="first-layer" />
+                    <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-1-1.png" alt="first-layer" />
                   </div>
                   <div class="move-image">
-                    <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-1-2.png" alt="first-layer" />
+                    <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-1-2.png" alt="first-layer" />
                   </div>
                   <div class="move-image">
-                    <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-1-3.png" alt="first-layer" />
+                    <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-1-3.png" alt="first-layer" />
                   </div>
                   <div class="move-image">
-                    <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-1-4.png" alt="first-layer" />
+                    <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-1-4.png" alt="first-layer" />
                   </div>
                   <div class="move-image">
-                    <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-1-5.png" alt="first-layer" />
+                    <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-1-5.png" alt="first-layer" />
                   </div>
                 </div>
               </div>
@@ -453,19 +459,19 @@
                 <h4><u>Left handed 4-moves:</u></h4>   
                 <div class="move-image-holder center-img">
                   <div class="move-image">
-                    <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-2-1.png" alt="first-layer" />
+                    <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-2-1.png" alt="first-layer" />
                   </div>
                   <div class="move-image">
-                    <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-2-2.png" alt="first-layer" />
+                    <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-2-2.png" alt="first-layer" />
                   </div>
                   <div class="move-image">
-                    <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-2-3.png" alt="first-layer" />
+                    <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-2-3.png" alt="first-layer" />
                   </div>
                   <div class="move-image">
-                    <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-2-4.png" alt="first-layer" />
+                    <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-2-4.png" alt="first-layer" />
                   </div>
                   <div class="move-image">
-                    <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-2-5.png" alt="first-layer" />
+                    <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-2-5.png" alt="first-layer" />
                   </div>
                 </div>
               </div>
@@ -475,40 +481,40 @@
             <h6 class="info-note"><b>Note:</b> A corner has three colors.</h6>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-3-1.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-3-1.png" alt="first-layer" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-3-2.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-3-2.png" alt="first-layer" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-3-3.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-3-3.png" alt="first-layer" />
               </div>
             </div>
             <h4>Hold the cube so the corner piece is on the front/right, and repeat the <span class="basic-link" onclick="clickanimation('4-move')">4-moves</span> until the corner is solved.</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-4-1.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-4-1.png" alt="first-layer" />
               </div>
               <div class="move-image small">
                 <h6 class="info-note">Right<br><span class="basic-link" onclick="clickanimation('4-move-right')">4-moves</span></h6>
                 <img class="cube-arrow small" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-4-2.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-4-2.png" alt="first-layer" />
               </div>
               <div class="move-image small">
                 <h6 class="info-note">Right<br><span class="basic-link" onclick="clickanimation('4-move-right')">4-moves</span></h6>
                 <img class="cube-arrow small" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-4-3.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-4-3.png" alt="first-layer" />
               </div>
               <div class="move-image small">
                 <h6 class="info-note">Right<br><span class="basic-link" onclick="clickanimation('4-move-right')">4-moves</span></h6>
                 <img class="cube-arrow small" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/first-layer-solve-4-4.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/first-layer-solve-4-4.png" alt="first-layer" />
               </div>
             </div>
             <h4>You can also use the <span class="basic-link" onclick="clickanimation('4-move-left')">left 4-moves</span> if you hold the piece on the front/left to start.</h4>
@@ -516,13 +522,13 @@
             <h2>Step 3. Second Layer</h2>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/second-layer-1.png" alt="second-layer" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/second-layer-1.png" alt="second-layer" />
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png" alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/second-layer-2.png" alt="second-layer" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/second-layer-2.png" alt="second-layer" />
               </div>
             </div>
             <h4>Find an edge piece on the top layer (yellow center on top) that doesn't have yellow as either of its pieces.</h4>
@@ -530,39 +536,39 @@
             <h4>Face the matched piece and check if the top color matches the right or left center.</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-1-1.png" alt="second-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-1-1.png" alt="second-layer" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-1-2.png" alt="second-layer">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-1-2.png" alt="second-layer">
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-1-3.png" alt="second-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-1-3.png" alt="second-layer" />
               </div>
             </div>
             <h4>If it matches the <u>right</u> side, do the following moves:</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-2-1.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-2-1.png" alt="first-layer" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-2-2.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-2-2.png" alt="first-layer" />
               </div>
               <div class="move-image small">
                 <h6 class="info-note">Right<br><span class="basic-link" onclick="clickanimation('4-move-right')">4-moves</span></h6>
                 <img class="cube-arrow small" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-2-3.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-2-3.png" alt="first-layer" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-2-4.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-2-4.png" alt="first-layer" />
               </div>
               <div class="move-image small">
                 <h6 class="info-note">Left<br><span class="basic-link" onclick="clickanimation('4-move-left')">4-moves</span></h6>
                 <img class="cube-arrow small" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-2-5.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-2-5.png" alt="first-layer" />
               </div>
             </div>
             <h4>How to memorize this algorithm:</h4>
@@ -575,27 +581,27 @@
             <h4>If it matches the <u>left</u> side, do the following moves:</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-3-1.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-3-1.png" alt="first-layer" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-3-2.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-3-2.png" alt="first-layer" />
               </div>
               <div class="move-image small">
                 <h6 class="info-note">Left<br><span class="basic-link" onclick="clickanimation('4-move-right')">4-moves</span></h6>
                 <img class="cube-arrow small" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-3-3.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-3-3.png" alt="first-layer" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-3-4.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-3-4.png" alt="first-layer" />
               </div>
               <div class="move-image small">
                 <h6 class="info-note">Right<br><span class="basic-link" onclick="clickanimation('4-move-left')">4-moves</span></h6>
                 <img class="cube-arrow small" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/second-layer-solve-3-5.png" alt="first-layer" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/second-layer-solve-3-5.png" alt="first-layer" />
               </div>
             </div>
             <h4>How to memorize this algorithm:</h4>
@@ -611,49 +617,49 @@
             <h2>Step 4. Yellow Cross</h2>
             <div class="move-image-holder no-border center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-1.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-1.png" alt="yellow-cross" />
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png" alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-2.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-2.png" alt="yellow-cross" />
               </div>
             </div>
             <h4>Hold the cube to match one of the following (ignore the corner pieces):</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-solve-1-1.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-solve-1-1.png" alt="yellow-cross" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-solve-1-2.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-solve-1-2.png" alt="yellow-cross" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-solve-1-3.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-solve-1-3.png" alt="yellow-cross" />
               </div>
             </div>
             <h4>Then do the following moves:</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-solve-2-1.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-solve-2-1.png" alt="yellow-cross" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-solve-2-2.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-solve-2-2.png" alt="yellow-cross" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-solve-2-3.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-solve-2-3.png" alt="yellow-cross" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-solve-2-4.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-solve-2-4.png" alt="yellow-cross" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-solve-2-5.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-solve-2-5.png" alt="yellow-cross" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-solve-2-6.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-solve-2-6.png" alt="yellow-cross" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/yellow-cross-solve-2-7.png" alt="yellow-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/yellow-cross-solve-2-7.png" alt="yellow-cross" />
               </div>
             </div>
             <h4>How to memorize this algorithm:</h4>
@@ -669,61 +675,61 @@
             <h2>Step 5. Match Cross Colors</h2>
             <div class="move-image-holder no-border center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-1.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-1.png" alt="match-cross-colors">
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png" alt="arrow">
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-2.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-2.png" alt="match-cross-colors">
               </div>
             </div>
             <h4>Turn the top face until 2 cross pieces match the side color (if all 4 match, you have finished this step!</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-1-1.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-1-1.png" alt="match-cross-colors">
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png" alt="arrow">
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-1-2.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-1-2.png" alt="match-cross-colors">
               </div>
             </div>
             <h4>Hold the 2 matching edges at the back/right. If they are across from each other, hold them in any way.</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-2-1.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-2-1.png" alt="match-cross-colors">
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-2-2.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-2-2.png" alt="match-cross-colors">
               </div>
             </div>
             <h4>Then do the following moves:</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-3-1.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-3-1.png" alt="match-cross-colors">
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-3-2.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-3-2.png" alt="match-cross-colors">
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-3-3.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-3-3.png" alt="match-cross-colors">
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-3-4.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-3-4.png" alt="match-cross-colors">
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-3-5.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-3-5.png" alt="match-cross-colors">
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-3-6.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-3-6.png" alt="match-cross-colors">
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-3-7.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-3-7.png" alt="match-cross-colors">
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-cross-colors-solve-3-8.png" alt="match-cross-colors">
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-cross-colors-solve-3-8.png" alt="match-cross-colors">
               </div>
             </div>
             <h4>How to memorize this algorithm:</h4>
@@ -736,57 +742,57 @@
             <h2>Step 6. Match Corners</h2>
             <div class="move-image-holder no-border center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-1.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-1.png" alt="match-corners" />
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png" alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-2.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-2.png" alt="match-corners" />
               </div>
             </div>
             <h4>A corner is in the correct position if all 3 colors on the piece match the surrounding colors.</h4>
             <h4>Examples of corner pieces in the correct position:</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-1-1.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-1-1.png" alt="match-corners" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-1-2.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-1-2.png" alt="match-corners" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-1-3.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-1-3.png" alt="match-corners" />
               </div>
             </div>
             <h4>If 1 corner is correct, hold it in the front/right (if 0 are correct, hold any corner in the front/right).</h4>
             <h4>Then do the following moves:</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-2-1.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-2-1.png" alt="match-corners" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-2-2.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-2-2.png" alt="match-corners" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-2-3.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-2-3.png" alt="match-corners" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-2-4.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-2-4.png" alt="match-corners" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-2-5.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-2-5.png" alt="match-corners" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-2-6.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-2-6.png" alt="match-corners" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-2-7.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-2-7.png" alt="match-corners" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-2-8.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-2-8.png" alt="match-corners" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/match-corners-solve-2-9.png" alt="match-corners" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/match-corners-solve-2-9.png" alt="match-corners" />
               </div>
             </div>
             <h4>How to memorize this algorithm:</h4>
@@ -800,13 +806,13 @@
             <h2>Step 7. Solve The Cube!</h2>
             <div class="move-image-holder no-border center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/solve-the-cube-1.png" alt="solve-the-cube" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/solve-the-cube-1.png" alt="solve-the-cube" />
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png" alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/solve-the-cube-2.png" alt="solve-the-cube" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/solve-the-cube-2.png" alt="solve-the-cube" />
               </div>
             </div>   
             <h4>It is very easy to make a mistake during this step, so I recommend reading the whole thing, including the <span class="basic-link" onclick="clickanimation('#common-mistakes')">common mistakes</span>, before attempting it.</h4>         
@@ -814,48 +820,48 @@
             <h4>You may have 2, 3, or 4 unsolved corner pieces.</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/solve-the-cube-solve-1-1.png" alt="solve-the-cube" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/solve-the-cube-solve-1-1.png" alt="solve-the-cube" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/solve-the-cube-solve-1-2.png" alt="solve-the-cube" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/solve-the-cube-solve-1-2.png" alt="solve-the-cube" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/solve-the-cube-solve-1-3.png" alt="solve-the-cube" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/solve-the-cube-solve-1-3.png" alt="solve-the-cube" />
               </div>
             </div>
             <h4>Repeatedly do the <span class="basic-link" onclick="clickanimation('4-move')">4-move sequence</span> until the front/right corner is solved (has yellow on the bottom).</h4>
             <h4>Then turn the bottom layer (not the whole cube) to bring an unsolved corner to the front/right. Repeat until the whole cube is solved.</h4>
             <div class="move-image-holder center-img">
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/solve-the-cube-solve-2-1.png" alt="solve-the-cube" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/solve-the-cube-solve-2-1.png" alt="solve-the-cube" />
               </div>
               <div class="move-image small">
                 <h6 class="info-note">Repeat <span class="basic-link" onclick="clickanimation('4-move')">4-moves</span></h6>
                 <img class="cube-arrow small" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/solve-the-cube-solve-2-2.png" alt="solve-the-cube" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/solve-the-cube-solve-2-2.png" alt="solve-the-cube" />
               </div>
               <div class="move-image small">
                 <h6 class="info-note">Turn the bottom</h6>
                 <img class="cube-arrow small" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/solve-the-cube-solve-2-3.png" alt="solve-the-cube" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/solve-the-cube-solve-2-3.png" alt="solve-the-cube" />
               </div>
               <div class="move-image small">
                 <h6 class="info-note">Repeat <span class="basic-link" onclick="clickanimation('4-move')">4-moves</span></h6>
                 <img class="cube-arrow small" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/solve-the-cube-solve-2-4.png" alt="solve-the-cube" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/solve-the-cube-solve-2-4.png" alt="solve-the-cube" />
               </div>
               <div class="move-image small">
                 <h6 class="info-note">Turn the bottom</h6>
                 <img class="cube-arrow small" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/solve-the-cube-solve-2-5.png" alt="solve-the-cube" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/solve-the-cube-solve-2-5.png" alt="solve-the-cube" />
               </div>
             </div>
             <div id="common-mistakes">
@@ -879,13 +885,13 @@
             <h2>Step 1. Cross</h2>
             <div class="move-image-holder no-border center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-1.png" alt="white-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-1.png" alt="white-cross" />
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/white-cross-2.png" alt="white-cross" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/white-cross-2.png" alt="white-cross" />
               </div>
             </div>
             <h4>You should already be familiar with the cross in the <span class="basic-link" onclick=" $('#beginner-method').trigger('click');clickanimation('white-cross');">beginner's method</span>.</h4>
@@ -893,19 +899,19 @@
             <h2>Step 2. F2L</h2>
             <div class="move-image-holder no-border center-img">
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/f2l-1.png" alt="f2l" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/f2l-1.png" alt="f2l" />
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/f2l-2.png" alt="f2l" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/f2l-2.png" alt="f2l" />
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img img-inverted" src="uploads/images/cube-solve/f2l-3.png" alt="f2l" />
+                <img class="cube-img img-inverted" src="uploads/images/cube-solve/3x3/f2l-3.png" alt="f2l" />
               </div>
             </div>
             <h4>Instead of solving layer by layer, with F2L you can solve 2 layers at the same time. The name goes by <b>First 2 Layers</b>. Though, the concepts are harder than the beginner's method, with some practice F2L is <i>much faster</i> than the beginner's method.</h4>
@@ -913,13 +919,13 @@
             <h2>Step 3. OLL</h2>   
             <div class="move-image-holder no-border center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/oll-1.png" alt="oll" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/oll-1.png" alt="oll" />
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/oll-2.png" alt="oll" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/oll-2.png" alt="oll" />
               </div>
             </div>  
             <h4><b>Orientation of the Last Layer (OLL)</b> solves the whole yellow by applying one of 52 algorithms. Don't worry, beginner OLL requires only 10 algorithms.</h4>
@@ -932,13 +938,13 @@
             <h2>Step 4. PLL</h2>   
             <div class="move-image-holder no-border center-img">
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/pll-1.png" alt="pll" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/pll-1.png" alt="pll" />
               </div>
               <div class="move-image">
                 <img class="cube-arrow" src="uploads/images/arrow.png"  alt="arrow" />
               </div>
               <div class="move-image">
-                <img class="cube-img" src="uploads/images/cube-solve/pll-2.png" alt="pll" />
+                <img class="cube-img" src="uploads/images/cube-solve/3x3/pll-2.png" alt="pll" />
               </div>
             </div>  
             <h4><b>Permutation of the Last Layer (OLL)</b> solves the cube and has 16 total algorithms. Don't worry, beginner PLL requires only 6 algorithms.</h4>
@@ -957,63 +963,63 @@
           <div class="op-0" onclick="window.open('uploads/pdfs/pll-algorithms.pdf')" animation="scalein 1s forwards">
             <div>
               <span class="label label-intermediate">Intermediate</span>
-              <img src="uploads/images/cube-solve/pll-alg.png" class="alg-img" alt="pll">
+              <img src="uploads/images/cube-solve/3x3/pll-alg.png" class="alg-img" alt="pll">
             </div>
             <h4 class="alg-title">PLL Algorithms</h4>
           </div>
           <div class="op-0" onclick="window.open('uploads/pdfs/oll-algorithms.pdf')" animation="scalein 1s forwards">
             <div>
               <span class="label label-intermediate">Intermediate</span>
-              <img src="uploads/images/cube-solve/oll-alg.png" class="alg-img" alt="oll">
+              <img src="uploads/images/cube-solve/3x3/oll-alg.png" class="alg-img" alt="oll">
             </div>
             <h4 class="alg-title">OLL Algorithms</h4>
           </div>
           <div class="op-0" onclick="window.open('uploads/pdfs/wv-algorithms.pdf')" animation="scalein 1s forwards">
             <div>
               <span class="label label-advanced">Advanced</span>
-              <img src="uploads/images/cube-solve/wv-alg.png" class="alg-img" alt="wv">
+              <img src="uploads/images/cube-solve/3x3/wv-alg.png" class="alg-img" alt="wv">
             </div>
             <h4 class="alg-title">WV Algorithms</h4>
           </div>
           <div class="op-0" onclick="window.open('uploads/pdfs/coll-algorithms.pdf')" animation="scalein 1s forwards">
             <div>
               <span class="label label-advanced">Advanced</span>
-              <img src="uploads/images/cube-solve/coll-alg.png" class="alg-img" alt="coll">
+              <img src="uploads/images/cube-solve/3x3/coll-alg.png" class="alg-img" alt="coll">
             </div>
             <h4 class="alg-title">COLL Algorithms</h4>
           </div>
           <div class="op-0" onclick="window.open('uploads/pdfs/ble-algorithms.pdf')" animation="scalein 1s forwards">
             <div>
               <span class="label label-advanced">Advanced</span>
-              <img src="uploads/images/cube-solve/ble-alg.png" class="alg-img" alt="ble">
+              <img src="uploads/images/cube-solve/3x3/ble-alg.png" class="alg-img" alt="ble">
             </div>
             <h4 class="alg-title">BLE Algorithms</h4>
           </div>
           <div class="op-0" onclick="window.open('uploads/pdfs/easy-vls-algorithms.pdf')" animation="scalein 1s forwards">
             <div>
               <span class="label label-advanced">Advanced</span>
-              <img src="uploads/images/cube-solve/easy-vls-alg.png" class="alg-img" alt="easy-cls">
+              <img src="uploads/images/cube-solve/3x3/easy-vls-alg.png" class="alg-img" alt="easy-cls">
             </div>
             <h4 class="alg-title">Easy VLS Algorithms</h4>
           </div>
           <div class="op-0" onclick="window.open('uploads/pdfs/easy-cls-algorithms.pdf')" animation="scalein 1s forwards">
             <div>
               <span class="label label-advanced">Advanced</span>
-              <img src="uploads/images/cube-solve/easy-cls-alg.png" class="alg-img" alt="easy-cls">
+              <img src="uploads/images/cube-solve/3x3/easy-cls-alg.png" class="alg-img" alt="easy-cls">
             </div>
             <h4 class="alg-title">Easy CLS Algorithms</h4>
           </div>
           <div class="op-0" onclick="window.open('uploads/pdfs/f2l-algorithms-different-slot-positions.pdf')" animation="scalein 1s forwards">
             <div>
               <span class="label label-advanced">Advanced</span>
-              <img src="uploads/images/cube-solve/f2l-algorithms-different-slot-positions-alg.png" class="alg-img" alt="f2l-algorithms-different-slot-positions">
+              <img src="uploads/images/cube-solve/3x3/f2l-algorithms-different-slot-positions-alg.png" class="alg-img" alt="f2l-algorithms-different-slot-positions">
             </div>
             <h4 class="alg-title">F2L Algorithms (Different slot positions)</h4>
           </div>
           <div class="op-0" onclick="window.open('uploads/pdfs/useful-f2l-algorithms.pdf')" animation="scalein 1s forwards">
             <div>
               <span class="label label-advanced">Advanced</span>
-              <img src="uploads/images/cube-solve/useful-f2l-alg.png" class="alg-img" alt="useful-f2l">
+              <img src="uploads/images/cube-solve/3x3/useful-f2l-alg.png" class="alg-img" alt="useful-f2l">
             </div>
             <h4 class="alg-title">Useful F2L Algorithms</h4>
           </div>

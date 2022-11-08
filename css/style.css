@@ -1358,7 +1358,7 @@ hr{
     text-align: left;
 }
 
-.cube-content h2:first-of-type{
+.cube-content h2.cube-title{
     font-size: 3rem;
     padding: 0.5rem;
     width: fit-content;
