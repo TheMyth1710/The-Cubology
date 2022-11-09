@@ -91,10 +91,10 @@
             </li>
             <li class="nav-item">
               <div class="dropdown">
-                <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false">
+                <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false" toggleClass>
                   Store
                 </button>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu" id="store-drop">
                   <a class="dropdown-item" href="https://www.cubelelo.com/" target="_blank">Cubelelo</a>
                   <a class="dropdown-item" href="https://www.gancube.com/" target="_blank">GanCube</a>
                   <a class="dropdown-item" href="https://www.thecubicle.com/" target="_blank">The Cubicle</a>
@@ -135,7 +135,7 @@
         <br>
           <div class="btn btn-index col-5 center-text overlay" id="downloadoverlay" onclick="device_checker(true);"></div>
           <button class="btn btn-index col-5 center-text inconsolata" id="downloadbtn" onclick="window.location='download'" animation="popdown-homebtns 0.5s forwards"><i class="fa-solid fa-download center-text" id="icon" style="float: left;">&nbsp;Download</i></button>
-          <button class="btn btn-index col-5 center-text inconsolata" id="storebtn" onclick="window.location='store'" animation="popdown-homebtns 0.5s 0.2s forwards"><i class="fa-solid fa-cart-shopping center-text" id="icon">&nbsp;Store</i></button>
+          <button class="btn btn-index col-5 center-text inconsolata" id="storebtn" onclick="displayNavbar();toggleClass('#store-drop', 'active')" animation="popdown-homebtns 0.5s 0.2s forwards"><i class="fa-solid fa-cart-shopping center-text" id="icon">&nbsp;Store</i></button>
       </div>
       <div class="card-holder">
         <div class="card op-0" id="card-1" onclick="window.location='features#2x-faster-solutions'" data-tilt data-tilt-perspective="500" animation="popup-card 1.5s forwards">
@@ -214,8 +214,8 @@
           </div>
           <div class="new-cube-btn-holder">
             <button class="btn new-cube-btn" id="new-cube-btn-1" onclick="window.location='learn3x3'" animation="scalein 0.5s forwards">Start With The 3x3</button>
-            <button class="btn new-cube-btn" id="new-cube-btn-2" onclick="window.location='morecubes'" animation="scalein 0.5s forwards">Explore More Cubes</button>
-            <button class="btn new-cube-btn" id="new-cube-btn-3" onclick="window.location='store'" animation="scalein 0.5s forwards">Buy Some Cubes</button>
+            <button class="btn new-cube-btn" id="new-cube-btn-2" onclick="window.location='more'" animation="scalein 0.5s forwards">Explore More Cubes</button>
+            <button class="btn new-cube-btn" id="new-cube-btn-3" onclick="displayNavbar();toggleClass('#store-drop', 'active')" animation="scalein 0.5s forwards">Buy Some Cubes</button>
           </div>
           <hr class="index-separator">
         </div>

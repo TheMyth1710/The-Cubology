@@ -118,3 +118,28 @@ document.onscroll = function(){
     }
     lastScrollTop = st <= 0 ? 0 : st;
 }
+
+function displayNavbar(){
+    navbar.style.animation = 'popdown-navbar 1s forwards'
+    navbar.style.visibility = 'visible'
+}
+
+function toggleClass(elem, className){
+    console.log(elem);
+    document.querySelector(elem).classList.toggle(className);
+}
+// $(document).ready(function(){
+
+//     $(document).on("click","#storebtn",function(){
+//         console.log('haha')
+//         $("#store-drop").click();
+//         document.querySelector("#store-drop").parentElement.querySelector(".dropdown-menu").style.display = "block";
+//     });
+// });
+
+document.querySelectorAll(".dropdown button").forEach(btn => {
+    if (btn.hasAttribute("toggleClass")){
+        console.log(btn.parentElement.querySelector(".dropdown-menu").id);
+        btn.setAttribute("onclick", `toggleClass('#${btn.parentElement.querySelector(".dropdown-menu").id}', 'active')`)
+    }
+});
