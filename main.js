@@ -1,5 +1,4 @@
 function update(key,value,sub_key=null,sub_sub_key=null){
-    console.log(key,value,sub_key,sub_sub_key)
     data = JSON.parse(localStorage.getItem("data"));
     if (sub_sub_key){
         data[key][sub_key][sub_sub_key] = value;
@@ -19,7 +18,6 @@ function any(iterable) {
 }
 
 function arraysEqual(a, b, notations=false) {
-    console.log(a,b,notations);
     if (a === b) return true;
     if (a == null || b == null) return false;
     if (a.length !== b.length) return false;  
@@ -123,23 +121,9 @@ function displayNavbar(){
     navbar.style.animation = 'popdown-navbar 1s forwards'
     navbar.style.visibility = 'visible'
 }
-
 function toggleClass(elem, className){
-    console.log(elem);
-    document.querySelector(elem).classList.toggle(className);
-}
-// $(document).ready(function(){
+    if (window.innerWidth <= 991) document.querySelector(".navbar-toggler").click();
+        document.querySelector(elem).classList.toggle(className);
+}   
 
-//     $(document).on("click","#storebtn",function(){
-//         console.log('haha')
-//         $("#store-drop").click();
-//         document.querySelector("#store-drop").parentElement.querySelector(".dropdown-menu").style.display = "block";
-//     });
-// });
-
-document.querySelectorAll(".dropdown button").forEach(btn => {
-    if (btn.hasAttribute("toggleClass")){
-        console.log(btn.parentElement.querySelector(".dropdown-menu").id);
-        btn.setAttribute("onclick", `toggleClass('#${btn.parentElement.querySelector(".dropdown-menu").id}', 'active')`)
-    }
-});
+document.querySelectorAll(".dropdown").forEach(dropdown => (dropdown.hasAttribute("toggleClass")) ? dropdown.querySelector("button").setAttribute("onclick", `toggleClass('#${dropdown.querySelector(".dropdown-menu").id}', 'active')`) : "");

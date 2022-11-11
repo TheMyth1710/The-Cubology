@@ -73,7 +73,7 @@
               <a class="nav-link" href="features">Features</a> <!-- Cube Features -->
             </li>
             <li class="nav-item">
-              <a class="nav-link dropdown" href="learn3x3">Learn The 3x3</a> <!-- Move Notation | Beginner | Advanced --> 
+              <a class="nav-link" href="learn3x3">Learn The 3x3</a>
             </li>
             <li class="nav-item">
               <div class="dropdown">
@@ -90,8 +90,8 @@
               <a class="nav-link" href="solve">Solve My Cube</a> <!-- Redirection to Download Page-->
             </li>
             <li class="nav-item">
-              <div class="dropdown">
-                <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false" toggleClass>
+              <div class="dropdown" toggleClass>
+                <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false">
                   Store
                 </button>
                 <div class="dropdown-menu" id="store-drop">
@@ -135,7 +135,7 @@
         <br>
           <div class="btn btn-index col-5 center-text overlay" id="downloadoverlay" onclick="device_checker(true);"></div>
           <button class="btn btn-index col-5 center-text inconsolata" id="downloadbtn" onclick="window.location='download'" animation="popdown-homebtns 0.5s forwards"><i class="fa-solid fa-download center-text" id="icon" style="float: left;">&nbsp;Download</i></button>
-          <button class="btn btn-index col-5 center-text inconsolata" id="storebtn" onclick="displayNavbar();toggleClass('#store-drop', 'active')" animation="popdown-homebtns 0.5s 0.2s forwards"><i class="fa-solid fa-cart-shopping center-text" id="icon">&nbsp;Store</i></button>
+          <button class="btn btn-index col-5 center-text inconsolata" id="storebtn" onclick="displayNavbar();toggleClass('#store-drop', 'active');" animation="popdown-homebtns 0.5s 0.2s forwards"><i class="fa-solid fa-cart-shopping center-text" id="icon">&nbsp;Store</i></button>
       </div>
       <div class="card-holder">
         <div class="card op-0" id="card-1" onclick="window.location='features#2x-faster-solutions'" data-tilt data-tilt-perspective="500" animation="popup-card 1.5s forwards">

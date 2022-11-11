@@ -269,9 +269,11 @@ html, body{
 } 
 .dropdown-menu{
     background-color: var(--blue);
+}
+[toggleClass] .dropdown-menu{
     display: none !important;
 }
-.dropdown-menu.active{
+[toggleClass] .dropdown-menu.active{
     display: block !important;
 }
 .dropdown-item{
