@@ -81,10 +81,15 @@ function clickanimation(id, key='background-color', before='', after='orange', t
     style.innerHTML = `@keyframes clickanimation{0%{${key}: ${before};}50%{${key}: ${after};}100%{${key}: ${before};}}`;
     document.getElementsByTagName('head')[0].appendChild(style);
     obj.style.animation = `clickanimation ${time}s`;
+    let execute = 0
     obj.addEventListener("animationend",()=>{
         obj.style.animation = '';
+        if (document.URL.includes('?click=true') && !execute){obj.click(); execute=1};
     })
-    if (document.readyState === "complete") obj.scrollIntoView();
+    if (document.readyState === "complete"){
+        obj.scrollIntoView();
+    }
+    
 }
 
 function home_nav(nav=null, start_page = 'index.html', navigate=true){

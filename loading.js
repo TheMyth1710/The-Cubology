@@ -32,7 +32,7 @@ function loadinganim() {
             document.getElementById("loader").style.display = "none";
             document.getElementById("body").style.display = "block";
             if (document.URL.includes("#")){
-                let id = document.URL.split("#").at(-1);
+                let id = window.location.hash.split("?")[0].slice(1,)
                 if (document.getElementById(id)){
                     clickanimation(id);
                     document.getElementById(id).style.opacity = '1';
