@@ -2,7 +2,7 @@ from tkinter import *
 import tkinter.font as font
 from PIL import ImageTk, Image
 from webbrowser import open as wbopen
-
+from functions import *
 # Initialize
 root = Tk()
 root.title("The Cubology")
@@ -106,13 +106,16 @@ def submit(e): # The Scramble Function
         if move not in accepted_moves:
             error_label.configure(text="Please enter valid moves!")
             break
+    scramble = reversed(scramble)
+    res_1 = reverse_move(scramble) # reverse the scramble
+    
 
 title_bar = Frame(root, bg="#101426", relief="raised", bd=0)
 title_bar.pack(side=TOP, fill=X)
 FloatingWindow(title_bar)
 
 
-title_logo = Label(title_bar, image=logo, font=("Inconsolata"), bg="#101426",  bd=0)
+title_logo = Label(title_bar, image=logo, font=("Inconsolata"), bg="#101426",  bd=0, cursor="hand2")
 title_logo.pack(side=LEFT, padx=10, pady=4)
 title_logo.bind("<Button-1>", func=lambda e: wbopen("https://themyth1710.github.io/The-Cubology/index"))
 
@@ -142,11 +145,11 @@ scramble_input = Entry(padding, font=("Inconsolata 12"), bg=darkblue, fg=cream, 
 error_label = Label(main, text="", font=("Inconsolata 9 italic"), bg=darkblue, fg='#f66364', width=53, anchor='w')
 scramble_input.bind("<Button-1>", func=lambda e: error_label.configure(text=""))
 
-small_label = Label(main, text="Learn Cube Notations", font=("Inconsolata 9"), bg=darkblue, fg=aqua, relief="sunken", bd=0)
+small_label = Label(main, text="Learn Cube Notations", font=("Inconsolata 9"), bg=darkblue, fg=aqua, relief="sunken", bd=0, cursor="hand2")
 small_label.bind("<Button-1>", func=lambda e: wbopen("http://themyth1710.github.io/The-Cubology/learn3x3#cube-notations?click=true"))
 underline_font(small_label)
 
-padding_1 = Frame(main, background=aqua)
+padding_1 = Frame(main, background=aqua, cursor="hand2")
 submit_btn = Label(padding_1, text="Lets Go!", font=("Inconsolata 14"), bg=aqua, fg=darkblue, relief="sunken", bd=0)
 Hover(padding_1, darkaqua, aqua, submit_btn)
 submit_btn.bind("<Button-1>", submit)
