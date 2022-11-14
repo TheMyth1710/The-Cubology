@@ -106,8 +106,11 @@ def submit(e): # The Scramble Function
         if move not in accepted_moves:
             error_label.configure(text="Please enter valid moves!")
             break
-    scramble = reversed(scramble)
-    res_1 = reverse_move(scramble) # reverse the scramble
+    res_1 = reverse_move(reversed(scramble)) # reverse the scramble
+    res_2 = solveCube(scramble, 'Beginner')
+    res_3 = solveCube(scramble, 'CFOP')
+    res_4 = solveCube(scramble, 'Kociemba')
+    print(res_4)
     
 
 title_bar = Frame(root, bg="#101426", relief="raised", bd=0)
