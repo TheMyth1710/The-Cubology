@@ -23,22 +23,24 @@ def YBRtoWGR(move:str):
         if k1 == move: return move.replace(k1, v1)
         elif v1 == move: return move.replace(v1, k1)
     return move
-
-def cleanSol(sol):
-    res = '-'.join(sol)
-    moveList = ['U', "U'", 'U2', 'D', "D'", 'D2', 'R', "R'", 'R2', 'L', "L'", 'L2', 'F', "F'", 'F2', 'B', "B'", 'B2', 'Y', "Y'", 'X', "X'", 'Z', "Z'", 'M', "M'", 'M2', 'E', "E'", 'E2', 'S', "S'", 'S2']
-    for move in moveList:
-        if move in res:
-            if (literal:= (f"{move}-"*4)[:-1]) and literal in res:
-                res = res.replace(literal,"")
-            if (literal:= f"{move}-{move}'") and literal in res:
-                res = res.replace(literal,"")
-            if (literal:= f"{move}'-{move}") and literal in res:
-                res = res.replace(literal,"")
-            if (literal:= f"{move}-{move}") and literal in res:
-                res = res.replace(literal,move+"2")
-    return [r for r in res.split('-') if r] # remove emptry strings
-
+def cleanSol(lst):
+    res = [lst[0]]
+    for i in range(1, len(lst)):
+        item = lst[i]
+        inverse = item.removesuffix("'") if item.endswith("'") else item
+        handled = False
+        if res and res[-1] == inverse:
+            res.pop()
+            handled = True
+        if len(res) >= 4 and set(res[-3:]) == {item}:
+            del res[-3:]
+            handled = True
+        if res and res[-1] == item:
+            res[-1] = f"{item}2"
+            handled = True
+        if not handled:
+            res.append(item)
+    return res
 def solveCube(scramble, solType:str, cube_state=None):
     cube = [
         [
@@ -137,5 +139,4 @@ def solveCube(scramble, solType:str, cube_state=None):
         cube = scrambleToCube(move, cube, 1)
     cube = ''.join(listToString(cube))
     return cleanSol([YBRtoWGR(str(move)) for move in utils.solve(cube, solType)])
-
-# add support to replace U, U to U2 and U, U, U, U to nothing for CFOP and beginner
+print(cleanSol(["R2", "R'", "R2", "R"]))
