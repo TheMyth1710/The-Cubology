@@ -3,6 +3,7 @@ import tkinter.font as font
 from PIL import ImageTk, Image
 from webbrowser import open as wbopen
 from functions import *
+from copy import deepcopy
 # Initialize
 root = Tk()
 root.title("The Cubology")
@@ -99,6 +100,7 @@ def underline_font(label):
 def submit(e): # The Scramble Function
     accepted_moves = ['U', "U'", 'U2', 'D', "D'", 'D2', 'R', "R'", 'R2', 'L', "L'", 'L2', 'F', "F'", 'F2', 'B', "B'", 'B2']
     scramble = scramble_input.get()
+    print(scramble)
     for splitter in [', ', ',', ' ']:
         if isinstance(scramble, list) and len(scramble) > 1: break
         scramble = ''.join(scramble).split(splitter)
@@ -109,8 +111,8 @@ def submit(e): # The Scramble Function
     res_1 = reverse_move(reversed(scramble)) # reverse the scramble
     res_2 = solveCube(scramble, 'Beginner')
     res_3 = solveCube(scramble, 'CFOP')
-    res_4 = solveCube(scramble, 'Kociemba')
-    print(res_4)
+    res_4 = solveCube(deepcopy(scramble), 'Kociemba')
+    output.configure(text=' '.join(res_4))
     
 
 title_bar = Frame(root, bg="#101426", relief="raised", bd=0)
@@ -146,6 +148,7 @@ border = Frame(main, background=cream)
 padding = Frame(border, background=darkblue)
 scramble_input = Entry(padding, font=("Inconsolata 12"), bg=darkblue, fg=cream, bd=0, insertbackground=cream, width=40)
 error_label = Label(main, text="", font=("Inconsolata 9 italic"), bg=darkblue, fg='#f66364', width=53, anchor='w')
+output = Label(main, text="", font=("Inconsolata 16"), bg=darkblue, fg=cream, bd=0)
 scramble_input.bind("<Button-1>", func=lambda e: error_label.configure(text=""))
 
 small_label = Label(main, text="Learn Cube Notations", font=("Inconsolata 9"), bg=darkblue, fg=aqua, relief="sunken", bd=0, cursor="hand2")
@@ -165,7 +168,7 @@ error_label.pack(side=TOP)
 small_label.pack(side=TOP, pady=5)
 padding_1.pack(side=TOP, pady=10)
 submit_btn.pack(side=TOP, padx=7.5, pady=7.5)
-
+output.pack(side=TOP)
 center(root)
 root.bind("<Map>", func=lambda e: root.overrideredirect(True))
 root.mainloop()

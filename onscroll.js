@@ -21,7 +21,7 @@ const observer = new IntersectionObserver((entries, observer) => {
                     obj.target.classList.add("animationend");
                     obj.target.style.borderRight = '3px solid transparent';
                     if (obj.target == document.querySelector('.wca-title h1')){
-                        obj.target.setAttribute("onclick","window.open('https://www.worldcubeassociation.org');");
+                        obj.target.setAttribute("onclick","window.open('https://www.worldcubeassociation.org');achievement_completed('Cubing Spirit');");
                     }
                 }
                 function type(animate=true){

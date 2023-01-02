@@ -1,5 +1,5 @@
 function update(key,value,sub_key=null,sub_sub_key=null){
-    data = JSON.parse(localStorage.getItem("data"));
+    data = JSON.parse(localStorage.getItem("cubologyData"));
     if (sub_sub_key){
         data[key][sub_key][sub_sub_key] = value;
     }else if (sub_key){
@@ -7,7 +7,7 @@ function update(key,value,sub_key=null,sub_sub_key=null){
     }else{
         data[key] = value;
     }
-    localStorage.setItem("data",JSON.stringify(data));
+    localStorage.setItem("cubologyData",JSON.stringify(data));
 } // Updates the localStorage with specific value
 
 function any(iterable) {
@@ -30,21 +30,31 @@ function arraysEqual(a, b, notations=false) {
     }
     return true;
 }
-
-if (!localStorage.getItem("data")){
-    localStorage.setItem("data", JSON.stringify({
+var data = JSON.parse(localStorage.getItem("cubologyData"))
+if (data && data["achievements"] && data["rewards"] && data["levels"] && data["ap"] && data["3x3"]){
+    if (!(data && Object.keys(data["achievements"]).length == 10 && Object.keys(data["rewards"]).length == 3 && Object.keys(data["levels"]).length == 4 && Object.keys(data["3x3"]).length == 3)){
+        console.log('reset')
+        reset();
+    }
+}else reset();
+function reset(){
+    localStorage.setItem("cubologyData", JSON.stringify({
         "achievements": {
             "Tab Friend": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Press <kbd>tab</kbd> 5 times"},
             "Hands On": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Open <kbd>Learn the 3x3</kbd> page"},
             "Safety First": {"points": 5, "completed": false, "hint_unlocked": false, "hint": "Open <kbd>privacy policy</kbd> section"},
-            "?????": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Get Scammed!", "title": "Here's Your Free Cube!", "desc": "Get Rickrolled!", "img": "uploads/images/rickastley.png"},
+            "Cubing Spirit": {"points": 10, "completed": false, "hint_unlocked": false, "hint": "Redirect to WCA!"},
             "The Inspector": {"points": 10, "completed": false, "hint_unlocked": false, "hint": "Inspect me with your gun!"},
-            "All-Rounder": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Finish Level 3 in Cube Simulator"}
+            "The Terminator": {"points": 10, "completed": false, "hint_unlocked": false, "hint": "Escape the cube animation!"},
+            "Smart Dev": {"points": 10, "completed": false, "hint_unlocked": false, "hint": "It's a secret function!"},
+            "All-Rounder": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Finish Level 3 in Cube Simulator"},
+            "?????": {"points": 15, "completed": false, "hint_unlocked": false, "hint": "Get Scammed!", "title": "Here's Your Free Cube!", "desc": "Get Rickrolled!", "img": "uploads/images/rickastley.png"},
+            "Easter Bunny": {"points": 15, "completed": false, "hint_unlocked": false},
         },
         "rewards": {
-            20: {"claimed": false, "reward": "https://youtu.be/dQw4w9WgXcQ"},
-            50: {"claimed": false, "reward": ""},
-            100: {"claimed": false, "reward": ""}
+            20: {"claimed": false, "reward": "https://gitfront.io/r/TheMyth1710/KNCfhmNEkiER/TicTacToe/"},
+            50: {"claimed": false, "reward": "https://gitfront.io/r/TheMyth1710/4edPb7MA22Vc/Temporary-Files-Remover/"},
+            100: {"claimed": false, "reward": "https://gitfront.io/r/TheMyth1710/WoK6x9GK6sxe/Jarvis/"}
         },
         "ap": 0,
         "levels": {
@@ -60,7 +70,6 @@ if (!localStorage.getItem("data")){
         }
     }))
 }
-
 function device_checker(click=false){
     let downloadbtn = document.getElementById("downloadbtn");
     let overlay = document.getElementById("downloadoverlay");
@@ -132,3 +141,8 @@ function toggleClass(elem, className){
 }   
 
 document.querySelectorAll(".dropdown").forEach(dropdown => (dropdown.hasAttribute("toggleClass")) ? dropdown.querySelector("button").setAttribute("onclick", `toggleClass('#${dropdown.querySelector(".dropdown-menu").id}', 'active')`) : "");
+
+function easter(){
+    setTimeout(console.log.bind(console, '%cYes, dev! It worked!', 'font-size: 16px'))
+    achievement_completed('Smart Dev')
+}

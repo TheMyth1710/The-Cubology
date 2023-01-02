@@ -1,11 +1,12 @@
-var achievements = JSON.parse(localStorage.getItem("data"))["achievements"];
-var ap = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
+var achievements = JSON.parse(localStorage.getItem("cubologyData"))["achievements"];
+var ap = parseInt(JSON.parse(localStorage.getItem("cubologyData"))["ap"]);
 var achievements_DOM = document.querySelectorAll(".achievement.locked");
 
 
-function achievement_completed(achievement, points){
-    points = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
-    var achievements = JSON.parse(localStorage.getItem("data"))["achievements"];
+function achievement_completed(achievement){
+    update("achievements",true,achievement,"completed");
+    var points = parseInt(JSON.parse(localStorage.getItem("cubologyData"))["ap"]);
+    var achievements = JSON.parse(localStorage.getItem("cubologyData"))["achievements"];
     var ap = points+parseInt(achievements[achievement]["points"]);
     var achievements_DOM = document.querySelectorAll(".achievement.locked");
     update("ap", ap);
@@ -32,9 +33,10 @@ function achievement_retriever(obj){
 }
 
 function achievement_checker(){ // Check for Completed Achievements and Update
-    var achievements = JSON.parse(localStorage.getItem("data"))["achievements"];
+    var achievements = JSON.parse(localStorage.getItem("cubologyData"))["achievements"];
+    var completed = [];
     var achievements_DOM = document.querySelectorAll(".achievement.locked");
-    var ap = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
+    var ap = parseInt(JSON.parse(localStorage.getItem("cubologyData"))["ap"]);
     document.querySelector('.ap-title h1').innerHTML = `Achievements: ${ap}/100 Points`;
     achievements_DOM.forEach(obj => {
         for (const [achievement, value] of Object.entries(achievements)){
@@ -42,6 +44,7 @@ function achievement_checker(){ // Check for Completed Achievements and Update
             if (name == achievement){
                 if (value["completed"]){
                     achievement_retriever(obj);
+                    completed.push(achievements[name]);
                     if (obj.hasAttribute("special")){
                         obj.querySelector("h4").innerHTML = achievements[name]["title"];
                         obj.querySelector("p").innerHTML = achievements[name]["desc"];
@@ -56,12 +59,12 @@ function achievement_checker(){ // Check for Completed Achievements and Update
                     obj.setAttribute("title",`Click to get hint | ${value["points"]} Points | Completed: ${value["completed"]}`);
                 }
             }
-        }
+        }if (completed.length == 9 && !achievements["Easter Bunny"]["completed"]) achievement_completed('Easter Bunny')
     })
 }
 function achievement_main(){
-    var achievements = JSON.parse(localStorage.getItem("data"))["achievements"];
-    var ap = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
+    var achievements = JSON.parse(localStorage.getItem("cubologyData"))["achievements"];
+    var ap = parseInt(JSON.parse(localStorage.getItem("cubologyData"))["ap"]);
     if (['index', '', '#'].includes(document.URL.split("/").at(-1).slice(0,-5)) || document.URL.split("/").at(-1).slice(0,-5).startsWith('#')) document.querySelector('.ap-title h1').innerHTML = `Achievements: ${ap}/100 Points`;
     // Achievement Records
     tab_presses = 0
@@ -72,7 +75,7 @@ function achievement_main(){
             tab_presses = 0;
         }
         if (tab_presses >=5 && !achievements["Tab Friend"]["completed"]){
-            update("achievements",true,"Tab Friend","completed");
+            // update("achievements",true,"Tab Friend","completed");
             achievements["Tab Friend"]["completed"] = true;
             achievement_completed("Tab Friend");
         }
@@ -80,25 +83,22 @@ function achievement_main(){
     
     $(document).keydown((e) => {
         if(((e.key == "F12") || (e.ctrlKey && e.shiftKey && any([e.key=='I', e.key == 'J', e.key == 'C']))) &&  !achievements["The Inspector"]["completed"]){
-        update("achievements",true,"The Inspector","completed");
         achievements["The Inspector"]["completed"] = true;
         achievement_completed("The Inspector");
         }  
     });
     if (document.URL.includes('learn3x3') && !achievements["Hands On"]["completed"]){
-        update("achievements",true,"Hands On","completed");
         achievements["Hands On"]["completed"] = true;
         achievement_completed("Hands On");
     }
     else if (document.URL.includes('other') && !achievements["Safety First"]["completed"]){
-        update("achievements",true,"Safety First","completed");
         achievements["Safety First"]["completed"] = true;
         achievement_completed("Safety First");
     }
 }
 
 function unlock_hint(elm){
-    var achievements = JSON.parse(localStorage.getItem("data"))["achievements"];
+    var achievements = JSON.parse(localStorage.getItem("cubologyData"))["achievements"];
     achievement = elm.querySelector('h4').innerHTML;
     if (elm.classList.contains('locked')){
         if (!achievements[achievement]["hint_unlocked"]){
@@ -117,13 +117,13 @@ function unlock_hint(elm){
 }
 function reward_checker(){
     var rewards_DOM = document.querySelectorAll(".reward-claim");
-    var ap = JSON.parse(localStorage.getItem("data"))["ap"];
-    var rewards = JSON.parse(localStorage.getItem("data"))["rewards"];
+    var ap = JSON.parse(localStorage.getItem("cubologyData"))["ap"];
+    var rewards = JSON.parse(localStorage.getItem("cubologyData"))["rewards"];
     rewards_DOM.forEach(reward => {
         if (rewards[reward.getAttribute("points")]["claimed"]){
             reward.classList.add("unlocked");
             reward.innerHTML = "Reward Claimed!";
-            elm.setAttribute("onclick",`window.open('${rewards[points.toString()]["reward"]}')`);
+            reward.setAttribute("onclick",`window.open('${rewards[reward.getAttribute("points")]["reward"]}')`);
             reward.parentElement.setAttribute("custom-title","Reward Unlocked!");
         }else if (ap >= parseInt(reward.getAttribute("points"))){
             reward.classList.add("claim");
@@ -132,9 +132,9 @@ function reward_checker(){
     })
 }
 function unlock_reward(elm){
-    var ap = JSON.parse(localStorage.getItem("data"))["ap"];
+    var ap = JSON.parse(localStorage.getItem("cubologyData"))["ap"];
     var points = parseInt(elm.getAttribute("points"));
-    rewards = JSON.parse(localStorage.getItem("data"))["rewards"];
+    rewards = JSON.parse(localStorage.getItem("cubologyData"))["rewards"];
     if (ap >= points){
         elm.classList = "btn reward-claim unlocked";
         elm.innerHTML = "Reward Claimed!";

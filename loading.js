@@ -18,9 +18,17 @@ function random(choices){
 
 function loadinganim() {
     document.getElementById("body").style.display = "block";
+    document.addEventListener('keydown', (e) => {
+        if (e.key == "Escape"){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("body").style.display = "block";
+            document.getElementById("body").style.backgroundColor = "var(--cream)";
+            if (!JSON.parse(localStorage.getItem("cubologyData"))['achievements']['The Terminator']['completed']) achievement_completed("The Terminator");
+        }
+    })
     if (document.URL.includes('index')){
         document.getElementById("loader").style.display = "block";
-        document.getElementById("loader").setAttribute("onclick", `window.open('https://youtu.be/dQw4w9WgXcQ'); update("achievements",true,"?????","completed");achievement_completed('?????'); achievement_checker();`);
+        document.getElementById("loader").setAttribute("onclick", `window.open('https://youtu.be/dQw4w9WgXcQ'); if (!JSON.parse(localStorage.getItem("cubologyData"))['achievements']['?????']['completed']){achievement_completed('?????');}`);
         document.getElementById("body").style.display = "none";
         document.querySelector(".know .bodying").innerHTML = random(cubing_facts);
         setTimeout(function(){

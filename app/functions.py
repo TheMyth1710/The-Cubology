@@ -24,23 +24,45 @@ def YBRtoWGR(move:str):
         elif v1 == move: return move.replace(v1, k1)
     return move
 def cleanSol(lst):
-    res = [lst[0]]
-    for i in range(1, len(lst)):
-        item = lst[i]
-        inverse = item.removesuffix("'") if item.endswith("'") else item
-        handled = False
-        if res and res[-1] == inverse:
-            res.pop()
-            handled = True
-        if len(res) >= 4 and set(res[-3:]) == {item}:
-            del res[-3:]
-            handled = True
-        if res and res[-1] == item:
-            res[-1] = f"{item}2"
-            handled = True
-        if not handled:
-            res.append(item)
-    return res
+    while True:
+        flag = False
+        for i, item in enumerate(lst):
+            inverse = item.replace("'", "") if "'" in item else item[0] + "'" + item[1:]
+
+            # To remove "U" and "U'"
+            if i < len(lst) - 1 and lst[i + 1] == inverse:
+                del lst[i : i + 2]
+                flag = True
+                break
+
+            # To remove "U", "U", "U", "U"
+            if len(lst) >= 4 and set(lst[i : i + 4]) == {item}:
+                del lst[i : i + 4]
+                flag = True
+                break
+
+            # The two "U2", "U2", makes "U22" this should Also be removed.
+            if "22" in item:
+                del lst[i]
+                flag = True
+                break
+
+            # To remove "U", "U2", "U"
+            if i < len(lst) - 2 and item == lst[i + 2] and item == f"{lst[i+1]}2":
+                del lst[i : i + 3]
+                flag = True
+                break
+
+            # To convert "U", "U" to "U2"
+            if i < len(lst) - 1 and item == lst[i + 1]:
+                lst[i] = f"{item}2"
+                del lst[i + 1]
+                flag = True
+                break
+
+        if not flag:
+            break
+    return lst
 def solveCube(scramble, solType:str, cube_state=None):
     cube = [
         [
@@ -138,5 +160,4 @@ def solveCube(scramble, solType:str, cube_state=None):
             return cube
         cube = scrambleToCube(move, cube, 1)
     cube = ''.join(listToString(cube))
-    return cleanSol([YBRtoWGR(str(move)) for move in utils.solve(cube, solType)])
-print(cleanSol(["R2", "R'", "R2", "R"]))
+    return [YBRtoWGR(str(move)) for move in utils.solve(cube, solType)]
