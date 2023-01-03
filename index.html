@@ -18,7 +18,7 @@
       <link rel="icon" href="uploads/images/fav.png" type="image/x-icon">
       <title>The Cubology</title>
   </head>
-  <body onload="loadinganim(); device_checker(); achievement_main(); achievement_checker(); reward_checker();"> 
+  <body onload="loadinganim(); achievement_main(); achievement_checker(); reward_checker();"> 
     <!-- Loading Animation -->
     <div class="row-loading col-12 center center-text" id="loader">
       <div class="rubiks-loader">
@@ -37,7 +37,7 @@
             <!-- first step: E', equator inverted -->
             <div class="face down  piece justanotherrow-top    column-centre green"></div>
             <div class="face down  piece justanotherrow-centre column-centre red"></div>
-            <div class="face down  piece justanotherrow-bottom column-centre white"></div>
+            <div class="face down  piece justanotherrow-bottom column-centre white"></div>a
         
             <!-- second step: M, middle -->
             <div class="face right piece justanotherrow-centre column-left   yellow"></div>
@@ -76,19 +76,19 @@
               <a class="nav-link" href="learn3x3">Learn The 3x3</a>
             </li>
             <li class="nav-item">
-              <div class="dropdown">
+              <div class="dropdown" toggleClass>
                 <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false">
                   More Puzzles
                 </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="more#2x2">Learn The 2x2</a>
-                  <a class="dropdown-item" href="more#3x3">Learn The 4x4</a>
+                <div class="dropdown-menu" id="more-drop">
+                  <a class="dropdown-item" href="https://jperm.net/2x2" target="_blank">Learn The 2x2</a>
+                  <a class="dropdown-item" href="https://jperm.net/4x4" target="_blank">Learn The 4x4</a>
                 </div>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="solve">Solve My Cube</a> <!-- Redirection to Download Page-->
-            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="solve">Solve My Cube</a>
+            </li> -->
             <li class="nav-item">
               <div class="dropdown" toggleClass>
                 <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false">
@@ -104,22 +104,22 @@
               </div> <!-- Direct Connection Via an API to Other Platforms -->
             </li>
             <li class="nav-item">
-              <div class="dropdown">
+              <div class="dropdown" toggleClass>
                 <button class="nav-link" type="button" data-toggle="dropdown" aria-expanded="false">
                   Other
                 </button>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu" id="other-drop">
                   <a class="dropdown-item" href="other#tos">Terms of Service</a>
                   <a class="dropdown-item" href="other#privacy">Privacy Policy</a>
                 </div>
               </div>
             </li>
             <li class="nav-item" id="nav-link-download" style="display: none">
-              <a class="nav-link" href="download">Download</a>
+              <a class="nav-link" href="https://github.com/TheMyth1710/The-Cubology/tree/main/app" target="_blank">Download</a>
             </li>
           </ul>
         </div>
-        <button class="downloadcolor center-text" id="download" onclick="window.location='download'"><span class="roboto bold">DOWNLOAD</span></button>
+        <button class="downloadcolor center-text" id="download" onclick='window.open("https://github.com/TheMyth1710/The-Cubology/tree/main/app")'><span class="roboto bold">DOWNLOAD</span></button>
       </nav>
       <!-- This Whole Thing is The Cube Animation -->
       <div class="wrapper"> 
@@ -133,8 +133,7 @@
         </div>
         <!-- Cube Animation End -->
         <br>
-          <div class="btn btn-index col-5 center-text overlay" id="downloadoverlay" onclick="device_checker(true);"></div>
-          <button class="btn btn-index col-5 center-text inconsolata" id="downloadbtn" onclick="window.location='download'" animation="popdown-homebtns 0.5s forwards"><i class="fa-solid fa-download center-text" id="icon" style="float: left;">&nbsp;Download</i></button>
+          <button class="btn btn-index col-5 center-text inconsolata" id="downloadbtn" onclick='window.open("https://github.com/TheMyth1710/The-Cubology/tree/main/app")' animation="popdown-homebtns 0.5s forwards"><i class="fa-solid fa-download center-text" id="icon" style="float: left;">&nbsp;Download</i></button>
           <button class="btn btn-index col-5 center-text inconsolata" id="storebtn" onclick="displayNavbar();toggleClass('#store-drop', 'active');" animation="popdown-homebtns 0.5s 0.2s forwards"><i class="fa-solid fa-cart-shopping center-text" id="icon">&nbsp;Store</i></button>
       </div>
       <div class="card-holder">
@@ -214,7 +213,7 @@
           </div>
           <div class="new-cube-btn-holder">
             <button class="btn new-cube-btn" id="new-cube-btn-1" onclick="window.location='learn3x3'" animation="scalein 0.5s forwards">Start With The 3x3</button>
-            <button class="btn new-cube-btn" id="new-cube-btn-2" onclick="window.location='more'" animation="scalein 0.5s forwards">Explore More Cubes</button>
+            <button class="btn new-cube-btn" id="new-cube-btn-2" onclick="displayNavbar();toggleClass('#more-drop', 'active')" animation="scalein 0.5s forwards">Explore More Cubes</button>
             <button class="btn new-cube-btn" id="new-cube-btn-3" onclick="displayNavbar();toggleClass('#store-drop', 'active')" animation="scalein 0.5s forwards">Buy Some Cubes</button>
           </div>
           <hr class="index-separator">
@@ -299,9 +298,8 @@
         </div>
       </div>
       <div class="uncompatible">
-        *Achievements and Rewards are only available on the Desktop version!
+        *Some achievements can only be unlocked on the desktop version!
       </div>
-      <hr class="ap-separator" />
       <div class="rw-holder">
         <div class="rw-title">
           <h1 class="inconsolata fw-800 center-text" id="rewards">Rewards</h1>
@@ -309,33 +307,45 @@
         <div class="rewards">
           <div class="reward op-0" animation="fadein 2s forwards" style="background-color: #ffe599;">
             <div class="classifier">
-              <img src="uploads/images/tictactoe.png" alt="TicTacToe" />
+              <div class="sub-classifier">
+                <img src="uploads/images/tictactoe.png" alt="TicTacToe" />
+              </div>
+              <div class="sub-classifier">
+                <h4 class="reward-title exo2">TicTacToe Game</h4>
+                <p>Now enjoy TicTacToe with bots! </p>
+              </div>
             </div>
             <div class="classifier">
-              <h4 class="reward-title exo2">TicTacToe Game</h4>
-              <p>Now enjoy TicTacToe with bots! </p>
+                <button class="btn reward-claim" onclick="unlock_reward(this)" points="20">20 Points Needed</button>
             </div>
-            <button class="btn reward-claim" onclick="unlock_reward(this)" points="20">20 Points Needed</button>
-            </div>
+          </div>
           <div class="reward op-0" animation="fadein 2s forwards" style="background-color: #b6d7a8;">
             <div class="classifier">
-              <img src="uploads/images/temp-files.png" style="background-size: 500% !important" alt="Reward" />
+              <div>
+                <img src="uploads/images/temp-files.png" style="background-size: 500% !important" alt="Reward" />
+              </div>
+              <div>
+                <h4 class="reward-title exo2">Temporary File Remover</h4>
+                <p class="exo2">Save disk space like never before!</p>
+              </div>
             </div>
             <div class="classifier">
-              <h4 class="reward-title exo2">Temporary File Remover</h4>
-              <p class="exo2">Save disk space like never before!</p>
+              <button class="btn reward-claim" onclick="unlock_reward(this)" points="50">50 Points Needed</button>
             </div>
-            <button class="btn reward-claim" onclick="unlock_reward(this)" points="50">50 Points Needed</button>
           </div>
           <div class="reward op-0" animation="fadein 2s forwards" style="background-color: #ea9999;">
             <div class="classifier">
-              <img src="uploads/images/jarvis.png" alt="Jarvis" />
+              <div>
+                <img src="uploads/images/jarvis.png" alt="Jarvis" />
+              </div>
+              <div>
+                <h4 class="reward-title exo2">Jarvis</h4>
+                <p class="exo2">Get your PC's work done by a bot!</p>
+              </div>
             </div>
             <div class="classifier">
-              <h4 class="reward-title exo2">Jarvis</h4>
-              <p class="exo2">Get your PC's work done by a bot!</p>
+              <button class="btn reward-claim" onclick="unlock_reward(this)" points="100">100 Points Needed</button>
             </div>
-            <button class="btn reward-claim" onclick="unlock_reward(this)" points="100">100 Points Needed</button>
           </div>
         </div>
       </div>
@@ -368,30 +378,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
   </body>
 </html>
-
-<!-- 
-
-Download + Store
-Features
-Our Mission
-About Cube //cream
-New to Cubing? //blue
-  → Redirect to Learn 3x3
-  → Redirect to store
-  → Other Puzzles : redirect to more puzzles
-WCA
-Achievements:
-(+5) Tab Friend → 5 tabs continuous
-(+5) Want to feel safe? → Learn the 3x3 cube simulator
-(+15) The Terminator → Terminator The Download Animation
-(+10) Never Gonna Give You Up → Imagine Being Rick Rolled (Mostly in Other page)
-(+5) You aren't broke! → Click a product in the store
-(+10) Getting hands on! → Visit WCA
-and more...
-
-
-Rewards:
-Rick Roll: 20 Points
-All unlocked: Redirect to Jarvis Installation
-
---> 

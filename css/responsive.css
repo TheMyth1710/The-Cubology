@@ -192,11 +192,28 @@
     .wca-content{
         width: 80%;
     }
-    .ap-holder, .rw-holder, .ap-separator{
-        display: none;
-    }
     .uncompatible{
         display: block;
+    }
+    .achievements, .rewards{
+        width: 100%;
+    }
+    .reward{
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        min-height: 100px;
+        max-height: 200px;
+        align-items: center;
+        text-align: center;
+    }
+    .reward .classifier{
+        height: 150px;
+        padding: 0 15px;
+        justify-content: center;
+    }
+    .reward .classifier:last-of-type button{
+        margin-right: 0;
     }
     .footer{
         padding-left: 5px;

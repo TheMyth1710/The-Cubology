@@ -39,7 +39,7 @@ function onclick_buttons(param='move(this, true)'){
 
 function level_checker(){
     onclick_buttons();
-    let level_record = JSON.parse(localStorage.getItem("data"))["levels"];
+    let level_record = JSON.parse(localStorage.getItem("cubologyData"))["levels"];
     document.querySelectorAll(".cube-level-ribbons .ribbon").forEach(level => {
         if (level_record[level.getAttribute("level")] && Boolean(level.getAttribute("level"))){
             level.classList.add('cleared');
@@ -49,7 +49,7 @@ function level_checker(){
 
 function level_identifier(level_DOM){
     let level = level_DOM.getAttribute("level");
-    let level_status = JSON.parse(localStorage.getItem("data"))["levels"];
+    let level_status = JSON.parse(localStorage.getItem("cubologyData"))["levels"];
     let move_ahead = true;
     for (let i = 0; i < level; i++){
         if (level_status[level]){
@@ -114,7 +114,7 @@ function level_simulator(level, i=0){
         setTimeout(() => {
             alert(msg);
             if (global_level == 3){
-                var ap = parseInt(JSON.parse(localStorage.getItem("data"))["ap"]);
+                var ap = parseInt(JSON.parse(localStorage.getItem("cubologyData"))["ap"]);
                 update("achievements",true,"All-Rounder","completed");
                 achievement_completed("All-Rounder",ap);
             }
@@ -263,7 +263,7 @@ function move(btn, complete=false){ // Avoid over spamming
 
 document.querySelectorAll(".know-more label input[type='checkbox']").forEach(input => input.addEventListener("change", function(){
     var additional_info = this.parentElement.parentElement.querySelector(".additional-info");
-    var opened = JSON.parse(localStorage.getItem("data"))["3x3"];
+    var opened = JSON.parse(localStorage.getItem("cubologyData"))["3x3"];
     var keys = Object.keys(opened);
     var check_out = true;
     if (this.checked){

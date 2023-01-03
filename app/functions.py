@@ -14,8 +14,18 @@ def listToString(data_structure, temp=[]):
     return temp
 
 def YBRtoWGR(move:str):
-    flexible_replacement = {"U": "D", "R": "F", "L": "B", "X": "Z"}
-    fixed_replacement = {"Y": "Y'", "M": "S'", "M'": "S"}
+    flexible_replacement = {
+        "U": "D", 
+        "R": "F",
+        "L": "B", 
+        "X": "Z"
+    }
+    fixed_replacement = {
+        "Y": "Y'", 
+        "M": "S'", 
+        "M'": 
+        "S"
+    }
     for k, v in flexible_replacement.items():
         if k in move: return move.replace(k,v)
         elif v in move: return move.replace(v,k)

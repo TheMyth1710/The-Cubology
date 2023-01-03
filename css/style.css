@@ -292,16 +292,6 @@ html, body{
     top: 30%;
 }
 
-@keyframes mymove {
-    50% {font-size: 28px;}
-}
-
-.overlay{
-    background-color: transparent !important;
-    position: absolute; 
-}
-
-
 .btn{
     border-radius: 10px;
     height: 3em;
@@ -695,11 +685,9 @@ hr{
     text-align: center;
     width: fit-content;
     margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: -50px;
     padding: 30px;
-    border-top: 1px solid var(--darkblue);
-    border-bottom: 1px solid var(--darkblue);
+    font-style: italic;
     display: none;
 }
 .wca{
@@ -787,11 +775,17 @@ hr{
     position: relative;
 }
 .reward .classifier{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
     margin-top: 5px;
     text-align: left;
 }
-.reward .classifier:last-of-type{
+.reward .classifier:first-of-type{
     width: 100%;
+}
+.reward .classifier:last-of-type button{
+    margin-right: 15px;
 }
 .achievement:hover, .reward:hover{
     transform: translateY(-2px);
@@ -839,8 +833,8 @@ hr{
 .reward-claim{
     width: 165px;
     right: 5px;
-    position: absolute;
-    float: right !important;
+    /* position: absolute;
+    float: right !important; */
     background-color: #d54444 !important;  
     color: var(--darkcream);
     opacity: 1 !important;
@@ -1478,12 +1472,21 @@ hr{
 
 .tos .content{
     max-width: 80ch;
-    text-indent: 4ch;
     color: var(--blue);
     text-align: justify;
     margin: auto;
 }
 
+
+.tos .content h2{
+    font-weight: bold;
+}
+.tos .content h3{
+    text-decoration: underline;
+}
+.tos .content h4{
+    font-style: italic;
+}
 .switch-button {
     margin-left: 50%;
     margin-top: 30px;

@@ -36,6 +36,7 @@ if (data && data["achievements"] && data["rewards"] && data["levels"] && data["a
         console.log('reset')
         reset();
     }
+    // Work on other and more page, and also work on feature page images
 }else reset();
 function reset(){
     localStorage.setItem("cubologyData", JSON.stringify({
@@ -70,19 +71,6 @@ function reset(){
         }
     }))
 }
-function device_checker(click=false){
-    let downloadbtn = document.getElementById("downloadbtn");
-    let overlay = document.getElementById("downloadoverlay");
-    if (!window.navigator.userAgent.includes("Windows NT 10.0")){
-        overlay.style.cursor = "not-allowed";
-        downloadbtn.disabled = true;
-        downloadbtn.style.opacity = '0';
-        if (click){
-            confirm("Oops! We currently only support Windows 10+");
-        }
-    }
-}
-
 function clickanimation(id, key='background-color', before='', after='orange', time='1'){
     const obj = document.getElementById(id);
     if (['2x-faster-solutions','3+-different-solutions','straightforward-ui','better-graphs'].includes(id)) before = '#252E51';
@@ -137,7 +125,12 @@ function displayNavbar(){
 }
 function toggleClass(elem, className){
     if (window.innerWidth <= 991) document.querySelector(".navbar-toggler").click();
-        document.querySelector(elem).classList.toggle(className);
+    document.querySelectorAll('.dropdown-menu').forEach(drop => {if (drop.id != elem.slice(1)) drop.classList.remove(className)})
+    document.querySelector(elem).classList.toggle(className);
+    document.addEventListener('keydown', (e)=>{if (e.key == "Escape") document.querySelector(elem).classList.remove(className);})
+    window.addEventListener('click', function(e){
+        if (document.querySelector(elem).parentElement != e.target && !e.target.classList.contains('new-cube-btn')) document.querySelector(elem).classList.remove(className)
+      });
 }   
 
 document.querySelectorAll(".dropdown").forEach(dropdown => (dropdown.hasAttribute("toggleClass")) ? dropdown.querySelector("button").setAttribute("onclick", `toggleClass('#${dropdown.querySelector(".dropdown-menu").id}', 'active')`) : "");
