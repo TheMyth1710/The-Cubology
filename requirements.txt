@@ -1,5 +1,0 @@
-tkinter
-Pillow
-webbrowser
-copy
-rubiks_solver
