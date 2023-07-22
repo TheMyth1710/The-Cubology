@@ -22,11 +22,11 @@ root.geometry(f"{int(width/1.5)}x{int(height/1.5)}")
 root.overrideredirect(True)
 
 # Assets
-max = ImageTk.PhotoImage(Image.open("app/assets/maximize.png"))
-min = ImageTk.PhotoImage(Image.open("app/assets/minimize.png"))
-restore = ImageTk.PhotoImage(Image.open("app/assets/restore.png"))
-close = ImageTk.PhotoImage(Image.open("app/assets/close.png"))
-logo = ImageTk.PhotoImage(Image.open("app/assets/logo.png").resize((30, 30), Image.Resampling.LANCZOS))
+max = ImageTk.PhotoImage(Image.open("assets/maximize.png"))
+min = ImageTk.PhotoImage(Image.open("assets/minimize.png"))
+restore = ImageTk.PhotoImage(Image.open("assets/restore.png"))
+close = ImageTk.PhotoImage(Image.open("assets/close.png"))
+logo = ImageTk.PhotoImage(Image.open("assets/logo.png").resize((30, 30), Image.Resampling.LANCZOS))
 
 # Custom Functions
 
